@@ -12,7 +12,7 @@
                             Reference number
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Full Name
+                           Business Name
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Business Type
@@ -20,6 +20,7 @@
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Date Received
                         </th>
+                        
                         <th scope="col" class="relative px-6 py-3">
                         <span class="sr-only">Send</span>
                         </th>
@@ -40,7 +41,7 @@
                             12/19/2020
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Send</a>
                         </td>
                     </tr>
                     <tr>
@@ -57,7 +58,7 @@
                             12/19/2020
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Send</a>
                         </td>
                     </tr>
         

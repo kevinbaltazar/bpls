@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -55,19 +55,12 @@
                 </div>
               </div>
       
-              <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                  <input id="remember_me" name="remember_me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                  <label for="remember_me" class="ml-2 block text-sm text-gray-900">
-                    Remember me
-                  </label>
-                </div>
-              </div>
+    
       
               <div>
                 <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   Sign in
-                </a>
+                </button>
               </div>
             </form>
       
