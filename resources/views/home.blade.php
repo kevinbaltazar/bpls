@@ -27,7 +27,7 @@
                           <img class="h-10 w-auto sm:h-10" src="{{url('/png/pulo-logo.png')}}">
                         </a>
                         <div class="-mr-2 flex items-center md:hidden">
-                          <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
+                          <button onclick="showNav()" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
                             <span class="sr-only">Open main menu</span>
                             <!-- Heroicon name: menu -->
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -61,14 +61,14 @@
                     From: "opacity-100 scale-100"
                     To: "opacity-0 scale-95"
                 -->
-                <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+                <div id="menu" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden hidden">
                   <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div class="px-5 pt-4 flex items-center justify-between">
                       <div>
                         <img class="h-10 w-auto" src="{{url('/png/pulo-logo.png')}}" alt="">
                       </div>
                       <div class="-mr-2">
-                        <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <button onclick="hideNav()" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                           <span class="sr-only">Close main menu</span>
                           <!-- Heroicon name: x -->
                           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -120,5 +120,18 @@
               <img class="h-56 object-cover w-full sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{url('/png/pulo.jpg')}}" alt="">
             </div>
           </div>
+
+
+          <script>
+            var menu = document.getElementById("menu");
+
+            function hideNav(){
+              menu.style.display = "none";
+            }
+            function showNav(){
+              menu.style.display = "block";
+            }
+            
+          </script>
     </body>
 </html>
