@@ -45,7 +45,7 @@
           <div class="border border-gray-200 overflow-hidden lg:border-0">
             <!-- Current Step -->
             
-            <a href="#" class="group">
+        
                 <span class="absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-gray-200 lg:w-full lg:h-1 lg:bottom-0 lg:top-auto" aria-hidden="true"></span>
                 <span class="px-6 py-5 flex items-start text-sm font-medium lg:pl-9">
                   <span class="flex-shrink-0">
@@ -57,7 +57,7 @@
                     <span class="text-lg mt-1 font-semibold text-gray-500 uppercase tracking-wide">requirement</span>
                   </span>
                 </span>
-            </a>
+            
             
   
             <div class="hidden absolute top-0 left-0 w-3 inset-0 lg:block" aria-hidden="true">
@@ -71,7 +71,7 @@
         <li class="relative overflow-hidden lg:flex-1">
           <div class="border border-gray-200 overflow-hidden border-t-0 rounded-b-md lg:border-0">
             <!-- Upcoming Step -->
-            <a href="#" class="group">
+           
               <span class="absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-gray-200 lg:w-full lg:h-1 lg:bottom-0 lg:top-auto" aria-hidden="true"></span>
               <span class="px-6 py-5 flex items-start text-sm font-medium lg:pl-9">
                 <span class="flex-shrink-0">
@@ -83,7 +83,7 @@
                   <span class="text-lg mt-1 font-semibold text-gray-500 uppercase tracking-wide">Summary</span>
                 </span>
               </span>
-            </a>
+            
   
             <div class="hidden absolute top-0 left-0 w-3 inset-0 lg:block" aria-hidden="true">
               <svg class="h-full w-full text-gray-300" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
@@ -220,18 +220,18 @@
 
 
 
+                <div class="pt-5">
+                    <div class="flex justify-end">
+                        <a href="#"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Cancel
+                        </button></a>
+                        <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Next
+                        </button>
+                    </div>
+                </div>
 
-        <div class="pt-5">
-            <div class="flex justify-end">
-                <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Cancel
-                </button>
-                <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Next
-                </button>
-            </div>
+            </form>
         </div>
-
-    </form>
-</div>
-@endsection
+    </body>
+</html>
