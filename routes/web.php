@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/apply', function (Request $request) {
-    return view('applicant.application');
+Route::get('/applynow', function () {
+    return view('applicant.applynow');
 });

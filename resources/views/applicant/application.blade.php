@@ -116,7 +116,7 @@
                 
                         <div class="sm:col-span-2">
                             <label for="middle_name" class="block text-sm font-medium text-gray-700">
-                                Middle N
+                                Middle Name
                             </label>
                             <div class="mt-1">
                                 <input type="text" name="middle_name" id="middle_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
@@ -168,7 +168,7 @@
                             </div>
                         </div>
 
-                        <div class="sm:col-span-1">
+                        <div class="sm:col-span-2">
                             <label for="birthplace" class="block text-sm font-medium text-gray-700">
                               Birthplace
                             </label>
@@ -177,7 +177,7 @@
                             </div>
                         </div>
 
-                        <div class="sm:col-span-2">
+                        <div class="sm:col-span-1">
                             <label for="birthdate" class="block text-sm font-medium text-gray-700">
                                Business Mobile Number
                             </label>
@@ -196,14 +196,35 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD:resources/views/applicant/application.blade.php
                 
+=======
+
+                <div class="mt-5 w-9/12">
+                    <h2 class="font-semibold text-sm">Please select the following type of business:</h2>
+                    <button type="button" class="bg-blue-100 text-sky-blue w-48 focus:outline-none h-8 text-xs rounded  font-normal mt-2">Accomodation and Lodging</button>
+                    <button type="button" class="bg-blue-100 text-sky-blue w-32 focus:outline-none h-8 text-xs rounded font-normal mt-2">Manufacture</button>
+                    <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Agriculture</button>
+                    <button type="button" class="bg-blue-100 text-sky-blue w-48 focus:outline-none h-8 text-xs rounded font-normal mt-2">Food and Beverage</button>
+                    <button type="button" class="bg-blue-100 text-sky-blue w-32 focus:outline-none h-8 text-xs rounded font-normal mt-2">Healthcare</button>
+                    <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Services</button>
+                    <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Real State</button>
+                    <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Retail</button>
+                    <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Others</button>
+                </div>
+
+
+
+
+
+>>>>>>> 9709b38b7fdbd3c731853de8c92e291134ffe032:resources/views/applicant/applynow.blade.php
                 <div class="pt-5">
                     <div class="flex justify-end">
                         <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Cancel
+                            Cancel
                         </button>
                         <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Save
+                            Next
                         </button>
                     </div>
                 </div>
