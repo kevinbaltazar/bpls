@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -76,7 +75,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                           </svg>
                         </button>
-                      </div>
+                      </div>~
                     </div>
                     <div role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
                       <div class="px-2 pt-2 pb-3 space-y-1" role="none">
@@ -103,7 +102,7 @@
                     </p>
                     <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                       <div class="rounded-md shadow">
-                        <a href="{{('/applynow')}}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                        <a href="{{('steps/step1')}}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
                             Apply Now
                         </a>
                       </div>
@@ -136,5 +135,3 @@
           </script>
     </body>
 </html>
-=======
->>>>>>> e9f4b5a7faa24954db31c325ce965b2d0ccaf9c5

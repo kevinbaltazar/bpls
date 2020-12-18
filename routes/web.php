@@ -18,6 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/applynow', function () {
-    return view('applicant.applynow');
+Route::get('/step1', function () {
+    return view('applicant.steps.step1');
+});
+
+Route::get('/step2', function () {
+    return view('applicant.steps.step2');
+});
+
+Route::get('/step3', function () {
+    return view('applicant.steps.step3');
 });
