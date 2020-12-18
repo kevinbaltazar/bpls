@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Str;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -36,5 +37,19 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    public function render($request, Throwable $e)
+    {
+        if ($request->expectsJson()) {
+            return response()->json(['message' => $e->getMessage()], 401);
+        }
+
+        if (Str::startsWith($request->path(), 'admin')) {
+            return redirect()->guest(route('admin.login'));
+        }
+
+        return redirect()->guest(route('login'));
+
     }
 }

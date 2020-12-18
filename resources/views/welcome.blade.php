@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -7,10 +6,8 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <title>Home</title>
-
-
-    
     </head>
+
     <body>
         <div class="relative bg-white overflow-hidden">
             <div class="max-w-7xl mx-auto">
@@ -86,7 +83,7 @@
           
                         <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Contact Us</a>
           
-                        <a href="{{('/faqs')}}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">FAQs</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">FAQs</a>
                       </div>
                     </div>
                   </div>
@@ -136,5 +133,3 @@
           </script>
     </body>
 </html>
-=======
->>>>>>> e9f4b5a7faa24954db31c325ce965b2d0ccaf9c5
