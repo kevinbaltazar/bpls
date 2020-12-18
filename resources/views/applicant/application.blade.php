@@ -90,17 +90,18 @@
         </div>
 
         <div class="px-4 md:px-16 lg:px-20 mt-12">
-            <form class="space-y-8 divide-y divide-gray-200">
-                <div class="space-y-8 divide-y divide-gray-200">
+            <form class="space-y-8" method="POST" action="#">
+              @csrf
+                <div class="space-y-8">
+                   
                     <div>
-                        <div>
-                            <h3 class="text-lg leading-6 font-medium text-gray-900">
-                            Business Information
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">
-                                This information will be in your business application.
-                            </p>
-                        </div>
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        Business Information
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            This information will be in your business application.
+                        </p>
+                    </div>
     
                     <div class="pt-3">
                         <div class="mt-1 grid grid-cols-1 gap-y-4 gap-x-4 sm:grid-cols-6">
@@ -193,15 +194,9 @@
                                 <input type="text" name="birthplace" id="birthplace" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                             </div>
                         </div>
-
                     </div>
                 </div>
                 
-
-
-
-
-
                 <div class="pt-5">
                     <div class="flex justify-end">
                         <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -212,6 +207,7 @@
                         </button>
                     </div>
                 </div>
+
             </form>
         </div>
     </body>
