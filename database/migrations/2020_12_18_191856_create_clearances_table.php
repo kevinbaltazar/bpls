@@ -22,16 +22,26 @@ class CreateClearancesTable extends Migration
             $table->string('last_name');
             $table->string('personal_address');
             $table->string('business_name');
+            $table->string('business_address');
             $table->date('birthdate');
             $table->string('birthplace');
             $table->string('mobile_number');
             $table->string('telephone_number')->nullable();
-            $table->string('business_name');
             $table->timestamp('requirements_approved_at')->nullable();
             $table->timestamp('inspected_at')->nullable();
             $table->timestamp('signed_at')->nullable();
             $table->timestamp('rejected_at')->nullable();
             $table->timestamps();
+
+            // $table->foreign('business_type_id')
+            // ->references('id')
+            // ->on('business_types')
+            // ->onDelete('cascade');
+
+            // $table->foreign('clearance_inspector_id')
+            // ->references('id')
+            // ->on('clearance_inspectors')
+            // ->onDelete('cascade');
         });
     }
 
