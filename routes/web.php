@@ -17,7 +17,15 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/faqs', function () {
+    return view('faqs');
+});
+
+
+
 Route::get('/applynow', function () {
     return view('applicant/applynow');
 });
+
+
 
