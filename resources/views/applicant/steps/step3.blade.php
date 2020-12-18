@@ -63,7 +63,7 @@
         <li class="relative overflow-hidden lg:flex-1">
           <div class="border border-gray-200 overflow-hidden border-t-0 rounded-b-md lg:border-0">
             <!-- Upcoming Step -->
-            <a href="#" aria-current="step">
+            
                 <span class="absolute top-0 left-0 w-1 h-full bg-indigo-600 lg:w-full lg:h-1 lg:bottom-0 lg:top-auto" aria-hidden="true"></span>
                 <span class="px-6 py-5 flex items-start text-sm font-medium lg:pl-9">
                   <span class="flex-shrink-0">
@@ -75,7 +75,7 @@
                     <span class="text-lg mt-1 font-semibold text-indigo-600 uppercase tracking-wide">Summary</span>
                   </span>
                 </span>
-              </a>
+              
   
             <div class="hidden absolute top-0 left-0 w-3 inset-0 lg:block" aria-hidden="true">
               <svg class="h-full w-full text-gray-300" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
