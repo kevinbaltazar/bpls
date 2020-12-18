@@ -8,44 +8,41 @@ use App\Models\Clearance;
 
 class ClearanceController extends Controller
 {
-    public function createStep1(Request $request){
-        $clearance = $request->session()->get('clearance');
-        return view('applicant.steps.step1',compact('clearance', $clearance));
+    public function createStep1()
+    {
+        return view('applicant.steps.step1', [
+            'data' => session('first', []),
+        ]);
     }
 
-    public function postCreateStep1(Request $request){
-        // $validatedData = $request->validate([
-        //     'first_name' => 'required',
-        //     'middle_name' => 'required',
-        //     'last_name' => 'required',
-        //     'personal_address' => 'required',
-        //     'business_name' => 'required',
-        //     'business_address' => 'required',
-        //     'birthdate' => 'required',
-        //     'birthplace' => 'required',
-        //     'mobile_number' => 'required',
-        // ]);
+    public function postCreateStep1(Request $request)
+    {
+        $validatedData = $request->validate([
+            'first_name' => 'required',
+            'middle_name' => 'required',
+            'last_name' => 'required',
+            'personal_address' => 'required',
+            'business_name' => 'required',
+            'business_address' => 'required',
+            'birthdate' => 'required',
+            'birthplace' => 'required',
+            'mobile_number' => 'required',
+        ]);
 
-        // if(empty($request->session()->get('clearance'))){
-        //     $clearance = new clearance();
-        //     $clearance->fill($validatedData);
-        //     $request->session()->put('clearance', $clearance);
-        // }else{
-        //     $clearance = $request->session()->get('clearance');
-        //     $clearance->fill($validatedData);
-        //     $request->session()->put('clearance', $clearance);
-        // }
+        session()->put('first', $validatedData);
 
-        return redirect('/application/create-step2');
+        return redirect('/application/second');
     }
 
     public function createStep2(Request $request){
-        $clearance = $request->session()->get('clearance');
-        return view('applicant.steps.step2',compact('clearance', $clearance));
+        return view('applicant.steps.step2', [
+            'data' => session('second', []),
+        ]);
     }
 
     public function postCreateStep2(){
-        return redirect('/application/create-step3');
+        // session()->put('second', $validatedData);
+        return redirect('/application/third');
     }
 
     public function createStep3(Request $request){
@@ -54,6 +51,6 @@ class ClearanceController extends Controller
     }
 
     public function postCreateStep3(){
-        
+        return "wow";
     }
 }

@@ -21,10 +21,10 @@ Route::get('/', function () {
 
 
 Route::get('/application', [ClearanceController::class, 'createStep1']);
-Route::post('/application/create-step1', [ClearanceController::class, 'postCreateStep1']);
+Route::post('/application/first', [ClearanceController::class, 'postCreateStep1']);
 
-Route::get('/application/create-step2', [ClearanceController::class, 'createStep2']);
-Route::post('/application/create-step2', [ClearanceController::class, 'postCreateStep2']);
+Route::get('/application/second', [ClearanceController::class, 'createStep2']);
+Route::post('/application/second', [ClearanceController::class, 'postCreateStep2']);
 
-Route::get('/application/create-step3', [ClearanceController::class, 'createStep3']);
-Route::post('/application/create-step3', [ClearanceController::class, 'postCreateStep3']);
+Route::get('/application/third', [ClearanceController::class, 'createStep3']);
+Route::post('/application/third', [ClearanceController::class, 'postCreateStep3']);
