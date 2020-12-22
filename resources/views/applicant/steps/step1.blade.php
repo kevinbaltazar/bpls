@@ -83,7 +83,6 @@
                   <span class="text-lg mt-1 font-semibold text-gray-500 uppercase tracking-wide">Summary</span>
                 </span>
               </span>
-            
   
             <div class="hidden absolute top-0 left-0 w-3 inset-0 lg:block" aria-hidden="true">
               <svg class="h-full w-full text-gray-300" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">

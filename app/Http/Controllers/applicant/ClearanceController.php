@@ -5,6 +5,7 @@ namespace App\Http\Controllers\applicant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Clearance;
+use App\Models\Media;
 
 class ClearanceController extends Controller
 {
@@ -17,6 +18,8 @@ class ClearanceController extends Controller
 
     public function postCreateStep1(Request $request)
     {
+
+        // dd($request);
         $validatedData = $request->validate([
             'first_name' => 'required',
             'middle_name' => 'required',
@@ -29,25 +32,40 @@ class ClearanceController extends Controller
             'mobile_number' => 'required',
         ]);
 
-        session()->put('first', $validatedData);
+        // if($validatedData)
+        // {
+        //     return redirect()->back()->withErrors(['msg', 'The Message']);
+        // }
+
+        // session()->put('first', $validatedData);
 
         return redirect('/application/second');
     }
 
     public function createStep2(Request $request){
-        return view('applicant.steps.step2', [
-            'data' => session('second', []),
-        ]);
+        // return view('applicant.steps.step2', [
+        //     'data' => session('second', []),
+        // ]);
+
+        return view('applicant.steps.step2');
     }
 
-    public function postCreateStep2(){
+    public function postCreateStep2()
+    {
+        // dd(request()->file('cedula'));
+
         // session()->put('second', $validatedData);
+
+        // $media = Media::create();
+        // $media->addMediaFromRequest('cedula')->toMediaCollection(); 
+
         return redirect('/application/third');
     }
 
     public function createStep3(Request $request){
-        $clearance = $request->session()->get('clearance');
-        return view('applicant.steps.step3',compact('clearance', $clearance));
+        // $clearance = $request->session()->get('clearance');
+        // return view('applicant.steps.step3',compact('clearance', $clearance));
+        return view('applicant.steps.step3');
     }
 
     public function postCreateStep3(){

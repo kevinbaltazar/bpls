@@ -16,7 +16,7 @@ use App\Http\Controllers\applicant\ClearanceController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
@@ -28,3 +28,4 @@ Route::post('/application/second', [ClearanceController::class, 'postCreateStep2
 
 Route::get('/application/third', [ClearanceController::class, 'createStep3']);
 Route::post('/application/third', [ClearanceController::class, 'postCreateStep3']);
+

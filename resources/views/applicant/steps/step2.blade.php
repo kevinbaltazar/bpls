@@ -90,7 +90,8 @@
 		
   
 <div class="px-4 mt-8 lg:px-20">
-	<form class="space-y-8 divide-y divide-gray-200">
+  <form class="space-y-8 divide-y divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
+    @csrf
 		<div class="sm:col-span-6">
 			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
 				Cedula
@@ -102,8 +103,8 @@
 					</svg>
 					<div class="flex text-sm text-gray-600">
 				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-							<span>Upload a file</span>
-								<input id="file-upload" name="file-upload" type="file" class="sr-only">
+							<span>Upload a photo</span>
+								<input id="file-upload" name="cedula" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>
@@ -125,8 +126,8 @@
 					</svg>
 					<div class="flex text-sm text-gray-600">
 				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-							<span>Upload a file</span>
-								<input id="file-upload" name="file-upload" type="file" class="sr-only">
+							<span>Upload a photo</span>
+								<input id="file-upload" name="real_property_tax" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>
@@ -147,8 +148,8 @@
 					</svg>
 					<div class="flex text-sm text-gray-600">
 				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-							<span>Upload a file</span>
-								<input id="file-upload" name="file-upload" type="file" class="sr-only">
+							<span>Upload a photo</span>
+								<input id="file-upload" name="land_title" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>
@@ -170,8 +171,8 @@
 					</svg>
 					<div class="flex text-sm text-gray-600">
 				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-							<span>Upload a file</span>
-								<input id="file-upload" name="file-upload" type="file" class="sr-only">
+							<span>Upload a photo</span>
+								<input id="file-upload" name="dti" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>
@@ -193,8 +194,8 @@
 					</svg>
 					<div class="flex text-sm text-gray-600">
 				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-							<span>Upload a file</span>
-								<input id="file-upload" name="file-upload" type="file" class="sr-only">
+							<span>Upload a photo</span>
+								<input id="file-upload" name="contract_of_lease" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>
@@ -204,13 +205,11 @@
 			  	</div>
 			</div>
 	  	</div>
-	
-	</form>
 </div>
 
+
+
 <div class="px-4 md:px-16 lg:px-20 mt-12">
-    <form class="space-y-8" method="POST" action="/application/create-step2">
-      @csrf
 	<div class="pt-5">
 		<div class="flex justify-end">
 			<button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -221,7 +220,7 @@
 			</button>
 		</div>
 	</div>
-
+</form>
         </div>
     </body>
 </html>

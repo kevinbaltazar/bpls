@@ -41,15 +41,29 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $e)
     {
-        if ($request->expectsJson()) {
-            return response()->json(['message' => $e->getMessage()], 401);
+        // if ($request->expectsJson()) {
+        //     return response()->json(['message' => $e->getMessage()], 401);
+        // }
+
+        // if (Str::startsWith($request->path(), 'admin')) {
+        //     return redirect()->guest(route('admin.login'));
+        // }
+
+        // 
+
+        // 404 page when a model is not found
+        if ($e instanceof ModelNotFoundException) {
+            return response()->view('errors.404', [], 404);
         }
 
-        if (Str::startsWith($request->path(), 'admin')) {
-            return redirect()->guest(route('admin.login'));
+        // custom error message
+        if ($e instanceof \ErrorException) {
+            return response()->view('errors.500', [], 500);
+        } else {
+            return parent::render($request, $e);
         }
 
+        // return parent::render($request, $e);
         return redirect()->guest(route('login'));
-
     }
 }
