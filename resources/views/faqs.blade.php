@@ -142,27 +142,29 @@
                     <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">What are the documentary requirements for registering a new business permit?</span>
                         <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </button>
-                    <p class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">For new business registration, the following documents should be attached: 
-                        <br><span class="font-semibold">Latest Cedula</span>
-                        <br><span class="font-semibold">Real Property Tax/Amilyar</span>
-                        <br><span class="font-semibold">Land Title</span>
-                        <br><span class="font-semibold">DTI/SEC Registration</span>
-                        <br><span class="font-semibold">Contract of Lease</span>
-                    </p>
+                    <div class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
+                        <p>For new business registration, the following documents should be attached:</p>
+                        <li>Latest Cedula</li>
+                        <li>Real Property Tax/Amilyar</li>
+                        <li>Land Title</li>
+                        <li>DTI/SEC Registration</li>
+                        <li>Contract of Lease</li>
+                    </div>
                 </div>
                 <div class="py-6 border-b-2 ">
                     <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">What are the documentary requirements for renewing a business permit?</span>
                         <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </button>
-                    <p class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">For new business registration, the following documents should be attached: 
-                        <br><span class="font-semibold">Latest Cedula</span>
-                        <br><span class="font-semibold">Real Property Tax/Amilyar</span>
-                        <br><span class="font-semibold">Land Title</span>
-                        <br><span class="font-semibold">DTI/SEC Registration</span>
-                        <br><span class="font-semibold">Contract of Lease</span>
-                        <br><span class="font-semibold">Old Permit</span>
-                        <br><span class="font-semibold">Picture of Business</span>
-                    </p>
+                    <div class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
+                        <p>For new business registration, the following documents should be attached:</p> 
+                        <li>Latest Cedula</li>
+                        <li>Real Property Tax/Amilyar</li>
+                        <li>Land Title</li>
+                        <li>DTI/SEC Registration</li>
+                        <li>Contract of Lease</li>
+                        <li>Old Permit</li>
+                        <li>Picture of Business</li>
+                    </div>
                 </div>
                 <div class="py-6 border-b-2 ">
                     <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">If the documentary requirements attached to the unified form are incomplete, should the application still be accepted?</span>
