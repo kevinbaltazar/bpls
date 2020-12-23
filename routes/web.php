@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/faqs', function () {
+    return view('faqs');
+});
+
+
 
 Route::get('/application', [ClearanceController::class, 'createStep1']);
 Route::post('/application/first', [ClearanceController::class, 'postCreateStep1']);

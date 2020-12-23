@@ -38,13 +38,13 @@
                       </div>
                     </div>
                     <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                      <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Home</a>
+                      <a href="{{url('/')}}" class="font-medium text-gray-500 hover:text-gray-900">Home</a>
           
                       <a href="#" class="font-medium text-gray-500 hover:text-gray-900">About Us</a>
           
                       <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Contact Us</a>
           
-                      <a href="#" class="font-medium text-gray-500 hover:text-gray-900">FAQs</a>
+                      <a href="{{url('/faqs')}}" class="font-medium text-gray-500 hover:text-gray-900">FAQs</a>
           
 
                     </div>
@@ -75,17 +75,17 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                           </svg>
                         </button>
-                      </div>~
+                      </div>
                     </div>
                     <div role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
                       <div class="px-2 pt-2 pb-3 space-y-1" role="none">
-                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Home</a>
+                        <a href="{{('/')}}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Home</a>
           
                         <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">About Us</a>
           
                         <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Contact Us</a>
           
-                        <a href="{{('/faqs')}}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">FAQs</a>
+                        <a href="{{url('/faqs')}}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">FAQs</a>
                       </div>
                     </div>
                   </div>
