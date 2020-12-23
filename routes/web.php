@@ -19,9 +19,18 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/faqs', function () {
+Route::get('/FAQs', function () {
     return view('faqs');
 });
+
+Route::get('/AboutUs', function () {
+    return view('about-us');
+});
+
+Route::get('/ContactUs', function () {
+    return view('contact-us');
+});
+
 
 
 

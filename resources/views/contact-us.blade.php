@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-        <title>Home</title>
+        <title>Contact Us</title>
 
 
     
@@ -90,36 +90,44 @@
                     </div>
                   </div>
                 </div>
-          
-                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                  <div class="sm:text-center lg:text-left">
-                    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                      <span class="block xl:inline">Business Permit &</span>
-                      <span class="block text-indigo-600 xl:inline">Licensing System</span>
-                    </h1>
-                    <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                        A better experience for applying and renewing business permit and licenses. Let us help you to register your business in an easy way without inconvenience anytime, anywhere.
-                    </p>
-                    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                      <div class="rounded-md shadow">
-                        <a href="{{('/application')}}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                            Apply Now
-                        </a>
-                      </div>
-                      <div class="mt-3 sm:mt-0 sm:ml-3">
-                        <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
-                          Renewal
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </main>
               </div>
             </div>
-            <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-              <img class="h-56 object-cover w-full sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{url('/png/pulo.jpg')}}" alt="">
-            </div>
           </div>
+          <div class="mx-auto md:w-8/12 lg:w-5/12">
+            <h1 class="text-lg text-center font-bold md:text-xl lg:text-3xl">Contact Information</h1>
+            <p class="font-medium pt-2 text-gray-400 text-xs w-64 text-center mx-auto md:w-full md:text-sm">Fill up the form and our Team will get back to you with 24 hours.</p>
+            <form action="#">
+                <div class="w-10/12 mx-auto mt-5 ">
+                    <div class="mt-3">
+                        <label for="fullName" class="block text-sm font-medium text-gray-700 text-left">Full Name</label>
+                        <div class="mt-1">
+                          <input type="text" name="fullName" id="fullName" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label for="email" class="block text-sm font-medium text-gray-700 text-left">Email</label>
+                        <div class="mt-1">
+                          <input type="text" name="email" id="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label for="contactNumber" class="block text-sm font-medium text-gray-700 text-left">Contact Number</label>
+                        <div class="mt-1">
+                          <input type="text" name="contactNumber" id="contactNumber" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label for="message" class="block text-sm font-medium text-gray-700 text-left">Message</label>
+                        <div class="mt-1">
+                            <textarea class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-6 mb-8">
+                        <button class="bg-indigo-500 w-full py-2 text-white font-medium rounded-md focus:outline-none">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
 
           <script>
