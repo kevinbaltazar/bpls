@@ -19,6 +19,20 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/FAQs', function () {
+    return view('faqs');
+});
+
+Route::get('/AboutUs', function () {
+    return view('about-us');
+});
+
+Route::get('/ContactUs', function () {
+    return view('contact-us');
+});
+
+
+
 
 Route::get('/application/first', [ClearanceController::class, 'createStep1']);
 Route::post('/application/first', [ClearanceController::class, 'postCreateStep1']);
