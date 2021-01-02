@@ -57,13 +57,13 @@ class Handler extends ExceptionHandler
         }
 
         // custom error message
-        if ($e instanceof \ErrorException) {
-            return response()->view('errors.500', [], 500);
-        } else {
-            return parent::render($request, $e);
-        }
+        // if ($e instanceof \ErrorException) {
+        //     return response()->view('errors.500', [], 500);
+        // } else {
+        //     return parent::render($request, $e);
+        // }
 
-        // return parent::render($request, $e);
-        return redirect()->guest(route('login'));
+        return parent::render($request, $e);
+        // return redirect()->guest(route('login'));
     }
 }

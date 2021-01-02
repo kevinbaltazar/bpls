@@ -102,9 +102,9 @@
 				  		<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
 					<div class="flex text-sm text-gray-600">
-				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+				  		<label for="cedula" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
 							<span>Upload a photo</span>
-								<input id="file-upload" name="cedula" type="file" class="sr-only">
+								<input id="cedula" name="cedula" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>
@@ -125,9 +125,9 @@
 				  		<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
 					<div class="flex text-sm text-gray-600">
-				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+				  		<label for="real_property_tax" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
 							<span>Upload a photo</span>
-								<input id="file-upload" name="real_property_tax" type="file" class="sr-only">
+								<input id="real_property_tax" name="real_property_tax" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>
@@ -147,9 +147,9 @@
 				  		<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
 					<div class="flex text-sm text-gray-600">
-				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+				  		<label for="land_title" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
 							<span>Upload a photo</span>
-								<input id="file-upload" name="land_title" type="file" class="sr-only">
+								<input id="land_title" name="land_title" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>
@@ -170,9 +170,9 @@
 				  		<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
 					<div class="flex text-sm text-gray-600">
-				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+				  		<label for="dti" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
 							<span>Upload a photo</span>
-								<input id="file-upload" name="dti" type="file" class="sr-only">
+								<input id="dti" name="dti" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>
@@ -193,9 +193,9 @@
 				  		<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
 					<div class="flex text-sm text-gray-600">
-				  		<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+				  		<label for="contract_of_lease" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
 							<span>Upload a photo</span>
-								<input id="file-upload" name="contract_of_lease" type="file" class="sr-only">
+								<input id="contract_of_lease" name="contract_of_lease" type="file" class="sr-only">
 				  		</label>
 				  		<p class="pl-1">or drag and drop</p>
 					</div>

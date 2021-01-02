@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/application', [ClearanceController::class, 'createStep1']);
+Route::get('/application/first', [ClearanceController::class, 'createStep1']);
 Route::post('/application/first', [ClearanceController::class, 'postCreateStep1']);
 
 Route::get('/application/second', [ClearanceController::class, 'createStep2']);

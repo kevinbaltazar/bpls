@@ -12,14 +12,13 @@ class ClearanceController extends Controller
     public function createStep1()
     {
         return view('applicant.steps.step1', [
-            'data' => session('first', []),
+            'first' => session('first', []),
         ]);
     }
 
     public function postCreateStep1(Request $request)
     {
 
-        // dd($request);
         $validatedData = $request->validate([
             'first_name' => 'required',
             'middle_name' => 'required',
@@ -30,14 +29,16 @@ class ClearanceController extends Controller
             'birthdate' => 'required',
             'birthplace' => 'required',
             'mobile_number' => 'required',
+            'telephone_number' => 'nullable'
         ]);
 
-        // if($validatedData)
-        // {
-        //     return redirect()->back()->withErrors(['msg', 'The Message']);
-        // }
+        if(!$validatedData)
+        {
+            
+            return redirect()->back()->withInput()->withErrors(['msg', 'errors']);
+        }
 
-        // session()->put('first', $validatedData);
+        session()->put('first', $validatedData);
 
         return redirect('/application/second');
     }
@@ -46,29 +47,63 @@ class ClearanceController extends Controller
         // return view('applicant.steps.step2', [
         //     'data' => session('second', []),
         // ]);
+        
+        if(session('first') != null)
+        {
+            return view('applicant.steps.step2');
+        }
+        else
+        {
+            session()->forget('first');
+            return redirect('/application');
+        }
 
-        return view('applicant.steps.step2');
+
+        
     }
 
-    public function postCreateStep2()
+    public function postCreateStep2(Request $request)
     {
-        // dd(request()->file('cedula'));
+        
+        
+        $request->validate([
+            'cedula' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
 
-        // session()->put('second', $validatedData);
+        $clearance = Clearance::create(session('first'));
 
-        // $media = Media::create();
-        // $media->addMediaFromRequest('cedula')->toMediaCollection(); 
+        $clearance->addMedia($request->file('cedula'))->toMediaCollection('requirements');
+        $clearance->addMedia($request->file('real_property_tax'))->toMediaCollection('requirements');
+        $clearance->addMedia($request->file('land_title'))->toMediaCollection('requirements');
+        $clearance->addMedia($request->file('dti'))->toMediaCollection('requirements');
+        $clearance->addMedia($request->file('contract_of_lease'))->toMediaCollection('requirements');
 
+        session()->put('clearance', $clearance->id);
+        
         return redirect('/application/third');
     }
 
-    public function createStep3(Request $request){
+    public function createStep3(Request $request)
+    {
         // $clearance = $request->session()->get('clearance');
         // return view('applicant.steps.step3',compact('clearance', $clearance));
-        return view('applicant.steps.step3');
+        return view('applicant.steps.step3', [
+            'clearance' => Clearance::find(session('clearance'))
+        ]);
     }
 
-    public function postCreateStep3(){
-        return "wow";
+    public function postCreateStep3()
+    {
+        $clearance = Clearance::find(session('clearance'));
+
+        $clearance->completed_at = now();
+        $clearance->save();
+
+        session()->forget('first');
+        return redirect('/');
     }
 }

@@ -15,8 +15,8 @@ class CreateClearancesTable extends Migration
     {
         Schema::create('clearances', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('business_type_id');
-            $table->unsignedBigInteger('clearance_inspector_id');
+            $table->unsignedBigInteger('business_type_id')->nullable();
+            $table->unsignedBigInteger('clearance_inspector_id')->nullable();
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
@@ -27,21 +27,12 @@ class CreateClearancesTable extends Migration
             $table->string('birthplace');
             $table->string('mobile_number');
             $table->string('telephone_number')->nullable();
+            $table->timestamp('completed_at')->nullable();
             $table->timestamp('requirements_approved_at')->nullable();
             $table->timestamp('inspected_at')->nullable();
             $table->timestamp('signed_at')->nullable();
             $table->timestamp('rejected_at')->nullable();
             $table->timestamps();
-
-            // $table->foreign('business_type_id')
-            // ->references('id')
-            // ->on('business_types')
-            // ->onDelete('cascade');
-
-            // $table->foreign('clearance_inspector_id')
-            // ->references('id')
-            // ->on('clearance_inspectors')
-            // ->onDelete('cascade');
         });
     }
 
