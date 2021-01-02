@@ -101,48 +101,110 @@
         </div>
           <div class="w-10/12 mx-auto lg:w-9/12 z-10 mb-20">
             <h1 class="pb-6 border-b-2 font-bold text-base text-center lg:text-2xl">Frequently Asked Questions</h1>
-                <div class="py-6 border-b-2 ">
-                    <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">What does “BPLS” mean?</span>
-                        <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <div x-data="{ show: false }" class="py-6 border-b-2">
+                    <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl">
+						<span class="w-10/12">What does “BPLS” mean?</span>
+						<svg 
+							class="w-6 h-6 ml-auto mr-3"
+							:class="{ 'transform rotate-180': show }"
+							fill="none" 
+							stroke="currentColor" 
+							viewBox="0 0 24 24" 
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</button>
+                    <p x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">BPLS of barangay Pulong buhangin means to reconstruct the current business permits and licensing systems of barangay for the purpose of simplifying and making them more efficient.  The BPLS Program of the of the barangay follow service standards in processing business registration applications, both for new and renewals, i.e.: 1) adopting a digital forms, and reducing the 2) number of steps, 3) processing time, and 4) the number of signatories in securing business permits/renewals. </p>
+				</div>
+
+				<div x-data="{ show: false }" class="py-6 border-b-2">
+                    <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl">
+						<span class="w-10/12">Who can apply business permits and licenses?</span>
+						<svg 
+							class="w-6 h-6 ml-auto mr-3"
+							:class="{ 'transform rotate-180': show }"
+							fill="none" 
+							stroke="currentColor" 
+							viewBox="0 0 24 24" 
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</button>
+                    <p x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">Only the residents and business establishment of Pulong Buhangin, Santa Maria Bulacan can apply their business permits and licenses to operate their business legally. </p>
+				</div>
+
+				<div x-data="{ show: false }" class="py-6 border-b-2">
+                    <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl">
+						<span class="w-10/12">Why do we need to apply business permit and licenses?</span>
+						<svg 
+							class="w-6 h-6 ml-auto mr-3"
+							:class="{ 'transform rotate-180': show }"
+							fill="none" 
+							stroke="currentColor" 
+							viewBox="0 0 24 24" 
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</button>
+                    <p x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">Business permits and licenses regulate safety, structure and appearance of the business community. They act as a validation that your business follows certain laws and ordinances. Requirements vary by authority, and failure to follow often results in fines or even having your business shut down. </p>
+				</div>
+
+				
+				
+                <div x-data="{ show: false }" class="py-6 border-b-2 ">
+                    <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">Why was the application form I submitted for applying New/Renewal of business permits rejected?</span>
+                        <svg 
+							class="w-6 h-6 ml-auto mr-3"
+							:class="{ 'transform rotate-180': show }"
+							fill="none" 
+							stroke="currentColor" 
+							viewBox="0 0 24 24" 
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
                     </button>
-                    <p class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">BPLS of barangay Pulong buhangin means to reconstruct the current business permits and licensing systems of barangay for the purpose of simplifying and making them more efficient.  The BPLS Program of the of the barangay follow service standards in processing business registration applications, both for new and renewals, i.e.: 1) adopting a digital forms, and reducing the 2) number of steps, 3) processing time, and 4) the number of signatories in securing business permits/renewals. </p>
-                </div>
-                <div class="py-6 border-b-2 ">
-                    <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">Who can apply business permits and licenses?</span>
-                        <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <p class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">Only the residents and business establishment of Pulong Buhangin, Santa Maria Bulacan can apply their business permits and licenses to operate their business legally. </p>
-                </div>
-                <div class="py-6 border-b-2 ">
-                    <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">Why do we need to apply business permit and licenses?</span>
-                        <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <p class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">Business permits and licenses regulate safety, structure and appearance of the business community. They act as a validation that your business follows certain laws and ordinances. Requirements vary by authority, and failure to follow often results in fines or even having your business shut down. </p>
-                </div>
-                <div class="py-6 border-b-2 ">
-                    <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">Why was the application form I submitted for applying New/Renewal of business permits rejected?</span>
-                        <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                    <div class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
-                            <p>Your application form submitted will not be accepted under the following instances:
-                            <li>The information fields needed in application form are incomplete.</li></p>
+                    <div x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
+                            <p>Your application form submitted will not be accepted under the following instances:</p>
+                            <li>The information fields needed in application form are incomplete.</li>
                             <li>The upload requirement documents are incomplete.</li>
                             <li>Did not passed in the business inspection area.</li>
-                        </p>
                     </div>
-                   
-                </div>
-                <div class="py-6 border-b-2 ">
-                    <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">What is the validity of my business permits?</span>
-                        <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+				</div>
+				
+                <div x-data="{ show: false }" class="py-6 border-b-2 ">
+                    <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">What is the validity of my business permits?</span>
+						<svg 
+							class="w-6 h-6 ml-auto mr-3"
+							:class="{ 'transform rotate-180': show }"
+							fill="none" 
+							stroke="currentColor" 
+							viewBox="0 0 24 24" 
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
                     </button>
-                    <p class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">The business permit and licenses is valid only at the end of the year.</p>
-                </div>
-                <div class="py-6 border-b-2 ">
-                    <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">What are the documentary requirements for registering a new business permit?</span>
-                        <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    <p x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">The business permit and licenses is valid only at the end of the year.</p>
+				</div>
+				
+                <div x-data="{ show: false }" class="py-6 border-b-2 ">
+                    <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">What are the documentary requirements for registering a new business permit?</span>
+						<svg 
+							class="w-6 h-6 ml-auto mr-3"
+							:class="{ 'transform rotate-180': show }"
+							fill="none" 
+							stroke="currentColor" 
+							viewBox="0 0 24 24" 
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
                     </button>
-                    <div class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
+                    <div x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
                         <p>For new business registration, the following documents should be attached:</p>
                         <li>Latest Cedula</li>
                         <li>Real Property Tax/Amilyar</li>
@@ -151,11 +213,20 @@
                         <li>Contract of Lease</li>
                     </div>
                 </div>
-                <div class="py-6 border-b-2 ">
-                    <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">What are the documentary requirements for renewing a business permit?</span>
-                        <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <div x-data="{ show: false }" class="py-6 border-b-2 ">
+                    <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">What are the documentary requirements for renewing a business permit?</span>
+                        <svg 
+							class="w-6 h-6 ml-auto mr-3"
+							:class="{ 'transform rotate-180': show }"
+							fill="none" 
+							stroke="currentColor" 
+							viewBox="0 0 24 24" 
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
                     </button>
-                    <div class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
+                    <div x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
                         <p>For new business registration, the following documents should be attached:</p> 
                         <li>Latest Cedula</li>
                         <li>Real Property Tax/Amilyar</li>
@@ -166,32 +237,43 @@
                         <li>Picture of Business</li>
                     </div>
                 </div>
-                <div class="py-6 border-b-2 ">
-                    <button class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">If the documentary requirements attached to the unified form are incomplete, should the application still be accepted?</span>
-                        <svg class="ml-auto mr-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <div x-data="{ show: false }" class="py-6 border-b-2 ">
+                    <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">If the documentary requirements attached to the unified form are incomplete, should the application still be accepted?</span>
+                        <svg 
+							class="w-6 h-6 ml-auto mr-3"
+							:class="{ 'transform rotate-180': show }"
+							fill="none" 
+							stroke="currentColor" 
+							viewBox="0 0 24 24" 
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
                     </button>
-                    <p class="panel hidden overflow-hidden mt-2 text-sm w-11/12 lg:text-base">Yes.  Even if the application lacks the documentary requirements, the Anti-Red Tape Act requires the barangay to accept the form. However, the processing of the form may be delayed until all the requirements are complete. </p>
+                    <p x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">Yes.  Even if the application lacks the documentary requirements, the Anti-Red Tape Act requires the barangay to accept the form. However, the processing of the form may be delayed until all the requirements are complete. </p>
                 </div>
             <div>
          
 
-
+				
+				<script src="{{ asset('js/app.js') }}"></script>
           <script>
             let menu = document.getElementById("menu");
-            let acc = document.getElementsByClassName("accordion");
-            let i;
+            // let acc = document.getElementsByClassName("accordion");
+            // let i;
 
-            for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                panel.style.display = "none";
-                } else {
-                panel.style.display = "block";
-                }
-            });
-            }
+            // for (i = 0; i < acc.length; i++) {
+            //     acc[i].addEventListener("click", function() {
+            //     this.classList.toggle("active");
+            //     let panel = this.nextElementSibling;
+            //     if (panel.style.display === "block") {
+            //     panel.style.display = "none";
+			// 	} 
+			// 	else {
+            //     panel.style.display = "block";
+            //     }
+            // });
+            // }
 
             function hideNav(){
               menu.style.display = "none";
