@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\Permission\Models\Role;
 
 class Clearance extends Model implements HasMedia
 {
@@ -15,6 +16,16 @@ class Clearance extends Model implements HasMedia
 
     protected $table = 'clearances';
     protected $guarded = [];
+
+    public function inspector()
+    {
+        return $this->belongsTo(Admin::class, 'clearance_inspector_id');
+    }
+
+    public function getFullNameAttribute()
+    {
+        return implode(' ', $this->only(['first_name', 'middle_name', 'last_name']));
+    }
 
     public function getStatusAttribute()
     {
@@ -39,5 +50,52 @@ class Clearance extends Model implements HasMedia
         }
 
         return ClearanceStatus::Incomplete;
+    }
+
+    public function reject()
+    {
+        $this->update(['rejected_at' => now()]);
+    }
+
+    public function approve($formData)
+    {
+        if ($this->status === ClearanceStatus::Pending) {
+            return $this->update([
+                'requirements_approved_at' => now(),
+                'clearance_inspector_id' => $formData['inspector']
+            ]);
+        }
+
+        if ($this->status === ClearanceStatus::Reviewed) {
+            return $this->update(['inspected_at' => now()]);
+        }
+
+        if ($this->status === ClearanceStatus::Inspected) {
+            return $this->update(['signed_at' => now()]);
+        }
+    }
+
+    public function scopeManageable($query, Role $role = null)
+    {
+        $query
+            ->whereNotNull('completed_at')
+            ->whereNull('rejected_at');
+
+        if ($role->name === 'reviewer') {
+            return $query->whereNull('requirements_approved_at')
+                ->whereNull('inspected_at');
+        }
+
+        if ($role->name === 'inspector') {
+            return $query->whereNotNull('requirements_approved_at')
+                ->whereNull('inspected_at')
+                ->whereNull('signed_at');
+        }
+
+        if ($role->name === 'approver') {
+            return $query->whereNotNull('inspected_at')
+                ->whereNull('signed_at')
+                ->whereNull('rejected_at');
+        }
     }
 }
