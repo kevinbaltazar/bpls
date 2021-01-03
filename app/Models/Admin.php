@@ -53,4 +53,11 @@ class Admin extends Authenticatable
     {
         return $this->role ? ucwords($this->role->name) : null;
     }
+
+    public function getInitialsAttribute()
+    {
+        $names = explode(' ', $this->name);
+
+        return count($names) === 1 ? $names[0][0] : $names[0][0] . $names[1][0];
+    }
 }

@@ -31,8 +31,13 @@
                 <div @click.away="open = false" class="ml-3 relative" x-data="{ open: false }">
                 <div>
                     <button @click="open = !open" class="bg-white flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="user-menu" aria-haspopup="true">
-                    <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                        <span class="sr-only">Open user menu</span>
+                        
+                        <span class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-gray-500">
+                            <span class="text-xs font-medium leading-none text-white">
+                                {{ Auth::guard('admin')->user()->initials }}
+                            </span>
+                        </span>
                     </button>
                 </div>
                 <!--
