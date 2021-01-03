@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Auth\SessionsController;
+use App\Http\Controllers\Admin\ClearanceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', DashboardController::class)->name('dashboard');
 Route::resource('admins', AdminController::class);
+Route::resource('clearances', ClearanceController::class)->only(['index', 'show', 'update']);
 
 Route::get('login', [SessionsController::class, 'showLoginPage'])->name('login');
 Route::post('login', [SessionsController::class, 'login']);
