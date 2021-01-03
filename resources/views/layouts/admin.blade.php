@@ -1,5 +1,4 @@
 <x-skeleton-layout>
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="min-h-screen bg-gray-100">
         <nav class="bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,8 +10,19 @@
                     </div>
                     
                     <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                    <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
-                    <a href="/admin" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Application</a>
+                        <a 
+                            href="{{ route('admin.dashboard') }}" 
+                            class="@if (Request::url() === route('admin.dashboard')) border-indigo-500 text-gray-900 @else border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 @endif inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                        >
+                            Dashboard
+                        </a>
+
+                        <a 
+                            href="{{ route('admin.admins.index') }}" 
+                            class="@if (Request::url() === route('admin.admins.index')) border-indigo-500 text-gray-900 @else border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 @endif inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                        >
+                            Admins
+                        </a>
                     </div>
                 </div>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Auth\SessionsController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', DashboardController::class)->name('dashboard');
+Route::resource('admins', AdminController::class);
 
 Route::get('login', [SessionsController::class, 'showLoginPage'])->name('login');
 Route::post('login', [SessionsController::class, 'login']);

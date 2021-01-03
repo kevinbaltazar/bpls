@@ -6,10 +6,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class Admin extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
+    use HasRoles;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -40,4 +43,14 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getRoleAttribute()
+    {
+        return $this->roles->first();
+    }
+
+    public function getRoleNameAttribute()
+    {
+        return $this->role ? ucwords($this->role->name) : null;
+    }
 }
