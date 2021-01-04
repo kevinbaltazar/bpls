@@ -213,16 +213,8 @@
         </div>
 
       <div class="mt-5 w-9/12">
-          <h2 class="font-semibold text-sm">Please select the following type of business:</h2>
-          <button type="button" class="bg-blue-100 text-sky-blue w-48 focus:outline-none h-8 text-xs rounded  font-normal mt-2">Accomodation and Lodging</button>
-          <button type="button" class="bg-blue-100 text-sky-blue w-32 focus:outline-none h-8 text-xs rounded font-normal mt-2">Manufacture</button>
-          <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Agriculture</button>
-          <button type="button" class="bg-blue-100 text-sky-blue w-48 focus:outline-none h-8 text-xs rounded font-normal mt-2">Food and Beverage</button>
-          <button type="button" class="bg-blue-100 text-sky-blue w-32 focus:outline-none h-8 text-xs rounded font-normal mt-2">Healthcare</button>
-          <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Services</button>
-          <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Real State</button>
-          <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Retail</button>
-          <button type="button" class="bg-blue-100 text-sky-blue w-24 focus:outline-none h-8 text-xs rounded font-normal mt-2">Others</button>
+		  	<h2 class="font-semibold text-sm">Please select the following type of business:</h2>
+		  	
       </div>
 
       <div class="pt-5">
@@ -238,3 +230,4 @@
 
     </form>
 </div>
+

@@ -55,5 +55,13 @@ class AdminsTableSeeder extends Seeder
         ]);
 
         $approver->assignRole('approver');
+
+        $dispatcher = Admin::create([
+            'name' => 'Isko',
+            'email' => 'dispatcher@bpls.site',
+            'password' => Hash::make('password')
+        ]);
+
+        $dispatcher->assignRole('dispatcher');
     }
 }
