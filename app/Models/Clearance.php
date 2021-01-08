@@ -97,5 +97,10 @@ class Clearance extends Model implements HasMedia
                 ->whereNull('signed_at')
                 ->whereNull('rejected_at');
         }
+
+        if ($role->name === 'dispatcher') {
+            return $query->whereNotNull('signed_at')
+                ->whereNull('rejected_at');
+        }
     }
 }

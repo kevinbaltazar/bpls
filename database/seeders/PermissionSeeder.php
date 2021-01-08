@@ -17,6 +17,8 @@ class PermissionSeeder extends Seeder
         Role::create(['name' => 'reviewer', 'guard_name' => 'admin']);
         Role::create(['name' => 'inspector', 'guard_name' => 'admin']);
         Role::create(['name' => 'approver', 'guard_name' => 'admin']);
+        Role::create(['name' => 'dispatcher', 'guard_name' => 'admin']);
         Role::create(['name' => 'superadmin', 'guard_name' => 'admin']);
+        
     }
 }

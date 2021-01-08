@@ -11,6 +11,7 @@ class ClearanceController extends Controller
 {
     public function createStep1()
     {
+        
         return view('applicant.steps.step1', [
             'first' => session('first', []),
         ]);
@@ -34,7 +35,6 @@ class ClearanceController extends Controller
 
         if(!$validatedData)
         {
-            
             return redirect()->back()->withInput()->withErrors(['msg', 'errors']);
         }
 
@@ -50,6 +50,8 @@ class ClearanceController extends Controller
         
         if(session('first') != null)
         {
+            // $clearance = Clearance::find(1);
+            // $image = $clearance->getMedia('requirements');
             return view('applicant.steps.step2');
         }
         else
@@ -91,9 +93,14 @@ class ClearanceController extends Controller
     {
         // $clearance = $request->session()->get('clearance');
         // return view('applicant.steps.step3',compact('clearance', $clearance));
-        return view('applicant.steps.step3', [
-            'clearance' => Clearance::find(session('clearance'))
-        ]);
+        $clearance = Clearance::find(1);
+        $image = $clearance->getMedia('requirements');
+        return view('applicant.steps.step3', compact('image'));
+        
+        // return view('applicant.steps.step3', [
+        //     'clearance' => Clearance::find(session('clearance'))
+        // ]);
+       
     }
 
     public function postCreateStep3()
