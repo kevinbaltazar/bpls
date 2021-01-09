@@ -115,6 +115,7 @@
   
             <div class="pt-3">
                 <div class="mt-1 grid grid-cols-1 gap-y-4 gap-x-4 sm:grid-cols-6">
+<<<<<<< HEAD
                   
   
                   <div class="sm:col-span-6">
@@ -125,6 +126,53 @@
                           <input type="text" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                       </div>
                   </div>
+=======
+                    
+                <div class="sm:col-span-6">
+                    <label for="personal_address" class="block text-sm font-medium text-gray-700">
+                        Business Number
+                    </label>
+                    <div class="mt-1">
+                        <input type="number" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                </div>
+
+                <div class="sm:col-span-2">
+                      <label for="first_name" class="block text-sm font-medium text-gray-700">
+                          First Name
+                      </label>
+                      <div class="mt-1">
+                        <input type="text" name="first_name" value="{{$first['first_name'] ?? ''}}"  id="first_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                      </div>
+                </div>
+        
+                <div class="sm:col-span-2">
+                    <label for="middle_name" class="block text-sm font-medium text-gray-700">
+                        Middle Name
+                    </label>
+                    <div class="mt-1">
+                        <input type="text" name="middle_name" value="{{$first['middle_name'] ?? ''}}" id="middle_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                </div>
+        
+                <div class="sm:col-span-2">
+                    <label for="last_name" class="block text-sm font-medium text-gray-700">
+                        Last Name
+                    </label>
+                    <div class="mt-1">
+                        <input type="text" name="last_name" value="{{$first['last_name'] ?? ''}}" id="zip" autocomplete="postal-code" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                </div>
+  
+                <div class="sm:col-span-6">
+                    <label for="personal_address" class="block text-sm font-medium text-gray-700">
+                        Business Name
+                    </label>
+                    <div class="mt-1">
+                        <input type="text" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                </div>
+>>>>>>> aed031f63ea61ff9918e088c475d4d72c3cd65c7
 
                   <div class="sm:col-span-6">
                     <label for="personal_address" class="block text-sm font-medium text-gray-700">

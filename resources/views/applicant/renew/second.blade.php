@@ -92,6 +92,7 @@
 <div class="px-4 mt-8 lg:px-72">
   <form class="space-y-8 divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
     @csrf
+<<<<<<< HEAD
 		<div class="sm:col-span-6">
 			<div class="sm:col-span-2 mb-4">
 				<label for="first_name" class="block text-sm font-medium text-gray-700">
@@ -120,7 +121,16 @@
 					</p>
 			  	</div>
 			</div>
+=======
+	<div class="sm:col-span-6">
+		<label for="personal_address" class="block text-sm font-medium text-gray-700">
+			CTC Number
+		</label>
+		<div class="mt-1">
+			<input type="number" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+>>>>>>> aed031f63ea61ff9918e088c475d4d72c3cd65c7
 		</div>
+	</div>
 		  
 		<div class="sm:col-span-6">
 			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
