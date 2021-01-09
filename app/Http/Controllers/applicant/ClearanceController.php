@@ -47,7 +47,7 @@ class ClearanceController extends Controller
         // return view('applicant.steps.step2', [
         //     'data' => session('second', []),
         // ]);
-        
+
         if(session('first') != null)
         {
             // $clearance = Clearance::find(1);
