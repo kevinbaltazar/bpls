@@ -22,7 +22,7 @@ class ClearanceController extends Controller
 
         $validatedData = $request->validate([
             'first_name' => 'required',
-            'middle_name' => 'required',
+            'middle_name' => 'nullable',
             'last_name' => 'required',
             'personal_address' => 'required',
             'business_name' => 'required',
@@ -69,11 +69,11 @@ class ClearanceController extends Controller
         
         
         $request->validate([
-            'cedula' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cedula' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
+            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
+            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
+            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
+            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
         ]);
 
         $clearance = Clearance::create(session('first'));
@@ -94,8 +94,9 @@ class ClearanceController extends Controller
         // $clearance = $request->session()->get('clearance');
         // return view('applicant.steps.step3',compact('clearance', $clearance));
         $clearance = Clearance::find(1);
-        $image = $clearance->getMedia('requirements');
-        return view('applicant.steps.step3', compact('image'));
+        $images = $clearance->getMedia('requirements');
+
+        return view('applicant.steps.step3', compact('clearance','images'));
         
         // return view('applicant.steps.step3', [
         //     'clearance' => Clearance::find(session('clearance'))
@@ -112,5 +113,14 @@ class ClearanceController extends Controller
 
         session()->forget('first');
         return redirect('/');
+    }
+
+    public function createRenewStep1()
+    {
+        return view('applicant/renew/first');
+    }
+    public function createRenewStep2()
+    {
+        return view('applicant/renew/second');
     }
 }

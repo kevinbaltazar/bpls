@@ -60,19 +60,12 @@
                                             <x-clearance-status-chip status="{{ $clearance->status }}" />
                                         </td>
 
-                                        @if ($clearance->status === 'approved')
-                                        <td class="px-6 py-3 whitespace-nowrap text-right text-sm font-medium">
-                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">
-                                                Print
-                                            </a>
-                                        </td>
-                                        @else
                                         <td class="px-6 py-3 whitespace-nowrap text-right text-sm font-medium">
                                             <a href="{{ route('admin.clearances.show', $clearance) }}" class="text-indigo-600 hover:text-indigo-900">
                                                 Show
                                             </a>
                                         </td>
-                                        @endif
+
                                     </tr>
                                 @endforeach
                             </tbody>

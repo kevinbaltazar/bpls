@@ -89,12 +89,24 @@
 </div>
 
 <div class="px-4 md:px-16 lg:px-20 mt-12">
+ 
+    @foreach ($images as $item)
+    <div class="flex bg-black w-1">
+      <img class="flex justify-between flex-col mt-12 w-40" src="{{$item->getFullUrl()}}" alt="">
+    </div>
+    @endforeach
+ 
   <form class="space-y-8" method="POST" action="/application/third">
       @csrf
 
-      @foreach ($image as $item)
-						{{$item}}
-					@endforeach
+      {{$clearance->full_name}}
+      {{$clearance->personal_address}}
+      {{$clearance->business_name}}
+      {{$clearance->birthdate}}
+      {{$clearance->birthplace}}
+      {{$clearance->mobile_number}}
+      {{$clearance->telephone_number}}
+
         <div class="pt-5">
             <div class="flex justify-end">
                 <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">

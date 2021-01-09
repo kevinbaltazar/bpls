@@ -7,8 +7,6 @@
 
         <title>Apply</title>
 
-
-    
     </head>
     <body>
        @yield('application');
