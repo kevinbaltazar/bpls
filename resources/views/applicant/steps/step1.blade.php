@@ -193,7 +193,7 @@
 
                 <div class="sm:col-span-1">
                     <label for="birthdate" class="block text-sm font-medium text-gray-700">
-                      Business Mobile Number
+                      Contact number
                     </label>
                     <div class="mt-1">
                         <input type="text" name="mobile_number" value="{{$first['mobile_number'] ?? ''}}" id="birthdate" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
@@ -218,8 +218,8 @@
       </div>
 
       <div class="pt-5">
-          <div class="flex justify-end">
-              <a href="#"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <div class="flex justify-end mb-8">
+              <a href="{{ url('/')}}"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   Cancel
               </button></a>
               <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">

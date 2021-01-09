@@ -105,19 +105,28 @@
     @endif
     <form class="space-y-8" method="POST" action="/application/first">
       @csrf
-        <div class="space-y-8">
+        <div class=" w-5/12 mx-auto">
           
             <div>
-                <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Business Information
+                <h3 class="text-lg  leading-6 font-medium text-gray-900">
+                  Renewal Form
                 </h3>
-                <p class="mt-1 text-sm text-gray-500">
-                    This information will be in your business application.
-                </p>
             </div>
   
             <div class="pt-3">
                 <div class="mt-1 grid grid-cols-1 gap-y-4 gap-x-4 sm:grid-cols-6">
+<<<<<<< HEAD
+                  
+  
+                  <div class="sm:col-span-6">
+                      <label for="personal_address" class="block text-sm font-medium text-gray-700">
+                          Enter Control Number
+                      </label>
+                      <div class="mt-1">
+                          <input type="text" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                      </div>
+                  </div>
+=======
                     
                 <div class="sm:col-span-6">
                     <label for="personal_address" class="block text-sm font-medium text-gray-700">
@@ -163,6 +172,16 @@
                         <input type="text" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                     </div>
                 </div>
+>>>>>>> aed031f63ea61ff9918e088c475d4d72c3cd65c7
+
+                  <div class="sm:col-span-6">
+                    <label for="personal_address" class="block text-sm font-medium text-gray-700">
+                        Enter Business Name
+                    </label>
+                    <div class="mt-1">
+                        <input type="text" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                </div>
 
   
               </div>
@@ -171,7 +190,7 @@
         
   
         <div class="pt-5">
-            <div class="flex justify-end">
+            <div class="flex justify-end mt-3">
                 <a href="#"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Cancel
                 </button></a>

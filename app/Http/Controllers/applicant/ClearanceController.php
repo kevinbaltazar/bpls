@@ -47,7 +47,7 @@ class ClearanceController extends Controller
         // return view('applicant.steps.step2', [
         //     'data' => session('second', []),
         // ]);
-
+        return view('applicant.steps.step2');
         if(session('first') != null)
         {
             // $clearance = Clearance::find(1);
@@ -78,7 +78,6 @@ class ClearanceController extends Controller
 
         $clearance = Clearance::create(session('first'));
 
-        $clearance->addMedia($request->file('cedula'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('real_property_tax'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('land_title'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('dti'))->toMediaCollection('requirements');
@@ -93,9 +92,8 @@ class ClearanceController extends Controller
     {
         // $clearance = $request->session()->get('clearance');
         // return view('applicant.steps.step3',compact('clearance', $clearance));
-        $clearance = Clearance::find(1);
+        $clearance = Clearance::find(5);
         $images = $clearance->getMedia('requirements');
-
         return view('applicant.steps.step3', compact('clearance','images'));
         
         // return view('applicant.steps.step3', [

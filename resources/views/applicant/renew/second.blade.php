@@ -90,14 +90,45 @@
 		
   
 <div class="px-4 mt-8 lg:px-72">
-  <form class="space-y-8 divide-y divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
+  <form class="space-y-8 divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
     @csrf
+<<<<<<< HEAD
+		<div class="sm:col-span-6">
+			<div class="sm:col-span-2 mb-4">
+				<label for="first_name" class="block text-sm font-medium text-gray-700">
+					Cedula Number
+				</label>
+				<div class="mt-1">
+				  <input type="text" name="first_name" value="{{$first['first_name'] ?? ''}}"  id="first_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+				</div>
+			</div>
+			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
+				Identification Card(ID)
+			</label>
+			<div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+			  	<div class="space-y-1 text-center">
+					<svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+				  		<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<div class="flex text-sm text-gray-600">
+				  		<label for="cedula" class="mx-auto relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+							<span>Upload a photo</span>
+								<input id="cedula" name="cedula" type="file" class="sr-only">
+				  		</label>
+					</div>
+					<p class="text-xs text-gray-500">
+				 		 PNG, JPG, GIF up to 5MB
+					</p>
+			  	</div>
+			</div>
+=======
 	<div class="sm:col-span-6">
 		<label for="personal_address" class="block text-sm font-medium text-gray-700">
 			CTC Number
 		</label>
 		<div class="mt-1">
 			<input type="number" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+>>>>>>> aed031f63ea61ff9918e088c475d4d72c3cd65c7
 		</div>
 	</div>
 		  
@@ -186,24 +217,66 @@
 					</p>
 			  	</div>
 			</div>
+		  </div>
+		  
+		  <div class="sm:col-span-6">
+			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
+				Old Permit
+			</label>
+			<div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+			  	<div class="space-y-1 text-center">
+					<svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+				  		<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<div class="flex text-sm text-gray-600">
+				  		<label for="contract_of_lease" class="mx-auto relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+							<span>Upload a photo</span>
+								<input id="contract_of_lease" name="contract_of_lease" type="file" class="sr-only">
+				  		</label>
+					</div>
+					<p class="text-xs text-gray-500">
+				 		 PNG, JPG, GIF up to 5MB
+					</p>
+			  	</div>
+			</div>
+		  </div>
+		  
+		  <div class="sm:col-span-6">
+			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
+				Picture of business
+			</label>
+			<div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+			  	<div class="space-y-1 text-center">
+					<svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+				  		<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<div class="flex text-sm text-gray-600">
+				  		<label for="contract_of_lease" class="mx-auto relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+							<span>Upload a photo</span>
+								<input id="contract_of_lease" name="contract_of_lease" type="file" class="sr-only">
+				  		</label>
+					</div>
+					<p class="text-xs text-gray-500">
+				 		 PNG, JPG, GIF up to 5MB
+					</p>
+			  	</div>
+			</div>
 	  	</div>
+	</div>
 
 
 
-
-        <div class="px-4 md:px-16 lg:px-20 mt-12">
-            <div class="pt-5">
-                <div class="flex justify-end">
-                    <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Cancel
-                    </button>
-                    <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Next
-                    </button>
-                </div>
-            </div>
+<div class="px-4 md:px-16 lg:px-20 mt-12">
+	<div class="pt-5">
+		<div class="flex justify-end mb-8">
+			<button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+				Cancel
+			</button>
+			<button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+				Next
+			</button>
+		</div>
+	</div>
+</form>
         </div>
-
-    </form>
-</div>
 

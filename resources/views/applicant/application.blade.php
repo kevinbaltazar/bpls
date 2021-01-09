@@ -6,7 +6,6 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <title>Apply</title>
-
     </head>
     <body>
        @yield('application')

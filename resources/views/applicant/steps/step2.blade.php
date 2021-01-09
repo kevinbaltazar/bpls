@@ -90,11 +90,19 @@
 		
   
 <div class="px-4 mt-8 lg:px-72">
-  <form class="space-y-8 divide-y divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
+  <form class="space-y-8 divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
     @csrf
 		<div class="sm:col-span-6">
+			<div class="sm:col-span-2 mb-4">
+				<label for="first_name" class="block text-sm font-medium text-gray-700">
+					Cedula Number
+				</label>
+				<div class="mt-1">
+				  <input type="text" name="first_name" value="{{$first['first_name'] ?? ''}}"  id="first_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+				</div>
+			</div>
 			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
-				Cedula
+				Identification Card(ID)
 			</label>
 			<div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
 			  	<div class="space-y-1 text-center">
@@ -206,7 +214,7 @@
 
 <div class="px-4 md:px-16 lg:px-20 mt-12">
 	<div class="pt-5">
-		<div class="flex justify-end">
+		<div class="flex justify-end mb-8">
 			<button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
 				Cancel
 			</button>
