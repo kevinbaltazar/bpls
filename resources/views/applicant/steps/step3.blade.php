@@ -91,8 +91,8 @@
 <div class="px-4 md:px-16 lg:px-20 mt-12">
  
     @foreach ($images as $item)
-    <div class="flex bg-black w-1">
-      <img class="flex justify-between flex-col mt-12 w-40" src="{{$item->getFullUrl()}}" alt="">
+    <div class="">
+      <img class="mt-12 w-40" src="{{$item->getFullUrl()}}" alt="">
     </div>
     @endforeach
  
@@ -113,7 +113,7 @@
                     Cancel
                 </button>
                 <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Next
+                    Submit
                 </button>
             </div>
         </div>
