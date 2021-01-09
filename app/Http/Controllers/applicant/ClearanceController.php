@@ -11,6 +11,7 @@ class ClearanceController extends Controller
 {
     public function createStep1()
     {
+        
         return view('applicant.steps.step1', [
             'first' => session('first', []),
         ]);
@@ -21,7 +22,7 @@ class ClearanceController extends Controller
 
         $validatedData = $request->validate([
             'first_name' => 'required',
-            'middle_name' => 'required',
+            'middle_name' => 'nullable',
             'last_name' => 'required',
             'personal_address' => 'required',
             'business_name' => 'required',
@@ -34,7 +35,6 @@ class ClearanceController extends Controller
 
         if(!$validatedData)
         {
-            
             return redirect()->back()->withInput()->withErrors(['msg', 'errors']);
         }
 
@@ -47,9 +47,11 @@ class ClearanceController extends Controller
         // return view('applicant.steps.step2', [
         //     'data' => session('second', []),
         // ]);
-        
+        return view('applicant.steps.step2');
         if(session('first') != null)
         {
+            // $clearance = Clearance::find(1);
+            // $image = $clearance->getMedia('requirements');
             return view('applicant.steps.step2');
         }
         else
@@ -67,16 +69,15 @@ class ClearanceController extends Controller
         
         
         $request->validate([
-            'cedula' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cedula' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
+            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
+            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
+            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
+            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
         ]);
 
         $clearance = Clearance::create(session('first'));
 
-        $clearance->addMedia($request->file('cedula'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('real_property_tax'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('land_title'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('dti'))->toMediaCollection('requirements');
@@ -91,9 +92,14 @@ class ClearanceController extends Controller
     {
         // $clearance = $request->session()->get('clearance');
         // return view('applicant.steps.step3',compact('clearance', $clearance));
-        return view('applicant.steps.step3', [
-            'clearance' => Clearance::find(session('clearance'))
-        ]);
+        $clearance = Clearance::find(5);
+        $images = $clearance->getMedia('requirements');
+        return view('applicant.steps.step3', compact('clearance','images'));
+        
+        // return view('applicant.steps.step3', [
+        //     'clearance' => Clearance::find(session('clearance'))
+        // ]);
+       
     }
 
     public function postCreateStep3()
@@ -105,5 +111,14 @@ class ClearanceController extends Controller
 
         session()->forget('first');
         return redirect('/');
+    }
+
+    public function createRenewStep1()
+    {
+        return view('applicant/renew/first');
+    }
+    public function createRenewStep2()
+    {
+        return view('applicant/renew/second');
     }
 }

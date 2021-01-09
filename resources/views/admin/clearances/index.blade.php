@@ -65,6 +65,7 @@
                                                 Show
                                             </a>
                                         </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>

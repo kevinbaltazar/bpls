@@ -89,18 +89,38 @@
 </div>
 
 <div class="px-4 md:px-16 lg:px-20 mt-12">
+	<div class="flex flex-col text-center text-xl">
+		<p>Cedula Number: <span class="font-bold text-red-600">02689024</span></p>
+	  	<p>Full Name: <span class="font-bold text-red-600">{{$clearance->full_name}}</span></p>
+      	<p>Personal Address: <span class="font-bold text-red-600">{{$clearance->personal_address}}</p>
+		<p>Business Name: <span class="font-bold text-red-600">{{$clearance->business_name}}</p>
+		<p>Birthdate: <span class="font-bold text-red-600">{{$clearance->birthdate}}</p>
+		<p>Birthplace: <span class="font-bold text-red-600">{{$clearance->birthplace}}</p>
+		<p>Mobile Number: <span class="font-bold text-red-600">{{$clearance->mobile_number}}</p>
+		<p>Telephone Number: <span class="font-bold text-red-600">{{$clearance->telephone_number}}</p>
+	</div>
+ 
+    @foreach ($images as $item)
+    <div class="flex">
+        <img class="image mx-auto w-4/12 mt-6" src="{{$item->getFullUrl()}}" alt="">
+    </div>
+    @endforeach
+    <x-modal-ok></x-modal-ok>
   <form class="space-y-8" method="POST" action="/application/third">
       @csrf
         <div class="pt-5">
-            <div class="flex justify-end">
-                <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Cancel
+            <div class="flex justify-end mb-8">
+				<a href="{{ url ('application/second')}}">
+					<button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+					Back
+				</a>
                 </button>
-                <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Next
+                <button @click="show = true" type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Submit
                 </button>
             </div>
         </div>
     </form>
+    
 </div>
 @endsection
