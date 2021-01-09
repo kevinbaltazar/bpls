@@ -9,6 +9,7 @@
 
     </head>
     <body>
-       @yield('application');
+       @yield('application')
     </body>
+    <script src="{{ asset('js/app.js') }}"></script>
 </html>
