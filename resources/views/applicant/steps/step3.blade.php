@@ -7,7 +7,7 @@
           <div class="border border-gray-200 overflow-hidden border-b-0 rounded-t-md lg:border-0">
             <!-- Completed Step -->
 
-            <a href="#" class="group">
+            
                 <span class="absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-gray-200 lg:w-full lg:h-1 lg:bottom-0 lg:top-auto" aria-hidden="true"></span>
                 <span class="px-6 py-5 flex items-start text-sm font-medium">
                   <span class="flex-shrink-0">
@@ -22,7 +22,7 @@
                     <span class="text-lg mt-1 font-semibold uppercase tracking-wide">Information</span>
                   </span>
                 </span>
-            </a>
+            
               
            
               
@@ -34,7 +34,7 @@
             <!-- Current Step -->
             
 
-              <a href="#" class="group">
+             
                 <span class="absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-gray-200 lg:w-full lg:h-1 lg:bottom-0 lg:top-auto" aria-hidden="true"></span>
                 <span class="px-6 py-5 flex items-start text-sm font-medium">
                   <span class="flex-shrink-0">
@@ -49,7 +49,7 @@
                     <span class="text-lg mt-1 font-semibold uppercase tracking-wide">Requirements</span>
                   </span>
                 </span>
-            </a>
+            
             
   
             <div class="hidden absolute top-0 left-0 w-3 inset-0 lg:block" aria-hidden="true">
