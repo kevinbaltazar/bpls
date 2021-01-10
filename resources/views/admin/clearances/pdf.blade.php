@@ -112,6 +112,10 @@
                 </tbody>
             </table>
 
+            <div style="padding-bottom: 10px;">
+                <p class="text-right font-bold">CTRL. No: {{ $clearance->control_number }}</p>
+            </div>
+
             <div class="text-center">
                 <h1 style="font-size: 40px; font-weight: bold; letter-spacing: 10px; line-height: 0;">
                     CERTIFICATION
@@ -169,7 +173,7 @@
 
                 <div class="official-info captain">
                     <div class="text text-right">
-                        <p class="name">RAYMUND M. CASTAÑEDA</p>
+                        <p class="name">{{ strtoupper($captain->name ?? 'Juan Dela Cruz') }}</p>
                         <p class="position">Punong Barangay</p>
                     </div>
                 </div>
@@ -178,7 +182,7 @@
                     <p>Attested by:</p>
 
                     <div class="text">
-                        <p class="name">EDGARDO S. FELICIANO</p>
+                        <p class="name">{{ strtoupper($secretary->name ?? 'Juana Dela Cruz') }}</p>
                         <p class="position">Barangay Secretary</p>
                     </div>
                 </div>
@@ -207,7 +211,9 @@
 
                                 <tr>
                                     <td style="width: 50%;">ISSUED ON:</td>
-                                    <td style="width: 50%;">---</td>
+                                    <td style="width: 50%;">
+                                        {{ now()->toFormattedDateString() }}
+                                    </td>
                                 </tr>
 
                                 <tr>

@@ -103,4 +103,18 @@ class Clearance extends Model implements HasMedia
                 ->whereNull('rejected_at');
         }
     }
+
+    public static function generateControlNumber()
+    {
+        $year = now()->format('Y');
+
+        $clearance = Clearance::query()
+            ->where('control_number', 'like', "{$year}-%")
+            ->orderByDesc('control_number')
+            ->first();
+
+        $number = (int) explode('-', $clearance->control_number)[1];
+
+        return $year . '-' . str_pad($number + 1, 5, '0', STR_PAD_LEFT);
+    }
 }
