@@ -6,8 +6,7 @@ class CreateGeneralSettings extends SettingsMigration
 {
     public function up(): void
     {
-        $this->migrator->add('general.site_name', 'Spatie');
-        $this->migrator->add('general.site_active', true);
-        $this->migrator->add('general.timezone', 'Europe/Brussels');
+        $this->migrator->add('general.secretary', 0);
+        $this->migrator->add('general.captain', 0);
     }
 }
