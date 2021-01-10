@@ -65,7 +65,7 @@
                         </div>
                     @endif
 
-                    <div class="mt-3 text-center sm:mt-0 @if ($withIcon === 'true') sm:ml-4 @endif sm:text-left">
+                    <div class="mt-3 w-full text-center sm:mt-0 @if ($withIcon === 'true') sm:ml-4 @endif sm:text-left">
                         <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
                             {{ $title }}
                         </h3>
