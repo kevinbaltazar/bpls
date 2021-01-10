@@ -2067,8 +2067,8 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\barangay-clearance\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\barangay-clearance\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! /Users/jovertical/Code/bpls/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/jovertical/Code/bpls/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })
