@@ -113,6 +113,10 @@ class Clearance extends Model implements HasMedia
             ->orderByDesc('control_number')
             ->first();
 
+        if ($clearance === null) {
+            return null;
+        }
+
         $number = (int) explode('-', $clearance->control_number)[1];
 
         return $year . '-' . str_pad($number + 1, 5, '0', STR_PAD_LEFT);
