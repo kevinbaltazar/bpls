@@ -3,19 +3,30 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
+use App\Support\GeneralSettings;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-use Spatie\Permission\Models\Role;
-
 
 class GeneralSettingsController extends Controller
 {
-    public function showSettingPage()
+    public function showSettingPage(GeneralSettings $settings)
     {
         return view('admin/admins/setting',  [
-            'roles' => Role::all()
+            'approvers' => Admin::role('approver')->get(),
+            'settings' => $settings
         ]);
     }
+
+    public function update(GeneralSettings $settings, Request $request)
+    {
+        $settings->secretary = $request->secretary;
+        $settings->captain = $request->captain;
+        
+        $settings->save();
+        
+        return redirect()->back();
+    }
+    
 }
 
 

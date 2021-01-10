@@ -31,6 +31,7 @@ Route::view('test', 'admin.clearances.pdf', ['clearance' => Clearance::first()])
 
 
 Route::get('setting', [GeneralSettingsController::class, 'showSettingPage'])->name('setting');
+Route::post('setting', [GeneralSettingsController::class, 'update'])->name('setting');
 
 
 Route::get('login', [SessionsController::class, 'showLoginPage'])->name('login');
