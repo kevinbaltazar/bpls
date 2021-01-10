@@ -89,10 +89,15 @@
   
 		
   
+<<<<<<< HEAD
 <div class="px-4 mt-8 lg:px-72">
   <form class="space-y-8 divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
     @csrf
-<<<<<<< HEAD
+=======
+	<div class="px-4 mt-8 lg:px-72">
+		<form class="space-y-8 divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
+		@csrf
+>>>>>>> 34e615469fa9adab229acf8867978410f5b00c73
 		<div class="sm:col-span-6">
 			<div class="sm:col-span-2 mb-4">
 				<label for="first_name" class="block text-sm font-medium text-gray-700">
@@ -121,17 +126,8 @@
 					</p>
 			  	</div>
 			</div>
-=======
-	<div class="sm:col-span-6">
-		<label for="personal_address" class="block text-sm font-medium text-gray-700">
-			CTC Number
-		</label>
-		<div class="mt-1">
-			<input type="number" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
->>>>>>> aed031f63ea61ff9918e088c475d4d72c3cd65c7
 		</div>
-	</div>
-		  
+
 		<div class="sm:col-span-6">
 			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
 				Real Property Tax
@@ -152,7 +148,8 @@
 					</p>
 			  	</div>
 			</div>
-	  	</div>
+		</div>
+
 		<div class="sm:col-span-6">
 			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
 				Land Title
@@ -173,8 +170,8 @@
 					</p>
 			  	</div>
 			</div>
-	  	</div>
-	
+		</div>
+		  
 		<div class="sm:col-span-6">
 			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
 				DTI/Sec Registration
@@ -195,9 +192,9 @@
 					</p>
 			  	</div>
 			</div>
-	  	</div>
-	
-		<div class="sm:col-span-6">
+		</div>
+		  
+		  <div class="sm:col-span-6">
 			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
 				Contract of Lease
 			</label>
@@ -217,9 +214,9 @@
 					</p>
 			  	</div>
 			</div>
-		  </div>
-		  
-		  <div class="sm:col-span-6">
+		</div>
+
+		<div class="sm:col-span-6">
 			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
 				Old Permit
 			</label>
@@ -239,9 +236,9 @@
 					</p>
 			  	</div>
 			</div>
-		  </div>
-		  
-		  <div class="sm:col-span-6">
+		</div>
+
+		<div class="sm:col-span-6">
 			<label for="cover_photo" class="block text-sm font-medium text-gray-700">
 				Picture of business
 			</label>
@@ -263,20 +260,18 @@
 			</div>
 	  	</div>
 	</div>
-
-
-
-<div class="px-4 md:px-16 lg:px-20 mt-12">
-	<div class="pt-5">
-		<div class="flex justify-end mb-8">
-			<button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-				Cancel
-			</button>
-			<button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-				Next
-			</button>
+	<div class="px-4 md:px-16 lg:px-20 mt-12">
+		<div class="pt-5">
+			<div class="flex justify-end mb-8">
+				<button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+					Cancel
+				</button>
+				<button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+					Next
+				</button>
+			</div>
 		</div>
 	</div>
-</form>
-        </div>
+	</form>
+</div>
 
