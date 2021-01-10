@@ -1,6 +1,6 @@
 <x-admin-layout>
 
-      <main class="flex-1 relative pb-8 z-0 overflow-y-auto">
+	<main class="flex-1 relative pb-8 z-0 overflow-y-auto">
 
   
         <div class="mt-0">
@@ -113,7 +113,7 @@
           </h2>
   
           <!-- Activity list (smallest breakopoint only) -->
-          <div class="shadow sm:hidden">
+          <div class="shadow sm:hidden mx-4">
             <ul class="mt-2 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
               <li>
                 <a href="#" class="block px-4 py-4 bg-white hover:bg-gray-50">
