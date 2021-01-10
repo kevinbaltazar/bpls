@@ -92,9 +92,12 @@ class ClearanceController extends Controller
     {
         // $clearance = $request->session()->get('clearance');
         // return view('applicant.steps.step3',compact('clearance', $clearance));
-        $clearance = Clearance::find(5);
+        $clearance = Clearance::find(session('clearance'));
         $images = $clearance->getMedia('requirements');
         return view('applicant.steps.step3', compact('clearance','images'));
+
+        
+        
         
         // return view('applicant.steps.step3', [
         //     'clearance' => Clearance::find(session('clearance'))

@@ -63,5 +63,13 @@ class AdminsTableSeeder extends Seeder
         ]);
 
         $dispatcher->assignRole('dispatcher');
+
+        $captain = Admin::create([
+            'name' => 'megure',
+            'email' => 'captain@bpls.site',
+            'password' => Hash::make('password')
+        ]);
+
+        $captain->assignRole('approver');
     }
 }
