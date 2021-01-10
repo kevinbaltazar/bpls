@@ -68,7 +68,7 @@
                         </form>
 
                         <x-slot name="trigger">
-                            <x-button @click="on = true" variant="info">
+                        <x-button @click="on = true" variant="info" >
                                 Print
                             </x-button>
                         </x-slot>
