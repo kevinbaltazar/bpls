@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Clearance;
 use App\Models\Media;
+use Session;
 
 class ClearanceController extends Controller
 {
     public function createStep1()
     {
-        
         return view('applicant.steps.step1', [
             'first' => session('first', []),
         ]);
@@ -59,9 +59,6 @@ class ClearanceController extends Controller
             session()->forget('first');
             return redirect('/application');
         }
-
-
-        
     }
 
     public function postCreateStep2(Request $request)
@@ -69,15 +66,17 @@ class ClearanceController extends Controller
         
         
         $request->validate([
-            'cedula' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
-            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
-            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
-            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
-            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5084',
+            'cedula' => 'nullable',
+            'identification_card' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
         ]);
 
         $clearance = Clearance::create(session('first'));
 
+        $clearance->addMedia($request->file('identification_card'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('real_property_tax'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('land_title'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('dti'))->toMediaCollection('requirements');
@@ -95,9 +94,6 @@ class ClearanceController extends Controller
         $clearance = Clearance::find(session('clearance'));
         $images = $clearance->getMedia('requirements');
         return view('applicant.steps.step3', compact('clearance','images'));
-
-        
-        
         
         // return view('applicant.steps.step3', [
         //     'clearance' => Clearance::find(session('clearance'))
@@ -118,10 +114,71 @@ class ClearanceController extends Controller
 
     public function createRenewStep1()
     {
-        return view('applicant/renew/first');
+        return view('applicant/renew/first',[
+            'renew' => session('renew', [])
+        ]);
     }
+    public function postCreateRenewStep1(Request $request, Clearance $clearance)
+    {   
+        $request->validate([
+            'control_number' => 'required',
+            'business_name' => 'required'
+        ]);
+
+
+        if($clearance = Clearance::where('control_number', $request->control_number)
+        ->where('business_name', $request->business_name)
+        ->first())
+        {
+            if($clearance->signed_at !== null)
+            {
+                session()->put('clearance', $clearance->id);
+                return redirect('renew/second');
+            }
+            else
+            {
+                Session::flash('message', "you dont have business!");
+                return Redirect()->back();
+            }
+            
+        }
+        else
+        {
+            Session::flash('message', "try again!");
+            return Redirect()->back();
+        }
+    }
+
     public function createRenewStep2()
     {
         return view('applicant/renew/second');
+    }
+
+    public function postCreateRenewStep2(Request $request, Clearance $clearance)
+    {
+
+        $request->validate([
+            'identification_card' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'old_permit' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+            'picture_of_business' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
+        ]);
+
+        $clearance = Clearance::find(session('clearance'));
+
+        $clearance->addMedia($request->file('identification_card'))->toMediaCollection('renew_requirements');
+        $clearance->addMedia($request->file('real_property_tax'))->toMediaCollection('renew_requirements');
+        $clearance->addMedia($request->file('land_title'))->toMediaCollection('renew_requirements');
+        $clearance->addMedia($request->file('dti'))->toMediaCollection('renew_requirements');
+        $clearance->addMedia($request->file('contract_of_lease'))->toMediaCollection('renew_requirements');
+        $clearance->addMedia($request->file('old_permit'))->toMediaCollection('renew_requirements');
+        $clearance->addMedia($request->file('picture_of_business'))->toMediaCollection('renew_requirements');
+        $clearance->business_renew_at = now();
+        $clearance->save();
+        
+        return redirect('/');
     }
 }

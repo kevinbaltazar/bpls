@@ -98,12 +98,15 @@
   </div>
   
   <div class="px-4 md:px-16 lg:px-20 mt-12">
+    @if (Session::has('message'))
+      <div class="text-red-600">{{ Session::get('message') }}</div>
+    @endif
     @if($errors->any())
       @foreach ($errors->all() as $error)
           <ul class="text-red-600">{{$error}}</ul>
       @endforeach
     @endif
-    <form class="space-y-8" method="POST" action="/application/first">
+    <form class="space-y-8" method="POST" action="/renew/first">
       @csrf
         <div class=" w-5/12 mx-auto">
           
@@ -118,20 +121,20 @@
                   
   
                   <div class="sm:col-span-6">
-                      <label for="personal_address" class="block text-sm font-medium text-gray-700">
+                      <label for="control_number" class="block text-sm font-medium text-gray-700">
                           Enter Control Number
                       </label>
                       <div class="mt-1">
-                          <input type="text" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                          <input type="text" name="control_number" value="{{$first['control_number'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                       </div>
                   </div>
 
                   <div class="sm:col-span-6">
-                    <label for="personal_address" class="block text-sm font-medium text-gray-700">
+                    <label for="business_name" class="block text-sm font-medium text-gray-700">
                         Enter Business Name
                     </label>
                     <div class="mt-1">
-                        <input type="text" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="business_name" value="{{$first['business_name'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                     </div>
                 </div>
 

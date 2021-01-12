@@ -33,6 +33,7 @@ class CreateClearancesTable extends Migration
             $table->timestamp('inspected_at')->nullable();
             $table->timestamp('signed_at')->nullable();
             $table->timestamp('rejected_at')->nullable();
+            $table->timestamp('business_renew_at')->nullable();
             $table->timestamps();
         });
     }

@@ -103,7 +103,7 @@
         <ul class="text-red-600">{{$error}}</ul>
     @endforeach
   @endif
-  <form class="space-y-8" method="POST" action="/application/first">
+  <form class="space-y-8" method="POST" action="#">
     @csrf
       <div class="space-y-8">
         
