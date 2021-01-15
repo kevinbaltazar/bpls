@@ -7,6 +7,7 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -113,6 +114,7 @@ class AdminController extends Controller
 
     protected function validateAdmin(Request $request, Admin $admin = null)
     {
+        
         return $this->validate($request, [
             'name' => ['required'],
             'email' => [
@@ -120,7 +122,7 @@ class AdminController extends Controller
                 'email',
                 Rule::unique('admins', 'email')->ignore($admin->id ?? null, 'id')
             ],
-            'role' => ['required', Rule::exists('roles', 'id')]
+            'role' => ['required', Rule::exists('roles', 'id')],
         ]);
     }
 }
