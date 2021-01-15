@@ -26,7 +26,7 @@ class SessionsController extends Controller
                 ->with('error', trans('auth.failed'));
         }
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.clearances.index');
     }
 
     public function logout()

@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class GeneralSettingsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:superadmin,admin']);
+    }
+    
     public function showSettingPage(GeneralSettings $settings)
     {
         return view('admin/admins/setting',  [

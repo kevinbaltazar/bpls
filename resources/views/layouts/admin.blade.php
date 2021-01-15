@@ -8,17 +8,14 @@
                         <img class="block lg:hidden h-8 w-auto" src="{{url('/png/pulo-logo.png')}}" alt="pulo-logo">
                         <p class="hidden lg:block text-black font-medium">Pulong Buhangin</p>
                     </div>
-                    
-                    <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                        
+                    <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">   
                         <a 
                             href="{{ route('admin.dashboard') }}" 
                             class="@if (Request::url() === route('admin.dashboard')) border-indigo-500 @else border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 @endif inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                         >
                             Dashboard
                         </a>
-                        
-                        
+     
                         <a 
                             href="{{ route('admin.admins.index') }}" 
                             class="@if (Request::url() === route('admin.admins.index')) border-indigo-500 @else border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 @endif inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
@@ -30,7 +27,7 @@
                             href="{{ route('admin.clearances.index') }}" 
                             class="@if (Request::url() === route('admin.clearances.index')) border-indigo-500 @else border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 @endif inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                         >
-                            Permits
+                            Clearances
                         </a>
                         
                         
