@@ -89,15 +89,9 @@
   
 		
   
-<<<<<<< HEAD
 <div class="px-4 mt-8 lg:px-72">
   <form class="space-y-8 divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
     @csrf
-=======
-	<div class="px-4 mt-8 lg:px-72">
-		<form class="space-y-8 divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
-		@csrf
->>>>>>> 34e615469fa9adab229acf8867978410f5b00c73
 		<div class="sm:col-span-6">
 			<div class="sm:col-span-2 mb-4">
 				<label for="first_name" class="block text-sm font-medium text-gray-700">
