@@ -1,5 +1,11 @@
 @extends('applicant.application')
 @section('application')
+
+@if($errors->any())
+    @foreach ($errors->all() as $error)
+        <ul class="text-red-600">{{$error}}</ul>
+    @endforeach
+@endif
 	<div class="lg:border-t lg:border-b lg:border-gray-200">
 		<nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Progress">
 		<ol class="rounded-md overflow-hidden lg:flex lg:border-l lg:border-r lg:border-gray-200 lg:rounded-none">
@@ -85,12 +91,12 @@
 			
 			<div class="sm:col-span-6">
 				<div class="sm:col-span-2">
-					<label for="first_name" class="block text-sm font-medium text-gray-700">
-						Cedula Number
+					<label for="cedula_number" class="block text-sm font-medium text-gray-700">
+						cedula Number
 					</label>
 					
 					<div class="mt-1">
-						<input type="text" name="first_name" value="{{$first['first_name'] ?? ''}}"  id="first_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+						<input type="text" name="cedula_number" value="{{$first['cedula_number'] ?? ''}}"  id="cedula_number" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
 					</div>
 				</div>
 			</div>
