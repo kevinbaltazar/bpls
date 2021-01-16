@@ -13,72 +13,134 @@
             </div>
 
             <div class="flex">
-                <x-modal 
-                    variant="error" 
-                    title="Reject Clearance" 
-                    submit-label="Reject" 
-                    on-submit="document.getElementById('reject-form').submit()"
-                >
-                    <x-slot name="trigger">
-                        <x-button @click="on = true" variant="error">
-                            Reject
-                        </x-button>
-                    </x-slot>
+                @if ($clearance->status === 'approved')
+                    <x-modal 
+                        variant="info" 
+                        title="Print Clearance" 
+                        submit-label="Print" 
+                        on-submit="document.getElementById('print-form').submit()"
+                        with-icon="false"
+                    >
+                        <form id="print-form" class="space-y-6" method="POST" action="{{ route('admin.clearances.print', $clearance) }}">
+                            @csrf
 
-                    <form id="reject-form" method="POST" action="{{ route('admin.clearances.update', $clearance) }}">
-                        @csrf
-                        @method('PATCH')
+                            <div>
+                                <x-input-label for="order_number" value="OR #" />
 
-                        <input type="hidden" name="new_status" value="rejected" />
-                    </form>
+                                <x-input 
+                                    class="mt-1" 
+                                    name="order_number" 
+                                    value="{{ old('order_number') }}"
+                                />
+                                
+                                @if ($error = $errors->first('order_number'))
+                                    <x-input-error for="order_number" value="{{ $error }}" />
+                                @endif
+                            </div>
 
-                    <p class="text-sm text-gray-500">
-                        Are you sure you want to reject this clearance application?
-                    </p>
-                </x-modal>
+                            <div>
+                                <x-input-label for="amount" value="Amount" />
 
-                <x-modal 
-                    variant="success" 
-                    withIcon="false" 
-                    title="Approve Clearance" 
-                    submit-label="Approve"
-                    on-submit="document.getElementById('approve-form').submit()"
-                >
-                    <x-slot name="trigger">
-                        <x-button @click="on = true" class="ml-3" variant="success">
-                            Approve
-                        </x-button>
-                    </x-slot>
+                                <x-input 
+                                    class="mt-1" 
+                                    name="amount" 
+                                    value="{{ old('amount') }}"
+                                />
+                                
+                                @if ($error = $errors->first('amount'))
+                                    <x-input-error for="amount" value="{{ $error }}" />
+                                @endif
+                            </div>
 
-                    <form id="approve-form" method="POST" action="{{ route('admin.clearances.update', $clearance) }}">
-                        @csrf
-                        @method('PATCH')
-                        
-                        <input type="hidden" name="new_status" value="approved" />
+                            <div>
+                                <x-input-label for="sticker_number" value="Sticker / Plate #" />
+
+                                <x-input 
+                                    class="mt-1" 
+                                    name="sticker_number" 
+                                    value="{{ old('sticker_number') }}"
+                                />
+                                
+                                @if ($error = $errors->first('sticker_number'))
+                                    <x-input-error for="sticker_number" value="{{ $error }}" />
+                                @endif
+                            </div>
+                        </form>
+
+                        <x-slot name="trigger">
+                        <x-button @click="on = true" variant="info" >
+                                Print
+                            </x-button>
+                        </x-slot>
+                    </x-modal>
+                @else
+                    <x-modal 
+                        variant="error" 
+                        title="Reject Clearance" 
+                        submit-label="Reject" 
+                        on-submit="document.getElementById('reject-form').submit()"
+                    >
+                        <x-slot name="trigger">
+                            <x-button @click="on = true" variant="error">
+                                Reject
+                            </x-button>
+                        </x-slot>
+
+                        <form id="reject-form" method="POST" action="{{ route('admin.clearances.update', $clearance) }}">
+                            @csrf
+                            @method('PATCH')
+
+                            <input type="hidden" name="new_status" value="rejected" />
+                        </form>
 
                         <p class="text-sm text-gray-500">
-                            You are approving this business clearance
+                            Are you sure you want to reject this clearance application?
+                        </p>
+                    </x-modal>
+
+                    <x-modal 
+                        variant="success" 
+                        with-icon="false"
+                        title="Approve Clearance" 
+                        submit-label="Approve"
+                        on-submit="document.getElementById('approve-form').submit()"
+                    >
+                        <x-slot name="trigger">
+                            <x-button @click="on = true" class="ml-3" variant="success">
+                                Approve
+                            </x-button>
+                        </x-slot>
+
+                        <form id="approve-form" method="POST" action="{{ route('admin.clearances.update', $clearance) }}">
+                            @csrf
+                            @method('PATCH')
+                            
+                            <input type="hidden" name="new_status" value="approved" />
+
+                            <p class="text-sm text-gray-500">
+                                You are approving this business clearance
+                                
+                                @if ($clearance->status === 'pending')
+                                    and you have to select the designated inspector below
+                                @endif
+                            </p>
                             
                             @if ($clearance->status === 'pending')
-                                and you have to select the designated inspector below
-                            @endif
-                        </p>
-                        
-                        @if ($clearance->status === 'pending')
-                            <div class="mt-4">
-                                <select id="inspector" name="inspector" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                                    <option disabled selected>Select the inspector</option>
+                                <div class="mt-4">
+                                    <select id="inspector" name="inspector" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                        <option disabled selected>Select the inspector</option>
 
-                                    @foreach($inspectors as $inspector) 
-                                        <option value="{{ $inspector->id }}">
-                                            {{ ucwords($inspector->name) }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        @endif
-                    </form>
-                </x-modal>
+                                        @foreach($inspectors as $inspector) 
+                                            <option value="{{ $inspector->id }}">
+                                                {{ ucwords($inspector->name) }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            @endif
+                        </form>
+                    </x-modal>
+                @endif
             </div>
         </div>
 

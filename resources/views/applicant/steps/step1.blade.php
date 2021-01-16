@@ -103,7 +103,7 @@
         <ul class="text-red-600">{{$error}}</ul>
     @endforeach
   @endif
-  <form class="space-y-8" method="POST" action="/application/first">
+  <form class="space-y-8" method="POST" action="#">
     @csrf
       <div class="space-y-8">
         
@@ -214,9 +214,8 @@
 
       <div class="mt-5 w-9/12">
 		  	<h2 class="font-semibold text-sm">Please select the following type of business:</h2>
-		  	
       </div>
-
+      
       <div class="pt-5">
           <div class="flex justify-end mb-8">
               <a href="{{ url('/')}}"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -229,5 +228,7 @@
       </div>
 
     </form>
+
+
 </div>
 @endsection

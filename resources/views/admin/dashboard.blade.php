@@ -1,11 +1,12 @@
 <x-admin-layout>
 
-      <main class="flex-1 relative pb-8 z-0 overflow-y-auto">
+	<main class="flex-1 relative pb-8 z-0 overflow-y-auto">
 
   
         <div class="mt-0">
           <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-lg leading-6 font-medium text-gray-900">Overview</h2>
+				<h2 class="text-lg leading-6 font-medium text-gray-900">Overview</h2>
+			
             <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               <!-- Card -->
   
@@ -18,7 +19,7 @@
                     <div class="ml-5 w-0 flex-1">
                       <dl>
                         <dt class="text-sm font-medium text-gray-500 truncate">
-                          Received
+							            Approved Documents (Last 30 days)
                         </dt>
                         <dd>
                           <div class="text-lg font-medium text-gray-900">
@@ -51,7 +52,7 @@
                     <div class="ml-5 w-0 flex-1">
                       <dl>
                         <dt class="text-sm font-medium text-gray-500 truncate">
-                          Pending
+                          Received Documents (Last 30 days)
                         </dt>
                         <dd>
                           <div class="text-lg font-medium text-gray-900">
@@ -84,6 +85,35 @@
                     <div class="ml-5 w-0 flex-1">
                       <dl>
                         <dt class="text-sm font-medium text-gray-500 truncate">
+							            Rejected Documents (Last 30 days)
+                        </dt>
+                        <dd>
+                          <div class="text-lg font-medium text-gray-900">
+                            59
+                          </div>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-gray-50 px-5 py-3">
+                  <div class="text-sm">
+                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                      View all
+                    </a>
+                  </div>
+                </div>
+			  </div>
+			  
+			  <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                      <!-- Heroicon name: scale -->
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                      <dl>
+                        <dt class="text-sm font-medium text-gray-500 truncate">
                           Processed (Last 30 days)
                         </dt>
                         <dd>
@@ -102,7 +132,8 @@
                     </a>
                   </div>
                 </div>
-              </div>
+			  </div>
+			  
   
               <!-- More cards... -->
             </div>

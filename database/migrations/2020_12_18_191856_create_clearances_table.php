@@ -17,6 +17,7 @@ class CreateClearancesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('business_type_id')->nullable();
             $table->unsignedBigInteger('clearance_inspector_id')->nullable();
+            $table->string('control_number')->nullable();
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
@@ -32,6 +33,7 @@ class CreateClearancesTable extends Migration
             $table->timestamp('inspected_at')->nullable();
             $table->timestamp('signed_at')->nullable();
             $table->timestamp('rejected_at')->nullable();
+            $table->timestamp('business_renew_at')->nullable();
             $table->timestamps();
         });
     }
