@@ -30,7 +30,8 @@ class ClearanceController extends Controller
             'birthdate' => 'required',
             'birthplace' => 'required',
             'mobile_number' => 'required',
-            'telephone_number' => 'nullable'
+            'telephone_number' => 'nullable',
+            'business_type' => 'required'
         ]);
 
         if(!$validatedData)
@@ -65,8 +66,11 @@ class ClearanceController extends Controller
     {
         
         
-        $request->validate([
+        $validatedCedula = $request->validate([
             'cedula' => 'nullable',
+            
+        ]);
+        $request->validate([
             'identification_card' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
             'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
             'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
@@ -74,8 +78,9 @@ class ClearanceController extends Controller
             'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
         ]);
 
+        
         $clearance = Clearance::create(session('first'));
-
+        
         $clearance->addMedia($request->file('identification_card'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('real_property_tax'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('land_title'))->toMediaCollection('requirements');

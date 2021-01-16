@@ -19,11 +19,11 @@
                     <div class="ml-5 w-0 flex-1">
                       <dl>
                         <dt class="text-sm font-medium text-gray-500 truncate">
-							            Approved Documents (Last 30 days)
+							Processed Documents (Last 30 days)
                         </dt>
                         <dd>
                           <div class="text-lg font-medium text-gray-900">
-                           29
+                           	{{$processed}}
                           </div>
                         </dd>
                       </dl>
@@ -56,7 +56,7 @@
                         </dt>
                         <dd>
                           <div class="text-lg font-medium text-gray-900">
-                            11
+							{{$received}}
                           </div>
                         </dd>
                       </dl>
@@ -118,7 +118,36 @@
                         </dt>
                         <dd>
                           <div class="text-lg font-medium text-gray-900">
-                            59
+                            {{$rejected}}
+                          </div>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-gray-50 px-5 py-3">
+                  <div class="text-sm">
+                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                      View all
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                      <!-- Heroicon name: scale -->
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                      <dl>
+                        <dt class="text-sm font-medium text-gray-500 truncate">
+                          Renewed Documents (Last 30 days)
+                        </dt>
+                        <dd>
+                          <div class="text-lg font-medium text-gray-900">
+							{{$renewed}}
                           </div>
                         </dd>
                       </dl>
@@ -208,53 +237,54 @@
                       </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
+					@foreach ($clearance as $clearances)
                       <tr class="bg-white">
                         <td class="max-w-0 w-full px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                           <div class="flex">
                             <a href="#" class="group inline-flex space-x-2 truncate text-sm">
                               <!-- Heroicon name: cash -->
                               <p class="text-gray-500 truncate group-hover:text-gray-900">
-                                Payment to Molly Sanders
+								  {{$clearances->business_name}}
                               </p>
                             </a>
                           </div>
                         </td>
                         <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
-                          <span class="text-gray-900 font-medium">Computer Shop </span>
+                          <span class="text-gray-900 font-medium">{{$clearances->business_type}}</span>
                         </td>
                         <td class="hidden px-6 py-4 whitespace-nowrap text-sm text-gray-500 md:block">
-                          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 capitalize">
-                            success
-                          </span>
+							<x-clearance-status-chip status="{{ $clearances->status }}" />
                         </td>
                         <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
-                          July 11, 2020
+							{{$clearances->created_at->toFormattedDateString()}}
                         </td>
-                      </tr>
+					  </tr>
+					@endforeach
   
                       <!-- More rows... -->
                       
                     </tbody>
-                  </table>
+				  </table>
+				  
                   <!-- Pagination -->
                   <nav class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6" aria-label="Pagination">
                     <div class="hidden sm:block">
                       <p class="text-sm text-gray-700">
                         Showing
-                        <span class="font-medium">1</span>
+                        <span class="font-medium">{{($clearance->currentpage()-1)*$clearance->perpage()+1}}</span>
                         to
-                        <span class="font-medium">10</span>
+                        <span class="font-medium">{{$clearance->currentpage()*$clearance->perpage()}}</span>
                         of
-                        <span class="font-medium">20</span>
+                        <span class="font-medium">{{$clearance->total()}}</span>
                         results
                       </p>
-                    </div>
+					</div>
                     <div class="flex-1 flex justify-between sm:justify-end">
-                      <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                        Previous
+                      <a href="{{$clearance->previousPageUrl()}}" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+						Previous
                       </a>
-                      <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                        Next
+                      <a href="{{$clearance->nextPageUrl()}}" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+						Next
                       </a>
                     </div>
                   </nav>

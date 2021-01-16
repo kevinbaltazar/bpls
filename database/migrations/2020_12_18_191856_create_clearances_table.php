@@ -15,9 +15,10 @@ class CreateClearancesTable extends Migration
     {
         Schema::create('clearances', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('business_type_id')->nullable();
+            $table->string('business_type');
             $table->unsignedBigInteger('clearance_inspector_id')->nullable();
             $table->string('control_number')->nullable();
+            $table->string('cedula_number')->nullable();
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');

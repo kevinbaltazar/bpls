@@ -213,9 +213,10 @@
         </div>
 
       <div class="mt-5 w-9/12">
-		  	<h2 class="font-semibold text-sm">Please select the following type of business:</h2>
+		  	<h2 class="font-semibold text-sm">Please input your business type</h2>
       </div>
-      
+
+    <input type="text" name="business_type" value="{{$first['business_type'] ?? ''}}"  id="birthplace" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="e.g Sari-sari store">
       <div class="pt-5">
           <div class="flex justify-end mb-8">
               <a href="{{ url('/')}}"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
