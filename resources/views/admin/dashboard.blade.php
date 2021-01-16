@@ -31,7 +31,7 @@
                 </div>
                 <div class="bg-gray-50 px-5 py-3">
                   <div class="text-sm">
-                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                    <a href="{{ route('admin.approved') }}" class="font-medium text-cyan-700 hover:text-cyan-900">
                       View all
                     </a>
                   </div>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="bg-gray-50 px-5 py-3">
                   <div class="text-sm">
-                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                    <a href="{{ route('admin.received') }}" class="font-medium text-cyan-700 hover:text-cyan-900">
                       View all
                     </a>
                   </div>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="bg-gray-50 px-5 py-3">
                   <div class="text-sm">
-                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                    <a href="{{ route('admin.rejected') }}" class="font-medium text-cyan-700 hover:text-cyan-900">
                       View all
                     </a>
                   </div>
@@ -126,7 +126,7 @@
                 </div>
                 <div class="bg-gray-50 px-5 py-3">
                   <div class="text-sm">
-                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                    <a href="{{ route('admin.renewed') }}" class="font-medium text-cyan-700 hover:text-cyan-900">
                       View all
                     </a>
                   </div>
