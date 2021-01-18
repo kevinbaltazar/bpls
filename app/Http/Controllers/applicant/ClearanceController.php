@@ -149,7 +149,7 @@ class ClearanceController extends Controller
         }
         else
         {
-            Session::flash('message', "try again!");
+            Session::flash('message', "business name or control number is incorrect!");
             return Redirect()->back();
         }
     }

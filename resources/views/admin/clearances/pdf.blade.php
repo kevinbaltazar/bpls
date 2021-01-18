@@ -201,7 +201,7 @@
                             <tbody>
                                 <tr>
                                     <td style="width: 50%;">CTC NO:</td>
-                                    <td style="width: 50%;">---</td>
+                                    <td style="width: 50%;"> {{$clearance->cedula_number ?? '---'}}</td>
                                 </tr>
 
                                 <tr>

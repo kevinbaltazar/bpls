@@ -29,6 +29,7 @@ class CreateClearancesTable extends Migration
             $table->string('birthplace');
             $table->string('mobile_number');
             $table->string('telephone_number')->nullable();
+            $table->timestamp('printed_at')->nullable();
             $table->timestamp('completed_at')->nullable();
             $table->timestamp('requirements_approved_at')->nullable();
             $table->timestamp('inspected_at')->nullable();

@@ -8,6 +8,7 @@ use App\Models\Clearance;
 use App\Support\GeneralSettings;
 use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PrintClearanceController extends Controller
 {
@@ -30,15 +31,17 @@ class PrintClearanceController extends Controller
         if ($clearance->control_number === null) {
             $controlNumber = Clearance::generateControlNumber();
             $clearance->update(['control_number' => $controlNumber]);
+            $clearance->update(['printed_at' => now()]);
         }
 
         $secretary = Admin::find($settings->secretary);
         $captain = Admin::find($settings->captain);
 
         $pdf = PDF::loadView('admin.clearances.pdf', compact('clearance', 'formData', 'secretary', 'captain'))
-            ->setPaper('a4')
+            ->setPaper('legal')
             ->setOption('margin-bottom', 0);
 
-        return $pdf->download('clearance.pdf');
+
+        return $pdf->download('Clearance_' . $clearance->business_name . '.pdf');
     }
 }

@@ -100,7 +100,13 @@ class Clearance extends Model implements HasMedia
 
         if ($role->name === 'dispatcher') {
             return $query->whereNotNull('signed_at')
-                ->whereNull('rejected_at');
+                ->whereNull('rejected_at')
+                ->whereNull('printed_at');
+        }
+        
+        if ($role->name === 'superadmin'){
+            return $query->whereNull('rejected_at')
+                ->whereNull('printed_at');
         }
     }
 
@@ -114,11 +120,14 @@ class Clearance extends Model implements HasMedia
             ->first();
 
         if ($clearance === null) {
-            return null;
+
+            $control_num = $clearance->control_number ?? '2021-00000';
+            $number = (int) explode('-',  $control_num)[1];
+            return $year . '-' . str_pad($number + 1, 5, '0', STR_PAD_LEFT);
+
         }
 
         $number = (int) explode('-', $clearance->control_number)[1];
-
         return $year . '-' . str_pad($number + 1, 5, '0', STR_PAD_LEFT);
     }
 }

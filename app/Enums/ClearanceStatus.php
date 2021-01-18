@@ -12,4 +12,5 @@ final class ClearanceStatus extends Enum
     const Inspected = 'inspected';
     const Approved = 'approved';
     const Rejected = 'rejected';
+    const Printed = 'printed';
 }
