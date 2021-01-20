@@ -5,6 +5,7 @@ namespace App\Http\Controllers\applicant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Clearance;
+use Illuminate\Support\Carbon;
 
 class ClearanceRenewController extends Controller
 {
@@ -24,33 +25,37 @@ class ClearanceRenewController extends Controller
 
         if($clearance = Clearance::where('control_number', $request->control_number)
         ->where('business_name', $request->business_name)
-        ->first())
-        {
-            if($clearance->signed_at !== null)
-            {
-                $renew = [
-                    'clearance_id' => $clearance->id,
-                    'business_type' => $clearance->business_type,
-                    'first_name' =>  $clearance->first_name,
-                    'middle_name' =>  $clearance->middle_name,
-                    'last_name' =>  $clearance->last_name,
-                    'personal_address' =>  $clearance->personal_address,
-                    'business_name' =>  $clearance->business_name,
-                    'business_address' =>  $clearance->business_address,
-                    'birthdate' =>  $clearance->birthdate,
-                    'birthplace' =>  $clearance->birthplace,
-                    'mobile_number' =>  $clearance->mobile_number,
-                    'telephone_number' =>  $clearance->telephone_number,
-                ];
-                session()->put('clearance', $renew);
-                return redirect('renew/second');
+        ->first()) {
+            if($clearance::whereDate('printed_at', '<=', Carbon::now()->subDays(300))->first()) {
+                if($clearance->signed_at !== null) {
+                    $renew = [
+                        'clearance_id' => $clearance->id,
+                        'business_type' => $clearance->business_type,
+                        'first_name' =>  $clearance->first_name,
+                        'middle_name' =>  $clearance->middle_name,
+                        'last_name' =>  $clearance->last_name,
+                        'personal_address' =>  $clearance->personal_address,
+                        'business_name' =>  $clearance->business_name,
+                        'business_address' =>  $clearance->business_address,
+                        'birthdate' =>  $clearance->birthdate,
+                        'birthplace' =>  $clearance->birthplace,
+                        'mobile_number' =>  $clearance->mobile_number,
+                        'telephone_number' =>  $clearance->telephone_number,
+                    ];
+                    session()->put('clearance', $renew);
+                    return redirect('renew/second');
+                }
+                else
+                {
+                    session()->flash('message', "you dont have business!");
+                    return Redirect()->back();
+                }
             }
             else
             {
-                session()->flash('message', "you dont have business!");
-                return Redirect()->back();
-            }
-            
+                session()->flash('message', "your business is less than 6 months!");
+                    return Redirect()->back();
+            }    
         }
         else
         {
@@ -58,6 +63,8 @@ class ClearanceRenewController extends Controller
             return Redirect()->back();
         }
     }
+
+    
 
     public function createRenewStep2()
     {
