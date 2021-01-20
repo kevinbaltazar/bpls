@@ -5,7 +5,8 @@
   
         <div class="mt-0">
           <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-lg leading-6 font-medium text-gray-900">Overview</h2>
+				<h2 class="text-lg leading-6 font-medium text-gray-900">Overview</h2>
+			
             <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               <!-- Card -->
   
@@ -44,7 +45,7 @@
   
               <div class="bg-white overflow-hidden shadow rounded-lg">
                 <div class="p-5">
-                  <div class="flex items-center">
+                  	<div class="flex items-center">
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: scale -->
                     </div>
@@ -74,8 +75,8 @@
               <!-- More cards... -->
 
               <!-- Card -->
-  
-              <div class="bg-white overflow-hidden shadow rounded-lg">
+			  
+			  <div class="bg-white overflow-hidden shadow rounded-lg">
                 <div class="p-5">
                   <div class="flex items-center">
                     <div class="flex-shrink-0">
@@ -84,7 +85,7 @@
                     <div class="ml-5 w-0 flex-1">
                       <dl>
                         <dt class="text-sm font-medium text-gray-500 truncate">
-                          Rejected Documents (Last 30 days)
+                          Rejected Documents(Last 30 days)
                         </dt>
                         <dd>
                           <div class="text-lg font-medium text-gray-900">
@@ -131,7 +132,8 @@
                     </a>
                   </div>
                 </div>
-              </div>
+			  </div>
+			  
   
               <!-- More cards... -->
             </div>

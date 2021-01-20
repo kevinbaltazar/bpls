@@ -38,10 +38,11 @@ class PrintClearanceController extends Controller
         $captain = Admin::find($settings->captain);
 
         $pdf = PDF::loadView('admin.clearances.pdf', compact('clearance', 'formData', 'secretary', 'captain'))
-            ->setPaper('legal')
+            ->setPaper('a4')
             ->setOption('margin-bottom', 0);
+        
 
 
-        return $pdf->download('Clearance_' . $clearance->business_name . '.pdf');
+        return $pdf->download($clearance->business_name . '.pdf');
     }
 }
