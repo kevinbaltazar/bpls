@@ -31,7 +31,13 @@ class PrintClearanceController extends Controller
         if ($clearance->control_number === null) {
             $controlNumber = Clearance::generateControlNumber();
             $clearance->update(['control_number' => $controlNumber]);
+        }
+
+        if(!$clearance->clearance_id) {
             $clearance->update(['printed_at' => now()]);
+        }
+        else {
+            $clearance->update(['renew_printed_at' => now()]);
         }
 
         $secretary = Admin::find($settings->secretary);

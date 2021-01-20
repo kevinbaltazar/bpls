@@ -125,6 +125,12 @@
                                 @endif
                             </p>
                             
+                            @if ($clearance->status === 'reviewed')
+                                <div class="mt-4">
+                                    <textarea name="inspector_comment" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            @endif
+
                             @if ($clearance->status === 'pending')
                                 <div class="mt-4">
                                     <select id="inspector" name="inspector" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">

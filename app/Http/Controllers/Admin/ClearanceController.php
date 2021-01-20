@@ -56,6 +56,7 @@ class ClearanceController extends Controller
             )
         ]);
 
+        
         if ($request->new_status === ClearanceStatus::Rejected) {
             $clearance->reject();
         }

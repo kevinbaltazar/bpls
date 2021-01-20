@@ -29,28 +29,47 @@ class Clearance extends Model implements HasMedia
 
     public function getStatusAttribute()
     {
-        if ($this->rejected_at) {
-            return ClearanceStatus::Rejected;
+        if(!$this->clearance_id) {
+            if ($this->rejected_at) {
+                return ClearanceStatus::Rejected;
+            }
+    
+            if ($this->signed_at) {
+                return ClearanceStatus::Approved;
+            }
+    
+            if ($this->inspected_at) {
+                return ClearanceStatus::Inspected;
+            }
+    
+            if ($this->requirements_approved_at) {
+                return ClearanceStatus::Reviewed;
+            }
+    
+            if ($this->completed_at) {
+                return ClearanceStatus::Pending;
+            }
         }
+        else {
+            if ($this->renew_rejected_at) {
+                return ClearanceStatus::Rejected;
+            }
 
-        if ($this->signed_at) {
-            return ClearanceStatus::Approved;
-        }
+            if ($this->renew_signed_at) {
+                return ClearanceStatus::Approved;
+            }
 
-        if ($this->inspected_at) {
-            return ClearanceStatus::Inspected;
-        }
-
-        if ($this->requirements_approved_at) {
-            return ClearanceStatus::Reviewed;
-        }
-
-        if ($this->completed_at) {
-            return ClearanceStatus::Pending;
-        }
-
-        if ($this->renew_completed_at) {
-            return ClearanceStatus::Pending;
+            if ($this->renew_inspected_at) {
+                return ClearanceStatus::Inspected;
+            }
+    
+            if($this->renew_requirements_approved_at) {
+                return ClearanceStatus::Reviewed;
+            }
+    
+            if($this->renew_completed_at) {
+                return ClearanceStatus::Pending;
+            }
         }
 
         return ClearanceStatus::Incomplete;
@@ -58,13 +77,18 @@ class Clearance extends Model implements HasMedia
 
     public function reject()
     {
-        $this->update(['rejected_at' => now()]);
+        if(!$this->clearance_id) {
+            $this->update(['rejected_at' => now()]);
+        }
+        else {
+            $this->update(['renew_rejected_at' => now()]);
+        }
     }
 
     public function approve($formData)
     {
         if ($this->status === ClearanceStatus::Pending) {
-            if($this->renew_completed_at) {
+            if($this->renew_completed_at){
                 return $this->update([
                     'renew_requirements_approved_at' => now(),
                     'clearance_inspector_id' => $formData['inspector']
@@ -75,49 +99,96 @@ class Clearance extends Model implements HasMedia
                     'requirements_approved_at' => now(),
                     'clearance_inspector_id' => $formData['inspector']
                 ]);
-            }   
+            }
         }
 
         if ($this->status === ClearanceStatus::Reviewed) {
-            return $this->update(['inspected_at' => now()]);
+            if(!$this->clearance_id) {
+                return $this->update(['inspected_at' => now()]);
+            }
+            else {
+                return $this->update(['renew_inspected_at' => now()]);
+            }
         }
 
         if ($this->status === ClearanceStatus::Inspected) {
-            return $this->update(['signed_at' => now()]);
+            if(!$this->clearance_id) {
+                return $this->update(['signed_at' => now()]);
+            }
+            else {
+                return $this->update(['renew_signed_at' => now()]);
+            }
+            
         }
     }
 
     public function scopeManageable($query, Role $role = null)
     {
-        $query->whereNotNull('completed_at')
-            ->whereNull('rejected_at');
+        $query->where(function ($query) {
+            $query->where('completed_at', '!=', NULL)
+                  ->orWhere('renew_completed_at', '!=', NULL);
+        })->where(function ($query) {
+            $query->where('rejected_at', '=', NULL)
+                  ->orWhere('renew_rejected_at', '=', NULL);
+        });
 
         if ($role->name === 'reviewer') {
-            return $query->whereNull('requirements_approved_at')
-                ->whereNull('inspected_at');
+            return $query->where(function ($query){
+                $query->where('requirements_approved_at', '=', NULL)
+                    ->where('renew_requirements_approved_at', '=', NULL);
+            })->where(function ($query){
+                $query->where('inspected_at', '=', NULL)
+                    ->where('renew_inspected_at', '=', NULL);
+            });
         }
 
         if ($role->name === 'inspector') {
-            return $query->whereNotNull('requirements_approved_at')
-                ->whereNull('inspected_at')
-                ->whereNull('signed_at');
+           return $query->where(function ($query){
+                $query->where('requirements_approved_at', '!=', NULL)
+                    ->orwhere('renew_requirements_approved_at', '!=', NULL);
+           })->where(function ($query){
+                $query->where('inspected_at', '=', NULL)
+                    ->where('renew_inspected_at', '=', NULL);
+           })->where(function ($query){
+                $query->where('signed_at', '=', NULL)
+                    ->where('renew_signed_at', '=', NULL);
+           });
         }
 
         if ($role->name === 'approver') {
-            return $query->whereNotNull('inspected_at')
-                ->whereNull('signed_at')
-                ->whereNull('rejected_at');
+            return $query->where(function ($query){
+                $query->where('inspected_at', '!=', NULL)
+                    ->orwhere('renew_inspected_at', '!=', NULL);
+           })->where(function ($query){
+                $query->where('signed_at', '=', NULL)
+                    ->where('renew_signed_at', '=', NULL);
+           })->where(function ($query){
+                $query->where('rejected_at', '=', NULL)
+                    ->where('renew_rejected_at', '=', NULL);
+           });
         }
 
         if ($role->name === 'dispatcher') {
-            return $query->whereNotNull('signed_at')
-                ->whereNull('rejected_at')
-                ->whereNull('printed_at');
+            return $query->where(function ($query){
+                $query->where('signed_at', '!=', NULL)
+                    ->orwhere('renew_signed_at', '!=', NULL);
+           })->where(function ($query){
+                $query->where('rejected_at', '=', NULL)
+                    ->where('renew_rejected_at', '=', NULL);
+           })->where(function ($query){
+                $query->where('printed_at', '=', NULL)
+                    ->where('renew_printed_at', '=', NULL);
+           });
         }
         
         if ($role->name === 'superadmin'){
-            return $query->whereNull('rejected_at')
-                ->whereNull('printed_at');
+            $query->where(function ($query){
+                $query->where('rejected_at', '=', NULL)
+                    ->orwhere('renew_rejected_at', '=', NULL);
+            })->where(function ($query){
+                $query->where('printed_at', '=', NULL)
+                    ->where('renew_printed_at', '=', NULL);
+            });
         }
     }
 

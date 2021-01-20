@@ -43,6 +43,7 @@ class CreateClearancesTable extends Migration
             $table->timestamp('renew_printed_at')->nullable();
             $table->timestamp('renew_rejected_at')->nullable();
             $table->timestamp('expired_at')->nullable();
+            $table->longText('inspector_comment')->nullable();
             $table->timestamps();
         });
     }
