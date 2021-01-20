@@ -118,7 +118,7 @@
                         </dt>
                         <dd>
                           <div class="text-lg font-medium text-gray-900">
-							{{$renewed}}
+                            renew
                           </div>
                         </dd>
                       </dl>
@@ -127,7 +127,7 @@
                 </div>
                 <div class="bg-gray-50 px-5 py-3">
                   <div class="text-sm">
-                    <a href="{{ route('admin.renewed') }}" class="font-medium text-cyan-700 hover:text-cyan-900">
+                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
                       View all
                     </a>
                   </div>

@@ -49,6 +49,10 @@ class Clearance extends Model implements HasMedia
             return ClearanceStatus::Pending;
         }
 
+        if ($this->renew_completed_at) {
+            return ClearanceStatus::Pending;
+        }
+
         return ClearanceStatus::Incomplete;
     }
 
@@ -60,10 +64,18 @@ class Clearance extends Model implements HasMedia
     public function approve($formData)
     {
         if ($this->status === ClearanceStatus::Pending) {
-            return $this->update([
-                'requirements_approved_at' => now(),
-                'clearance_inspector_id' => $formData['inspector']
-            ]);
+            if($this->renew_completed_at) {
+                return $this->update([
+                    'renew_requirements_approved_at' => now(),
+                    'clearance_inspector_id' => $formData['inspector']
+                ]);
+            }
+            else{
+                return $this->update([
+                    'requirements_approved_at' => now(),
+                    'clearance_inspector_id' => $formData['inspector']
+                ]);
+            }   
         }
 
         if ($this->status === ClearanceStatus::Reviewed) {
@@ -77,8 +89,7 @@ class Clearance extends Model implements HasMedia
 
     public function scopeManageable($query, Role $role = null)
     {
-        $query
-            ->whereNotNull('completed_at')
+        $query->whereNotNull('completed_at')
             ->whereNull('rejected_at');
 
         if ($role->name === 'reviewer') {

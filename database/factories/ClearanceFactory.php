@@ -32,6 +32,7 @@ class ClearanceFactory extends Factory
             'personal_address' => $this->faker->address,
             'business_name' => $this->faker->company,
             'business_address' => $this->faker->address,
+            'cedula_number' => $this->faker->numberBetween($min = 10000, $max = 99999),
         ];
     }
 }

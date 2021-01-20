@@ -1,5 +1,4 @@
-!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -12,7 +11,7 @@
                 font-size: 18px;
                 font-family: arial;
             }
-            .text-center {
+            .text-center-clearance {
                 text-align: center;
             }
             .text-right {
@@ -100,7 +99,7 @@
                 <p class="text-right font-bold">CTRL. No: {{ $clearance->control_number }}</p>
             </div>
 
-            <div class="text-center">
+            <div class="text-center-clearance">
                 <h1 style="font-size: 40px; font-weight: bold; letter-spacing: 10px; line-height: 0;">
                     CERTIFICATION
                 </h1>

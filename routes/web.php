@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\applicant\ClearanceController;
+use App\Http\Controllers\applicant\ClearanceRenewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +44,8 @@ Route::post('/application/second', [ClearanceController::class, 'postCreateStep2
 Route::get('/application/third', [ClearanceController::class, 'createStep3']);
 Route::post('/application/third', [ClearanceController::class, 'postCreateStep3']);
 
-Route::get('/renew/first', [ClearanceController::class, 'createRenewStep1']);
-Route::post('/renew/first', [ClearanceController::class, 'postCreateRenewStep1']);
+Route::get('/renew/first', [ClearanceRenewController::class, 'createRenewStep1']);
+Route::post('/renew/first', [ClearanceRenewController::class, 'postCreateRenewStep1']);
 
-Route::get('/renew/second', [ClearanceController::class, 'createRenewStep2']);
-Route::post('/renew/second', [ClearanceController::class, 'postCreateRenewStep2']);
+Route::get('/renew/second', [ClearanceRenewController::class, 'createRenewStep2']);
+Route::post('/renew/second', [ClearanceRenewController::class, 'postCreateRenewStep2']);
