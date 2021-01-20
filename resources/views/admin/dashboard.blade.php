@@ -32,7 +32,7 @@
                 </div>
                 <div class="bg-gray-50 px-5 py-3">
                   <div class="text-sm">
-                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                    <a href="{{ route('admin.approved') }}" class="font-medium text-cyan-700 hover:text-cyan-900">
                       View all
                     </a>
                   </div>
@@ -45,7 +45,7 @@
   
               <div class="bg-white overflow-hidden shadow rounded-lg">
                 <div class="p-5">
-                  <div class="flex items-center">
+                  	<div class="flex items-center">
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: scale -->
                     </div>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="bg-gray-50 px-5 py-3">
                   <div class="text-sm">
-                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                    <a href="{{ route('admin.received') }}" class="font-medium text-cyan-700 hover:text-cyan-900">
                       View all
                     </a>
                   </div>
@@ -75,35 +75,6 @@
               <!-- More cards... -->
 
               <!-- Card -->
-  
-              <div class="bg-white overflow-hidden shadow rounded-lg">
-                <div class="p-5">
-                  <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                      <!-- Heroicon name: scale -->
-                    </div>
-                    <div class="ml-5 w-0 flex-1">
-                      <dl>
-                        <dt class="text-sm font-medium text-gray-500 truncate">
-							            Rejected Documents (Last 30 days)
-                        </dt>
-                        <dd>
-                          <div class="text-lg font-medium text-gray-900">
-                            59
-                          </div>
-                        </dd>
-                      </dl>
-                    </div>
-                  </div>
-                </div>
-                <div class="bg-gray-50 px-5 py-3">
-                  <div class="text-sm">
-                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
-                      View all
-                    </a>
-                  </div>
-                </div>
-			  </div>
 			  
 			  <div class="bg-white overflow-hidden shadow rounded-lg">
                 <div class="p-5">
@@ -114,7 +85,7 @@
                     <div class="ml-5 w-0 flex-1">
                       <dl>
                         <dt class="text-sm font-medium text-gray-500 truncate">
-                          Processed (Last 30 days)
+                          Rejected Documents(Last 30 days)
                         </dt>
                         <dd>
                           <div class="text-lg font-medium text-gray-900">
@@ -127,7 +98,7 @@
                 </div>
                 <div class="bg-gray-50 px-5 py-3">
                   <div class="text-sm">
-                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                    <a href="{{ route('admin.rejected') }}" class="font-medium text-cyan-700 hover:text-cyan-900">
                       View all
                     </a>
                   </div>
@@ -156,7 +127,7 @@
                 </div>
                 <div class="bg-gray-50 px-5 py-3">
                   <div class="text-sm">
-                    <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">
+                    <a href="{{ route('admin.renewed') }}" class="font-medium text-cyan-700 hover:text-cyan-900">
                       View all
                     </a>
                   </div>

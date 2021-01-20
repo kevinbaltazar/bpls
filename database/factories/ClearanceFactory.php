@@ -25,6 +25,7 @@ class ClearanceFactory extends Factory
             'first_name' => $this->faker->firstName,
             'middle_name' => $this->faker->lastName,
             'last_name' => $this->faker->lastName,
+            'business_type' => $this->faker->word,
             'birthdate' => $this->faker->date('Y-m-d', now()->subYears(18)),
             'birthplace' => $this->faker->address,
             'mobile_number' => $this->faker->phoneNumber,

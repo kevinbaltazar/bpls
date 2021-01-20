@@ -29,4 +29,28 @@ class DashboardController extends Controller
        
         return view('admin.dashboard', compact('processed', 'received', 'rejected', 'renewed', 'clearance'));
     }
+    
+    public function showapproved(Clearance $clearance){
+
+        $clearance = Clearance::whereNotNull('signed_at')->paginate(50);
+        return view('admin/viewing/approved', compact('clearance'));
+    }
+
+    public function showreceived(Clearance $clearance){
+
+        $clearance = Clearance::paginate(50);
+        return view('admin/viewing/received', compact('clearance'));
+    }
+
+    public function showrejected(Clearance $clearance){
+
+        $clearance = Clearance::whereNotNull('rejected_at')->paginate(50);
+        return view('admin/viewing/received', compact('clearance'));
+    }
+
+    public function showrenewed(Clearance $clearance){
+
+        $clearance = Clearance::whereNotNull('business_renew_at')->paginate(50);
+        return view('admin/viewing/received', compact('clearance'));
+    }
 }
