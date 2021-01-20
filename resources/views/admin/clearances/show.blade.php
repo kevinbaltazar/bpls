@@ -269,9 +269,13 @@
             </div>
         </div>
 
-         @foreach ($clearance->getMedia('requirements') as $requirements)
-            <img src="{{$requirements->getUrl()}}" alt="" width="200px">
-         @endforeach
+        
+            @foreach ($clearance->getMedia('requirements') as $requirements)
+            <div class="flex w-full">
+                <img class="w-9/12 mt-10 ml-32" src="{{$requirements->getUrl()}}">
+            </div>
+            @endforeach
+        </div>
 
     </div>
 </x-admin-layout>
