@@ -31,6 +31,7 @@ class PrintClearanceController extends Controller
         if ($clearance->control_number === null) {
             $controlNumber = Clearance::generateControlNumber();
             $clearance->update(['control_number' => $controlNumber]);
+            $clearance->update(['printed_at' => now()]);
         }
 
         $secretary = Admin::find($settings->secretary);
@@ -41,6 +42,7 @@ class PrintClearanceController extends Controller
             ->setOption('margin-bottom', 0);
         
 
-        return $pdf->download( $clearance->business_name . '.pdf');
+
+        return $pdf->download($clearance->business_name . '.pdf');
     }
 }

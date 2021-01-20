@@ -32,7 +32,7 @@ class DashboardController extends Controller
     
     public function showapproved(Clearance $clearance){
 
-        $clearance = Clearance::whereNotNull('signed_at')->paginate(50);
+        $clearance = Clearance::whereNotNull('printed_at')->paginate(50);
         return view('admin/viewing/approved', compact('clearance'));
     }
 

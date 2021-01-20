@@ -246,7 +246,7 @@
                         </dt>
 
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $clearance->telephone_number }}
+                            {{ $clearance->telephone_number ?? '---' }}
                         </dd>
                     </div>
 
@@ -256,11 +256,16 @@
                         </dt>
 
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            ---
+                            {{$clearance->business_type}}
                         </dd>
-                    </div>
+                    </div>   
                 </dl>
             </div>
         </div>
+
+         @foreach ($clearance->getMedia('requirements') as $requirements)
+            <img src="{{$requirements->getUrl()}}" alt="" width="200px">
+         @endforeach
+
     </div>
 </x-admin-layout>

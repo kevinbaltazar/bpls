@@ -91,7 +91,7 @@
 
 <div class="px-4 md:px-16 lg:px-20 mt-12">
 	<div class="flex flex-col text-center text-xl">
-		<p>Cedula Number: <span class="font-bold text-red-600">02689024</span></p>
+		<p>Cedula Number: <span class="font-bold text-red-600">{{$clearance->cedula_number}}</span></p>
 	  <p>Full Name: <span class="font-bold text-red-600">{{$clearance->full_name}}</span></p>
     <p>Personal Address: <span class="font-bold text-red-600">{{$clearance->personal_address}}</p>
 		<p>Business Name: <span class="font-bold text-red-600">{{$clearance->business_name}}</p>

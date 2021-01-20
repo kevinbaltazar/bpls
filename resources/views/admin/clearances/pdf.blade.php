@@ -104,10 +104,57 @@
                     <span style="font-weight: bold;">Note: Any violation(s) or illegal act(s) commited by a business will be a cause for cancellation of this clearance.</span>
                 </p>
 
-                <div>
-                    <div style="text-align: center; margin-top:100px;">
-                        <p style="font-size:15px; font-weight:bold; text-transform:uppercase; text-align:right; margin-right:100px">{{ strtoupper($captain->name ?? 'Juan Dela Cruz') }}</p>
-                        <p style="text-transform: capitalize; font-size:12px; text-align:right; font-weight:normal; margin-right:150px;">Punong Barangay</p>
+                <div style="width: 100%; position: relative; height: 320px;">
+                    <div style="position: absolute; right: 30px;">
+                        <div style="line-height: 5px;">
+                            <p style="text-align: center; font-weight: bold; text-transform: uppercase; text-decoration: underline;">
+                                {{ $clearance->full_name }}
+                            </p>
+
+                            <p>SIGNATURE OVER PRINTED NAME</p>
+                        </div>
+
+                        <table style="width: 100%;">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%;">CTC NO:</td>
+                                    <td style="width: 50%;"> {{$clearance->cedula_number ?? '---'}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 50%;">ISSUED AT:</td>
+                                    <td style="width: 50%;">Pulong Buhangin</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 50%;">ISSUED ON:</td>
+                                    <td style="width: 50%;">
+                                        {{ now()->toFormattedDateString() }}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 50%;">OR NO:</td>
+                                    <td style="width: 50%;">
+                                        {{ $formData['order_number'] ?? '---' }}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 50%;">Amount:</td>
+                                    <td style="width: 50%;">
+                                        {{ isset($formData['amount']) ? 'Php ' . number_format($formData['amount'], 2) : '---' }}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width: 60%;">STICKER/PLATE:</td>
+                                    <td style="width: 40%;">
+                                        {{ $formData['sticker_number'] ?? '---' }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
