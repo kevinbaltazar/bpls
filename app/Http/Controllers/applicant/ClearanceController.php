@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Clearance;
 use App\Models\Media;
-use Session;
 
 class ClearanceController extends Controller
 {
@@ -67,19 +66,20 @@ class ClearanceController extends Controller
         
         
         $validatedCedula = $request->validate([
-            'cedula' => 'nullable',
-            
+            'cedula_number' => 'required',  
         ]);
-        $request->validate([
-            'identification_card' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
-            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
-            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
-            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
-            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
-        ]);
-
         
-        $clearance = Clearance::create(session('first'));
+        $request->validate([
+            'identification_card' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
+            'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
+            'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
+            'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
+            'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
+        ]);
+        
+        $merge = array_merge(session('first'), $validatedCedula);
+
+        $clearance = Clearance::create($merge);
         
         $clearance->addMedia($request->file('identification_card'))->toMediaCollection('requirements');
         $clearance->addMedia($request->file('real_property_tax'))->toMediaCollection('requirements');
@@ -88,7 +88,6 @@ class ClearanceController extends Controller
         $clearance->addMedia($request->file('contract_of_lease'))->toMediaCollection('requirements');
 
         session()->put('clearance', $clearance->id);
-        
         return redirect('/application/third');
     }
 
