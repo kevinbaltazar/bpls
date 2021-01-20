@@ -33,7 +33,7 @@ class AdminsTableSeeder extends Seeder
         $abette->assignRole('superadmin');
 
         $reviewer = Admin::create([
-            'name' => 'Juan Dela Cruz',
+            'name' => 'Candy Ignacio',
             'email' => 'reviewer@bpls.site',
             'password' => Hash::make('password')
         ]);
@@ -41,7 +41,7 @@ class AdminsTableSeeder extends Seeder
         $reviewer->assignRole('reviewer');
 
         $inspector = Admin::create([
-            'name' => 'Iska',
+            'name' => 'Darren Hermogenes',
             'email' => 'inspector@bpls.site',
             'password' => Hash::make('password')
         ]);
@@ -49,27 +49,27 @@ class AdminsTableSeeder extends Seeder
         $inspector->assignRole('inspector');
 
         $approver = Admin::create([
-            'name' => 'Isko',
+            'name' => 'Edgardo S. Feliciano',
             'email' => 'approver@bpls.site',
             'password' => Hash::make('password')
         ]);
 
         $approver->assignRole('approver');
 
-        $dispatcher = Admin::create([
-            'name' => 'Juan',
-            'email' => 'dispatcher@bpls.site',
-            'password' => Hash::make('password')
-        ]);
-
-        $dispatcher->assignRole('dispatcher');
-
         $captain = Admin::create([
-            'name' => 'megure',
+            'name' => 'Raymond Castañeda',
             'email' => 'captain@bpls.site',
             'password' => Hash::make('password')
         ]);
 
         $captain->assignRole('approver');
+
+        $dispatcher = Admin::create([
+            'name' => 'Jessalyn Alberto',
+            'email' => 'dispatcher@bpls.site',
+            'password' => Hash::make('password')
+        ]);
+
+        $dispatcher->assignRole('dispatcher');
     }
 }
