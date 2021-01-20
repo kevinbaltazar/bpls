@@ -15,7 +15,7 @@ class CreateClearancesTable extends Migration
     {
         Schema::create('clearances', function (Blueprint $table) {
             $table->id();
-            $table->string('business_type');
+            $table->unsignedBigInteger('clearance_id')->nullable();
             $table->unsignedBigInteger('clearance_inspector_id')->nullable();
             $table->string('control_number')->nullable();
             $table->string('cedula_number')->nullable();
@@ -29,13 +29,20 @@ class CreateClearancesTable extends Migration
             $table->string('birthplace');
             $table->string('mobile_number');
             $table->string('telephone_number')->nullable();
-            $table->timestamp('printed_at')->nullable();
+            $table->string('business_type');
             $table->timestamp('completed_at')->nullable();
             $table->timestamp('requirements_approved_at')->nullable();
             $table->timestamp('inspected_at')->nullable();
             $table->timestamp('signed_at')->nullable();
+            $table->timestamp('printed_at')->nullable();
             $table->timestamp('rejected_at')->nullable();
-            $table->timestamp('business_renew_at')->nullable();
+            $table->timestamp('renew_completed_at')->nullable();
+            $table->timestamp('renew_requirements_approved_at')->nullable();
+            $table->timestamp('renew_inspected_at')->nullable();
+            $table->timestamp('renew_signed_at')->nullable();
+            $table->timestamp('renew_printed_at')->nullable();
+            $table->timestamp('renew_rejected_at')->nullable();
+            $table->timestamp('expired_at')->nullable();
             $table->timestamps();
         });
     }

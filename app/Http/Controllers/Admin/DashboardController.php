@@ -24,10 +24,9 @@ class DashboardController extends Controller
         $received = $clearance::count('id');
         $processed = $clearance::whereNotNull('signed_at')->whereDate('signed_at', '>', Carbon::now()->subDays(30))->count();
         $rejected = $clearance::whereNotNull('rejected_at')->whereDate('rejected_at', '>', Carbon::now()->subDays(30))->count();
-        $renewed = $clearance::whereNotNull('business_renew_at')->whereDate('business_renew_at', '>', Carbon::now()->subDays(30))->count();
         $clearance = $clearance::paginate(15);
        
-        return view('admin.dashboard', compact('processed', 'received', 'rejected', 'renewed', 'clearance'));
+        return view('admin.dashboard', compact('processed', 'received', 'rejected', 'clearance'));
     }
     
     public function showapproved(Clearance $clearance){
@@ -45,12 +44,6 @@ class DashboardController extends Controller
     public function showrejected(Clearance $clearance){
 
         $clearance = Clearance::whereNotNull('rejected_at')->paginate(50);
-        return view('admin/viewing/received', compact('clearance'));
-    }
-
-    public function showrenewed(Clearance $clearance){
-
-        $clearance = Clearance::whereNotNull('business_renew_at')->paginate(50);
         return view('admin/viewing/received', compact('clearance'));
     }
 }
