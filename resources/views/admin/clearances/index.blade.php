@@ -20,6 +20,10 @@
                                     </th>
 
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Type
+                                    </th>
+
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Status
                                     </th>
 
@@ -54,6 +58,14 @@
                                             <div class="text-sm text-gray-500">
                                                 {{ $clearance->mobile_number }}
                                             </div>
+                                        </td>
+
+                                        <td class="px-6 py-3 whitespace-nowrap text-sm text-gray-500">
+                                            @if ($clearance->clearance_id === NULL)
+                                                <span>New</span>
+                                            @else
+                                                <span>Renew</span>
+                                            @endif
                                         </td>
 
                                         <td class="px-6 py-3 whitespace-nowrap text-sm text-gray-500">

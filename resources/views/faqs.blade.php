@@ -206,6 +206,7 @@
       </button>
       <div x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
           <p>For new business registration, the following documents should be attached:</p>
+          <li>ID</li>
           <li>Latest Cedula</li>
           <li>Real Property Tax/Amilyar</li>
           <li>Land Title</li>
@@ -252,7 +253,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
-          <p x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">Yes.  Even if the application lacks the documentary requirements, the Anti-Red Tape Act requires the barangay to accept the form. However, the processing of the form may be delayed until all the requirements are complete. </p>
+          <p x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">No, the documentary requirements that will attach to the unified form should be complete to continue the process and accept the application.</p>
     </div>
 
   <div>

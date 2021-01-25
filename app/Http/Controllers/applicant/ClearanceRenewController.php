@@ -73,9 +73,11 @@ class ClearanceRenewController extends Controller
 
     public function postCreateRenewStep2(Request $request, Clearance $clearance)
     {
+        $validatedCedula = $request->validate([
+            'cedula_number' => 'required',  
+        ]);
 
         $request->validate([
-            'identification_card' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
             'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
             'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
             'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
@@ -84,9 +86,11 @@ class ClearanceRenewController extends Controller
             'picture_of_business' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10084',
         ]);
 
-        $clearance = Clearance::create(session('clearance'));
+        $merge = array_merge(session('clearance'), $validatedCedula);
+        $clearance = Clearance::create($merge);
+
         
-        $clearance->addMedia($request->file('identification_card'))->toMediaCollection('renew_requirements');
+        
         $clearance->addMedia($request->file('real_property_tax'))->toMediaCollection('renew_requirements');
         $clearance->addMedia($request->file('land_title'))->toMediaCollection('renew_requirements');
         $clearance->addMedia($request->file('dti'))->toMediaCollection('renew_requirements');

@@ -92,7 +92,7 @@
 			<div class="sm:col-span-6">
 				<div class="sm:col-span-2">
 					<label for="cedula_number" class="block text-sm font-medium text-gray-700">
-						cedula Number
+						Cedula Number
 					</label>
 					
 					<div class="mt-1">

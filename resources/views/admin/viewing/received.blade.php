@@ -15,6 +15,9 @@
                 <thead>
                   <tr>
                     <th class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Document Type
+                    </th>
+                    <th class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Control Number
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -34,6 +37,15 @@
                 <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($clearance as $clearances)
                   <tr class="bg-white">
+                    @if ($clearances->clearance_id === NULL)
+                    <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
+                      <span class="text-gray-900 font-medium">New</span>
+                    </td>
+                    @else
+                    <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
+                      <span class="text-gray-900 font-medium">Renew</span>
+                    </td>
+                    @endif
                     <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
                         <span class="text-gray-900 font-medium">{{$clearances->control_number ?? '-- -- --'}}</span>
                     </td>

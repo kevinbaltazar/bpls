@@ -95,7 +95,7 @@
           </div>
           <div class="mx-auto md:w-8/12 lg:w-5/12">
             <h1 class="text-lg text-center font-bold md:text-xl lg:text-3xl">Contact Information</h1>
-            <p class="font-medium pt-2 text-gray-400 text-xs w-64 text-center mx-auto md:w-full md:text-sm">Fill up the form and our Team will get back to you with 24 hours.</p>
+            <p class="font-medium pt-2 text-gray-400 text-xs w-64 text-center mx-auto md:w-full md:text-sm">Fill up the form and our team will get back to you within 24 hours.</p>
             <form action="#">
                 <div class="w-10/12 mx-auto mt-5 ">
                     <div class="mt-3">

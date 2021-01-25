@@ -199,6 +199,9 @@
                         <th class="px-0 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Business Type
                         </th>
+                        <th class="px-0 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Document Type
+                        </th>
                         <th class="hidden px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider md:block">
                           Status
                         </th>
@@ -208,14 +211,14 @@
                       </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-					@foreach ($clearance as $clearances)
+					          @foreach ($clearance as $clearances)
                       <tr class="bg-white">
                         <td class="max-w-0 w-full px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                           <div class="flex">
                             <a href="#" class="group inline-flex space-x-2 truncate text-sm">
                               <!-- Heroicon name: cash -->
                               <p class="text-gray-500 truncate group-hover:text-gray-900">
-								  {{$clearances->business_name}}
+								                {{$clearances->business_name}}
                               </p>
                             </a>
                           </div>
@@ -223,14 +226,23 @@
                         <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
                           <span class="text-gray-900 font-medium">{{$clearances->business_type}}</span>
                         </td>
+                        @if ($clearances->clearance_id === NULL)
+                        <td class="px-10 py-4 text-center whitespace-nowrap text-sm text-gray-500">
+                          <span class="text-gray-900 font-medium">New</span>
+                        </td>
+                        @else
+                        <td class="px-10 py-4 text-center whitespace-nowrap text-sm text-gray-500">
+                          <span class="text-gray-900 font-medium">Renew</span>
+                        </td>
+                        @endif
                         <td class="hidden px-6 py-4 whitespace-nowrap text-sm text-gray-500 md:block">
-							<x-clearance-status-chip status="{{ $clearances->status }}" />
+							            <x-clearance-status-chip status="{{ $clearances->status }}" />
                         </td>
                         <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
-							{{$clearances->created_at->toFormattedDateString()}}
+							            {{$clearances->created_at->toFormattedDateString()}}
                         </td>
-					  </tr>
-					@endforeach
+                      </tr>
+                    @endforeach
   
                       <!-- More rows... -->
                       

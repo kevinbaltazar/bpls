@@ -15,7 +15,10 @@
                 <thead>
                   <tr>
                     <th class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Control Number
+                      Document Type
+                    </th>
+                    <th class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Control Number
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Business Name
@@ -34,6 +37,15 @@
                 <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($clearance as $clearances)
                   <tr class="bg-white">
+                    @if ($clearances->clearance_id === NULL)
+                    <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
+                      <span class="text-gray-900 font-medium">New</span>
+                    </td>
+                    @else
+                    <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
+                      <span class="text-gray-900 font-medium">Renew</span>
+                    </td>
+                    @endif
                     <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
                         <span class="text-gray-900 font-medium">{{$clearances->control_number ?? '-- -- --'}}</span>
                     </td>
@@ -69,13 +81,13 @@
                         <span class="font-medium">{{$clearance->total()}}</span>
                         results
                       </p>
-					</div>
+					          </div>
                     <div class="flex-1 flex justify-between sm:justify-end">
                       <a href="{{$clearance->previousPageUrl()}}" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-						Previous
+					            	Previous
                       </a>
                       <a href="{{$clearance->nextPageUrl()}}" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-						Next
+					            	Next
                       </a>
                     </div>
                   </nav>

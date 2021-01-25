@@ -134,7 +134,7 @@
                     </p>
                 </div>
                 <div class="text-center">
-                    <p style="font-size:15px;">STATUS: &nbsp; [ X ]NEW  &nbsp;[ X ]RENEWAL</p>
+                    <p style="font-size:15px;">STATUS: &nbsp; [ @if($clearance->clearance_id === NULL) X @endif ]NEW  &nbsp;[ @if($clearance->clearance_id !== NULL) X @endif  ]RENEWAL</p>
                 </div>
                 <div class="text-center">
                     <p class="text" style="line-height: 25px; width:80%; margin:auto">
