@@ -33,6 +33,8 @@ class PrintClearanceController extends Controller
             $clearance->update(['control_number' => $controlNumber]);
         }
 
+        $clearance->update($formData);
+
         if(!$clearance->clearance_id) {
             $clearance->update(['printed_at' => now()]);
         }
