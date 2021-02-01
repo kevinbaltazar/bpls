@@ -7,8 +7,10 @@ use App\Http\Controllers\Admin\ClearanceController;
 use App\Http\Controllers\Admin\GeneralSettingsController;
 use App\Models\Admin;
 use App\Http\Controllers\Admin\PrintClearanceController;
+use App\Http\Controllers\ContactUsController;
 use App\Models\Clearance;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,5 +50,3 @@ Route::get('dashboard/approved',  [DashboardController::class, 'showapproved'])-
 Route::get('dashboard/received',  [DashboardController::class, 'showreceived'])->name('received');
 Route::get('dashboard/rejected',  [DashboardController::class, 'showrejected'])->name('rejected');
 Route::get('dashboard/renewed',  [DashboardController::class, 'showrenewed'])->name('renewed');
-
-

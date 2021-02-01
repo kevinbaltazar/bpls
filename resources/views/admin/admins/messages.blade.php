@@ -19,26 +19,48 @@
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Message
                         </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+
+                        </th>
                       </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
+                      @foreach ($messages as $message) 
                       <tr>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          Abette Gumasing
+                          {{$message->full_name}}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          ahgumasing@gmail.com
+                          {{$message->email}}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          +639166801952
+                          {{$message->contact_number}}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-48 fixed overflow-hidden overflow-ellipsis">
-                          Lorem ipsum dolorasdasdasdasdasdasdasdasdasdasd
+                          {{$message->message}}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                          
+                        <x-modal 
+                        variant="info" 
+                        title="Message" 
+                        with-icon="false"
+                        >
+
+                        <p class="w-64 h-auto bg-red-50">{{$message->message}}</p>
+                        {{-- <textarea class="w-100 border-none" name="" id="" cols="60" rows="10" disabled>lorem100</textarea> --}}
+
+                          <x-slot name="trigger">
+                            <button class="text-indigo-500 bg-none" @click="on = true">
+                              Show
+                            </button>
+                          </x-slot>
+
+                        </x-modal>
+
                         </td>
                       </tr>
+                      @endforeach
           
                       <!-- More items... -->
                     </tbody>
@@ -47,6 +69,6 @@
               </div>
             </div>
           </div>
-    
+          
     </div>
 </x-admin-layout>

@@ -77,13 +77,14 @@
                 </div>
 
                 <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                    <x-button @click="{{ $onSubmit ?? '' }}" class="ml-3" variant="{{ $variant }}">
-                        {{ $submitLabel }}
-                    </x-button>
-
-                    <x-button @click="on = false" variant="secondary">
-                        {{ $cancelLabel }}
-                    </x-button>
+                    @if ($title !== "Message")
+                        <x-button @click="{{ $onSubmit ?? '' }}" class="ml-3" variant="{{ $variant }}">
+                            {{ $submitLabel }}
+                        </x-button>
+                        <x-button @click="on = false" variant="secondary">
+                            {{ $cancelLabel }}
+                        </x-button>
+                    @endif
                 </div>
             </div>
         </div>

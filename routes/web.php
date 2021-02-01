@@ -16,9 +16,7 @@ use App\Http\Controllers\ContactUsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('admin/messages', function () {
-    return view('admin.admins.messages');
-});
+
 
 Route::get('/', function () {
     return view('home');
@@ -51,3 +49,6 @@ Route::post('/renew/first', [ClearanceRenewController::class, 'postCreateRenewSt
 
 Route::get('/renew/second', [ClearanceRenewController::class, 'createRenewStep2']);
 Route::post('/renew/second', [ClearanceRenewController::class, 'postCreateRenewStep2']);
+
+
+Route::get('admin/messages',  [ContactUsController::class, 'show'])->name('messages');
