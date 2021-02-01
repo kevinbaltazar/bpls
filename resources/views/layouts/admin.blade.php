@@ -4,10 +4,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <img class="block lg:hidden h-8 w-auto" src="{{url('/png/pulo-logo.png')}}" alt="pulo-logo">
-                        <p class="hidden lg:block text-black font-medium">Pulong Buhangin</p>
-                    </div>
                     <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">   
                         <a 
                             href="{{ route('admin.dashboard') }}" 
