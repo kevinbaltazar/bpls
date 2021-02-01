@@ -154,6 +154,52 @@
       <p x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">Business permits and licenses regulate safety, structure and appearance of the business community. They act as a validation that your business follows certain laws and ordinances. Requirements vary by authority, and failure to follow often results in fines or even having your business shut down. </p>
     </div>
 
+    <div x-data="{ show: false }" class="py-6 border-b-2">
+      <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl">
+        <span class="w-10/12">What is the step by step process for registering a new business permit?</span>
+        <svg 
+          class="w-6 h-6 ml-auto mr-3"
+          :class="{ 'transform rotate-180': show }"
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
+       
+        <li>Step 1 – Fill out request information.</li>
+        <li>Step 2 – Enter cedula number and attach a clear colored images of documentary requirements.</li>
+        <li>Step 3 – Summiting of filled out information and attached documentary requirements.</li>
+      </div>
+    </div>
+    
+    <div x-data="{ show: false }" class="py-6 border-b-2">
+      <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl">
+        <span class="w-10/12">What is the step by step process for renewing a business permit?</span>
+        <svg 
+          class="w-6 h-6 ml-auto mr-3"
+          :class="{ 'transform rotate-180': show }"
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div x-show="show" class="panel overflow-hidden mt-2 text-sm w-11/12 lg:text-base">
+       
+        <li>Step 1 – Enter business name and control number.</li>
+        <li>Step 2 – Enter cedula number and attach a clear colored images of documentary requirements.</li>
+        <li>Step 3 – Summiting of filled out information and attached documentary requirements.</li>
+      </div>
+    </div>
+
+
+
     <div x-data="{ show: false }" class="py-6 border-b-2 ">
       <button @click="show = !show" class="accordion font-bold flex w-full text-left focus:outline-none text-sm lg:text-xl"><span class="w-10/12">Why was the application form I submitted for applying New/Renewal of business permits rejected?</span>
         <svg 

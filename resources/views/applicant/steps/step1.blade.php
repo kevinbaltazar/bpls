@@ -1,9 +1,10 @@
+
+
 @extends('applicant.application')
 @section('application')
 <div class="lg:border-t lg:border-b lg:border-gray-200">
   <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Progress">
     <ol class="rounded-md overflow-hidden lg:flex lg:border-l lg:border-r lg:border-gray-200 lg:rounded-none">
-
       <li class="relative overflow-hidden lg:flex-1">
         <div class="border border-gray-200 overflow-hidden border-b-0 rounded-t-md lg:border-0">
             <!-- Completed Step -->
@@ -41,7 +42,7 @@
               
         </div>
       </li>
-  
+      
       <li class="relative overflow-hidden lg:flex-1">
         <div class="border border-gray-200 overflow-hidden lg:border-0">
           <!-- Current Step -->

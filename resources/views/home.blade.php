@@ -98,7 +98,7 @@
                       <span class="block text-indigo-600 xl:inline">Licensing System</span>
                     </h1>
                     <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                        A better experience for applying and renewing business permit and licenses. Let us help you to register your business in an easy way without inconvenience anytime, anywhere.
+                      A better experience for applying and renewing business permit and licenses. Let us help you to register your business without inconvenience anytime, anywhere.
                     </p>
                     <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                       <div class="rounded-md shadow">

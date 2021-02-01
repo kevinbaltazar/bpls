@@ -78,6 +78,7 @@
                         variant="error" 
                         title="Reject Clearance" 
                         submit-label="Reject" 
+                        with-icon="false"
                         on-submit="document.getElementById('reject-form').submit()"
                     >
                         <x-slot name="trigger">
@@ -90,13 +91,11 @@
                             @csrf
                             @method('PATCH')
 
-                            <textarea name="rejected_message" id="" cols="30" rows="10"></textarea>
+                            <textarea class="resize-none w-full" name="rejected_message" id="" cols="30" rows="10" placeholder="Please enter why you reject the document"></textarea>
                             <input type="hidden" name="new_status" value="rejected" />
                         </form>
 
-                        <p class="text-sm text-gray-500">
-                            Are you sure you want to reject this clearance application?
-                        </p>
+                        
                     </x-modal>
 
                     <x-modal 
@@ -119,7 +118,6 @@
                             <input type="hidden" name="new_status" value="approved" />
 
                             <p class="text-sm text-gray-500">
-                                You are approving this business clearance
                                 
                                 @if ($clearance->status === 'pending')
                                     and you have to select the designated inspector below
@@ -128,7 +126,7 @@
                             
                             @if ($clearance->status === 'reviewed')
                                 <div class="mt-4">
-                                    <textarea name="inspector_comment" id="" cols="30" rows="10"></textarea>
+                                    <textarea class="w-full resize-none h-32"name="inspector_comment" id="" cols="30" rows="10" placeholder="Please enter why you approve the document"></textarea>
                                 </div>
                             @endif
 
