@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\applicant\ClearanceController;
 use App\Http\Controllers\applicant\ClearanceRenewController;
+use App\Http\Controllers\ContactUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,7 @@ Route::get('/AboutUs', function () {
 Route::get('/ContactUs', function () {
     return view('contact-us');
 });
-
-
-
+Route::post('/ContactUs', [ContactUsController::class, 'insert']);
 
 Route::get('/application/first', [ClearanceController::class, 'createStep1']);
 Route::post('/application/first', [ClearanceController::class, 'postCreateStep1']);

@@ -96,12 +96,13 @@
           <div class="mx-auto md:w-8/12 lg:w-5/12">
             <h1 class="text-lg text-center font-bold md:text-xl lg:text-3xl">Contact Information</h1>
             <p class="font-medium pt-2 text-gray-400 text-xs w-64 text-center mx-auto md:w-full md:text-sm">Fill up the form and our team will get back to you within 24 hours.</p>
-            <form action="#">
+            <form action="#" method="POST">
+              @csrf
                 <div class="w-10/12 mx-auto mt-5 ">
                     <div class="mt-3">
                         <label for="fullName" class="block text-sm font-medium text-gray-700 text-left">Full Name</label>
                         <div class="mt-1">
-                          <input type="text" name="fullName" id="fullName" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                          <input type="text" name="full_name" id="fullName" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                         </div>
                     </div>
                     <div class="mt-3">
@@ -113,13 +114,13 @@
                     <div class="mt-3">
                         <label for="contactNumber" class="block text-sm font-medium text-gray-700 text-left">Contact Number</label>
                         <div class="mt-1">
-                          <input type="text" name="contactNumber" id="contactNumber" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="">
+                          <input type="text" name="contact_number" id="contactNumber" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="">
                         </div>
                     </div>
                     <div class="mt-3">
                         <label for="message" class="block text-sm font-medium text-gray-700 text-left">Message</label>
                         <div class="mt-1">
-                            <textarea class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" name="" id="" cols="30" rows="10"></textarea>
+                            <textarea class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" name="message" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="mt-6 mb-8">

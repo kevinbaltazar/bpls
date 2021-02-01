@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\ContactUs;
+
+class ContactUsController extends Controller
+{
+    public function insert(Request $request){
+        $data = $request->validate([
+            'full_name' => 'required', 
+            'email' => 'required',  
+            'contact_number' => 'required',  
+            'message' => 'required',   
+        ]);
+        
+        ContactUs::create($data);
+        
+        return redirect('ContactUs');
+    }
+}
