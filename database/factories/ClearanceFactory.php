@@ -25,7 +25,7 @@ class ClearanceFactory extends Factory
             'first_name' => $this->faker->firstName,
             'middle_name' => $this->faker->lastName,
             'last_name' => $this->faker->lastName,
-            'business_type' => $this->faker->word,
+            'business_type' => "Sari-sari Store",
             'birthdate' => $this->faker->date('Y-m-d', now()->subYears(18)),
             'birthplace' => $this->faker->address,
             'mobile_number' => $this->faker->phoneNumber,
@@ -33,6 +33,7 @@ class ClearanceFactory extends Factory
             'business_name' => $this->faker->company,
             'business_address' => $this->faker->address,
             'cedula_number' => $this->faker->numberBetween($min = 10000, $max = 99999),
+            'completed_at' => now(),
         ];
     }
 }

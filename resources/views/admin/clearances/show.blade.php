@@ -90,6 +90,7 @@
                             @csrf
                             @method('PATCH')
 
+                            <textarea name="rejected_message" id="" cols="30" rows="10"></textarea>
                             <input type="hidden" name="new_status" value="rejected" />
                         </form>
 

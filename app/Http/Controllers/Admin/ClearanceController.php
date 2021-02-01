@@ -9,6 +9,7 @@ use App\Models\Clearance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class ClearanceController extends Controller
 {
@@ -54,11 +55,21 @@ class ClearanceController extends Controller
                 $clearance->status === ClearanceStatus::Pending &&
                     $request->new_status === ClearanceStatus::Approved
             )
-        ]);
-
+        ]);        
         
         if ($request->new_status === ClearanceStatus::Rejected) {
+            
+            $msg = "Your application was rejected.\n\nReason: ";
+
+            Nexmo::message()->send([
+                'to'   => $clearance->mobile_number,
+                'from' => 'Pulong Buhangin',
+                'text' => $msg . $request->rejected_message 
+            ]);
+            
             $clearance->reject();
+            $clearance->rejected_message = $rejected_message;
+            $clearance->save();  
         }
 
         if ($request->new_status === ClearanceStatus::Approved) {
