@@ -48,3 +48,5 @@ Route::get('dashboard/approved',  [DashboardController::class, 'showapproved'])-
 Route::get('dashboard/received',  [DashboardController::class, 'showreceived'])->name('received');
 Route::get('dashboard/rejected',  [DashboardController::class, 'showrejected'])->name('rejected');
 Route::get('dashboard/renewed',  [DashboardController::class, 'showrenewed'])->name('renewed');
+
+
