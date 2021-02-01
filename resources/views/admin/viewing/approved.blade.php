@@ -3,7 +3,7 @@
         <h2 class="text-lg leading-6 font-medium text-gray-900">Viewing of all processed documents</h2>
         <div>
             <label for="search" class="sr-only">search</label>
-            <input type="text" name="search" id="search" class=" justify-betweenshadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-56 sm:text-sm border-gray-300 rounded-md" placeholder="Search anything here...">
+            <input type="text" name="search" id="search" class=" justify-between shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-56 sm:text-sm border-gray-300 rounded-md" placeholder="Search anything here...">
         </div>
     </div>
    

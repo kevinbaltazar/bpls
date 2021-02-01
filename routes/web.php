@@ -20,6 +20,10 @@ Route::get('admin/messages', function () {
     return view('admin.admins.messages');
 });
 
+Route::get('admin/reports', function () {
+    return view('admin.admins.reports');
+});
+
 Route::get('/', function () {
     return view('home');
 });
