@@ -47,11 +47,11 @@
                         with-icon="false"
                         >
 
-                        <p class="w-64 h-auto bg-red-50">{{$message->message}}</p>
-                        {{-- <textarea class="w-100 border-none" name="" id="" cols="60" rows="10" disabled>lorem100</textarea> --}}
+                  
+                        <textarea class="w-100 border-none h-auto resize-none" name="" id="" cols="60" rows="10" disabled>{{$message->message}}</textarea>
 
                           <x-slot name="trigger">
-                            <button class="text-indigo-500 bg-none" @click="on = true">
+                            <button class="text-indigo-500 bg-none font-semibold focus:outline-none" @click="on = true">
                               Show
                             </button>
                           </x-slot>

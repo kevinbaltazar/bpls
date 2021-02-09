@@ -120,7 +120,7 @@
                     <div class="mt-3">
                         <label for="message" class="block text-sm font-medium text-gray-700 text-left">Message</label>
                         <div class="mt-1">
-                            <textarea class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" name="message" id="" cols="30" rows="10"></textarea>
+                            <textarea class="min-h-0 resize-none hadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" name="message" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="mt-6 mb-8">
@@ -129,6 +129,7 @@
                 </div>
             </form>
         </div>
+     
 
 
           <script>
