@@ -1,7 +1,7 @@
 <x-admin-layout>
     <div class="max-w-7xl mx-20  flex justify-between items-center mb-4">
         <h2 class="text-lg leading-6 font-medium text-gray-900">Reports</h2>
-        <form action="{{route('filter')}}" method="POST">
+        <form action="{{route('filter')}}" method="get">
           @csrf
         <div class="flex">
           <div class="mr-3">
@@ -19,15 +19,18 @@
             </div>
             <div>
         </form>
-                <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                <a href="{{route('exportPDF')}}" type="button" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     <!-- Heroicon name: mail -->
                     <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                     Export
-                  </button>
+                </a>
             </div>
             
         </div>
     </div>
+    {{-- amount --}}
+    <span>{{$sum}}</span>
+    
     <div class="mx-20">
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
