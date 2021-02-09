@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\applicant\ClearanceController;
 use App\Http\Controllers\applicant\ClearanceRenewController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,7 @@ use App\Http\Controllers\ContactUsController;
 */
 
 
-Route::get('admin/reports', function () {
-    return view('admin.admins.reports');
-});
+
 
 Route::get('/', function () {
     return view('home');
@@ -55,4 +54,4 @@ Route::get('/renew/second', [ClearanceRenewController::class, 'createRenewStep2'
 Route::post('/renew/second', [ClearanceRenewController::class, 'postCreateRenewStep2']);
 
 
-Route::get('admin/messages',  [ContactUsController::class, 'show'])->name('messages');
+Route::post('admin/reports',  [ReportController::class, 'filter'])->name('filter');

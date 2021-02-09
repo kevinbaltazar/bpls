@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\PrintClearanceController;
 use App\Http\Controllers\ContactUsController;
 use App\Models\Clearance;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReportController;
 
 
 /*
@@ -22,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 
 
@@ -50,3 +50,7 @@ Route::get('dashboard/approved',  [DashboardController::class, 'showapproved'])-
 Route::get('dashboard/received',  [DashboardController::class, 'showreceived'])->name('received');
 Route::get('dashboard/rejected',  [DashboardController::class, 'showrejected'])->name('rejected');
 Route::get('dashboard/renewed',  [DashboardController::class, 'showrenewed'])->name('renewed');
+
+Route::get('admin/messages',  [ContactUsController::class, 'show'])->name('messages');
+Route::get('admin/reports',  [ReportController::class, 'index'])->name('reports');
+
