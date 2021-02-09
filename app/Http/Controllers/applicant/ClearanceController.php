@@ -12,9 +12,12 @@ class ClearanceController extends Controller
 {
     public function createStep1()
     {
+        // session()->forget('first');
         return view('applicant.steps.step1', [
             'first' => session('first', []),
         ]);
+
+        
     }
 
     public function postCreateStep1(Request $request)
@@ -34,10 +37,10 @@ class ClearanceController extends Controller
             'business_type' => 'required'
         ]);
 
-        if(!$validatedData)
-        {
-            return redirect()->back()->withInput()->withErrors(['msg', 'errors']);
-        }
+        // if(!$validatedData)
+        // {
+        //     return redirect()->back()->withInput()->withErrors(['msg', 'errors']);
+        // }
 
         session()->put('first', $validatedData);
 

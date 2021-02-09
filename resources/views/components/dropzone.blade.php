@@ -5,7 +5,7 @@
 ])
 
 <div {{ $attributes->merge(['class' => $class]) }} x-data="Dropzone()">
-    <label for="cover_photo" class="block text-sm font-medium text-gray-700">
+    <label for="cover_photo" class="block text-sm font-medium text-gray-700 mt-4">
         {{ $label }}
     </label>
 
