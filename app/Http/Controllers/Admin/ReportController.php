@@ -15,11 +15,13 @@ class ReportController extends Controller
     {
         $this->middleware(['role:superadmin,admin']);
     }
-
+    
     public function index(){
         
+        session('reports', []);
         $reports = Clearance::paginate(30);
         $sum =  $reports->sum('amount');
+        session()->put('reports', $reports);
         return view('admin.admins.reports', compact('reports','sum'));
     }
 
@@ -32,16 +34,22 @@ class ReportController extends Controller
         if($request->date_from === NULL || $request->date_to === NULL){
             $reports = Clearance::paginate(30);
             $sum = $reports->sum('amount');
+            session()->put('reports', $reports);
             return view('admin.admins.reports', compact('reports','sum'));
         }
         else
         {
             $reports = Clearance::whereBetween('created_at', [$date_from, $date_to])->paginate(30);
             $sum = $reports->sum('amount');
+            session()->put('reports', $reports);
             return view('admin.admins.reports', compact('reports','sum'));
         }
         
     }
 
+    public function exportPDF() {
+        $pdf = PDF::loadView('admin.clearances.pdfReports', ['reports' => session('reports')]);
+        return $pdf->setPaper('a4')->setOrientation('portrait')->setOption('margin-top', 5)->download('export-' . '.pdf');
+    }
 
 }

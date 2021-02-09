@@ -67,21 +67,19 @@ class ClearanceController extends Controller
 
     public function postCreateStep2(Request $request)
     {
-        
-        
-        $validatedCedula = $request->validate([
-            'cedula_number' => 'required',  
-        ]);
+       
         
         $request->validate([
+            'cedula_number' => 'required',
             'identification_card' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
             'real_property_tax' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
             'land_title' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
             'dti' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
             'contract_of_lease' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5084',
         ]);
-        
-        $merge = array_merge(session('first'), $validatedCedula);
+
+        $cedula_number['cedula_number'] = $request->cedula_number;
+        $merge = array_merge(session('first'), $cedula_number);
 
         $clearance = Clearance::create($merge);
         
