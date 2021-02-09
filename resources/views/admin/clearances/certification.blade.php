@@ -112,7 +112,7 @@
                 <span style="margin-left: 30px;">This is to certify that the person whose name, signature and other personal data appearing hereon, has</span> 
                 requested for a Business certification from this Office for their tenants. See attached list;
             </p>
-
+                
             <div style="margin-top: 30px;">
                 <table class="information-table">
                     <tbody>

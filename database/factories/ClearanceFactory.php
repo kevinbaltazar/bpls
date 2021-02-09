@@ -28,7 +28,7 @@ class ClearanceFactory extends Factory
             'business_type' => "Sari-sari Store",
             'birthdate' => $this->faker->date('Y-m-d', now()->subYears(18)),
             'birthplace' => $this->faker->address,
-            'mobile_number' => $this->faker->phoneNumber,
+            'mobile_number' => +639513489084,
             'personal_address' => $this->faker->address,
             'business_name' => $this->faker->company,
             'business_address' => $this->faker->address,

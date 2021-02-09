@@ -29,7 +29,7 @@
         </div>
     </div>
     {{-- amount --}}
-    <span>{{$sum}}</span>
+    
     
     <div class="mx-20">
         <div class="flex flex-col">
