@@ -54,6 +54,4 @@ Route::get('/renew/second', [ClearanceRenewController::class, 'createRenewStep2'
 Route::post('/renew/second', [ClearanceRenewController::class, 'postCreateRenewStep2']);
 
 
-Route::get('admin/reports',  [ReportController::class, 'filter'])->name('filter');
-Route::get('admin/export',  [ReportController::class, 'exportPDF'])->name('exportPDF');
-
+Route::post('admin/reports',  [ReportController::class, 'filter'])->name('filter');
