@@ -146,9 +146,9 @@
                     <div class="mt-1">
                         <input type="text" name="last_name" value="{{$first['last_name'] ?? old('last_name')}}" id="last_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('last_name') ? " border-red-600" : "")}}">
                     </div>
-                    <span class="pt-1 flex text-red-600 {{($errors->first('last_name') ? "block" : "hidden")}}">
-                      <svg class="w-4 h-4 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                      <span class="text-sm items-center">This last name is required.</span>
+                    <span class="pt-1 flex text-red-600 items-center  {{($errors->first('last_name') ? "block" : "hidden")}}">
+                      <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      <span class="text-sm">This field name is required.</span>
                     </span>
                 </div>
 
@@ -157,8 +157,12 @@
                         Personal Address
                     </label>
                     <div class="mt-1">
-                        <input type="text" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="personal_address" value="{{$first['personal_address'] ?? ''}}" id="personal_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('personal_address') ? " border-red-600" : "")}}">
                     </div>
+                    <span class="pt-1 flex text-red-600 items-center  {{($errors->first('personal_address') ? "block" : "hidden")}}">
+                      <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      <span class="text-sm">This field name is required.</span>
+                    </span>
                 </div>
 
                 <div class="sm:col-span-3">
@@ -166,8 +170,12 @@
                       Business Name
                     </label>
                     <div class="mt-1">
-                        <input type="text" name="business_name" value="{{$first['business_name'] ?? ''}}" id="business_name" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="business_name" value="{{$first['business_name'] ?? ''}}" id="business_name" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('business_name') ? " border-red-600" : "")}}">
                     </div>
+                    <span class="pt-1 flex text-red-600 items-center  {{($errors->first('business_name') ? "block" : "hidden")}}">
+                      <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      <span class="text-sm">This field name is required.</span>
+                    </span>
                 </div>
 
                 <div class="sm:col-span-3">
@@ -175,8 +183,12 @@
                       Business Address
                     </label>
                     <div class="mt-1">
-                        <input type="text" name="business_address" value="{{$first['business_address'] ?? ''}}" id="business_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="business_address" value="{{$first['business_address'] ?? ''}}" id="business_address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('business_address') ? " border-red-600" : "")}}">
                     </div>
+                    <span class="pt-1 flex text-red-600 items-center  {{($errors->first('business_address') ? "block" : "hidden")}}">
+                      <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      <span class="text-sm">This field name is required.</span>
+                    </span>
                 </div>
 
                 <div class="sm:col-span-1">
@@ -184,8 +196,12 @@
                       Birthdate
                     </label>
                     <div class="mt-1">
-                        <input type="date" name="birthdate" value="{{$first['birthdate'] ?? ''}}" id="birthdate" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <input type="date" name="birthdate" value="{{$first['birthdate'] ?? ''}}" id="birthdate" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('birthdate') ? " border-red-600" : "")}}">
                     </div>
+                    <span class="pt-1 flex text-red-600 items-center  {{($errors->first('birthdate') ? "block" : "hidden")}}">
+                      <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      <span class="text-sm">This field name is required.</span>
+                    </span>
                 </div>
 
                 <div class="sm:col-span-2">
@@ -193,22 +209,30 @@
                       Birthplace
                     </label>
                     <div class="mt-1">
-                        <input type="text" name="birthplace" value="{{$first['birthplace'] ?? ''}}" id="birthplace" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="birthplace" value="{{$first['birthplace'] ?? ''}}" id="birthplace" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('birthplace') ? " border-red-600" : "")}}">
                     </div>
-                </div>
-
-                <div class="sm:col-span-1">
-                    <label for="birthdate" class="block text-sm font-medium text-gray-700">
-                      Contact number
-                    </label>
-                    <div class="mt-1">
-                        <input type="text" name="mobile_number" value="{{$first['mobile_number'] ?? ''}}" id="birthdate" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
-                    </div>
+                    <span class="pt-1 flex text-red-600 items-center  {{($errors->first('birthplace') ? "block" : "hidden")}}">
+                      <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      <span class="text-sm">This field name is required.</span>
+                    </span>
                 </div>
 
                 <div class="sm:col-span-2">
+                    <label for="birthdate" class="block text-sm font-medium text-gray-700">
+                     Mobile Number
+                    </label>
+                    <div class="mt-1">
+                        <input type="text" name="mobile_number" value="{{$first['mobile_number'] ?? ''}}" id="birthdate" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('mobile_number') ? " border-red-600" : "")}}">
+                    </div>
+                    <span class="pt-1 flex text-red-600 items-center  {{($errors->first('birthplace') ? "block" : "hidden")}}">
+                      <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      <span class="text-sm">This field name is required.</span>
+                    </span>
+                </div>
+
+                <div class="sm:col-span-1">
                     <label for="birthplace" class="block text-sm font-medium text-gray-700">
-                      Business Telephone Number(Optional)
+                     Telephone number
                     </label>
                     <div class="mt-1">
                         <input type="text" name="telephone_number" value="{{$first['telephone_number'] ?? ''}}"  id="birthplace" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
@@ -218,11 +242,15 @@
             </div>
         </div>
 
-      <div class="mt-5 w-9/12">
+      <div class="w-9/12">
 		  	<h2 class="font-semibold text-sm">Please input your business type</h2>
       </div>
 
-    <input type="text" name="business_type" value="{{$first['business_type'] ?? ''}}"  id="birthplace" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="e.g Sari-sari store">
+    <input type="text" name="business_type" value="{{$first['business_type'] ?? ''}}"  id="birthplace" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-full sm:text-sm border-gray-300 rounded-md mb-0 {{($errors->first('business_type') ? " border-red-600" : "")}}" placeholder="e.g Sari-sari store" >
+    <span class="flex text-red-600 items-center {{($errors->first('business_type') ? "block" : "hidden")}}">
+      <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span class="text-sm">This field name is required.</span>
+    </span>
       <div class="pt-5">
           <div class="flex justify-end mb-8">
               <a href="{{ url('/')}}"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
