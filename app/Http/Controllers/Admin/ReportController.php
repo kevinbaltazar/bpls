@@ -48,8 +48,10 @@ class ReportController extends Controller
     }
 
     public function exportPDF() {
+
         $pdf = PDF::loadView('admin.clearances.pdfReports', ['reports' => session('reports')]);
         return $pdf->setPaper('a4')->setOrientation('portrait')->setOption('margin-top', 5)->download('export-' . '.pdf');
+    
     }
 
 }
