@@ -3,7 +3,7 @@
         <h2 class="text-lg leading-6 font-medium text-gray-900">Reports</h2>
         <div class="flex">
             <div class="mr-3">
-                <label class="sr-only">Date</label>
+                <label class="sr-only">Filter</label>
                 <input type="date" name="email" id="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
             </div>
             <div class="mr-3" >
