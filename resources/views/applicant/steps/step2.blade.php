@@ -91,20 +91,20 @@
 					</label>
 					
 					<div class="mt-1">
-						<input type="text" name="cedula_number" value="{{$first['cedula_number'] ?? ''}}"  id="cedula_number" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('cedula_number') ? " border-red-600" : "")}}">
+						<input type="text" name="cedula_number" value="{{$first['cedula_number'] ?? old('cedula_number')}}"  id="cedula_number" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{ $errors->first('cedula_number') ? ' border-red-600' : ''}}">
 					</div>
-					<span class="pt-1 flex text-red-600 items-center  {{($errors->first('cedula_number') ? "block" : "hidden")}}">
-						<svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-						<span class="text-sm">This field name is required.</span>
-					  </span>
+					<span class="pt-1 flex text-red-600 items-center {{($errors->first('cedula_number') ? "block" : "hidden")}}">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-sm">This field is required.</span>
+                      </span>
 				</div>
 			</div>
-		
-			<x-dropzone class="sm:col-span-6" class="i{{($errors->first('identification_card') ? "block" : "hidden")}}"name="identification_card" label="Identification Card(ID)" />
-			<x-dropzone class="sm:col-span-6" name="real_property_tax" label="Real Property Tax" />
-			<x-dropzone class="sm:col-span-6" name="land_title" label="Land Title" />
-			<x-dropzone class="sm:col-span-6" name="dti" label="DTI/Sec Registration" />
-			<x-dropzone class="sm:col-span-6" name="contract_of_lease" label="Contract of Lease" />
+
+			<x-dropzone class="sm:col-span-6" name="identification_card" label="Identification Card(ID)" error="{{ $errors->first('identification_card') ? ' border-red-600' : ''}}"/>
+			<x-dropzone class="sm:col-span-6" name="real_property_tax" label="Real Property Tax"  error="{{ $errors->first('real_property_tax') ? ' border-red-600' : ''}}"/>
+			<x-dropzone class="sm:col-span-6" name="land_title" label="Land Title" error="{{ $errors->first('real_property_tax') ? ' border-red-600' : ''}}"/>
+			<x-dropzone class="sm:col-span-6" name="dti" label="DTI/Sec Registration" error="{{ $errors->first('real_property_tax') ? ' border-red-600' : ''}}"/>
+			<x-dropzone class="sm:col-span-6" name="contract_of_lease" label="Contract of Lease" error="{{ $errors->first('real_property_tax') ? ' border-red-600' : ''}}"/>
 
 			<div class="px-4 md:px-16 lg:px-20 mt-12">
 				<div class="pt-5">
