@@ -123,9 +123,9 @@
                       <div class="mt-1">
                         <input type="text" name="first_name" value="{{$first['first_name'] ?? old('first_name')}}" id="first_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('first_name') ? " border-red-600" : "")}}" placeholder="Juan">
                       </div>
-                      <span class="pt-1 flex text-red-600 {{($errors->first('first_name') ? "block" : "hidden")}}">
-                        <svg class="w-4 h-4 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span class="text-sm">This first name is required.</span>
+                      <span class="flex text-red-600 items-center {{($errors->first('business_type') ? "block" : "hidden")}}">
+                        <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-sm">This field is required.</span>
                       </span>
                 </div>
       
@@ -148,7 +148,7 @@
                     </div>
                     <span class="pt-1 flex text-red-600 items-center  {{($errors->first('last_name') ? "block" : "hidden")}}">
                       <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                      <span class="text-sm">This field name is required.</span>
+                      <span class="text-sm">This field is required.</span>
                     </span>
                 </div>
 
@@ -161,7 +161,7 @@
                     </div>
                     <span class="pt-1 flex text-red-600 items-center  {{($errors->first('personal_address') ? "block" : "hidden")}}">
                       <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                      <span class="text-sm">This field name is required.</span>
+                      <span class="text-sm">This field is required.</span>
                     </span>
                 </div>
 
@@ -174,7 +174,7 @@
                     </div>
                     <span class="pt-1 flex text-red-600 items-center  {{($errors->first('business_name') ? "block" : "hidden")}}">
                       <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                      <span class="text-sm">This field name is required.</span>
+                      <span class="text-sm">This field is required.</span>
                     </span>
                 </div>
 
@@ -187,7 +187,7 @@
                     </div>
                     <span class="pt-1 flex text-red-600 items-center  {{($errors->first('business_address') ? "block" : "hidden")}}">
                       <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                      <span class="text-sm">This field name is required.</span>
+                      <span class="text-sm">This field is required.</span>
                     </span>
                 </div>
 
@@ -200,7 +200,7 @@
                     </div>
                     <span class="pt-1 flex text-red-600 items-center  {{($errors->first('birthdate') ? "block" : "hidden")}}">
                       <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                      <span class="text-sm">This field name is required.</span>
+                      <span class="text-sm">This field is required.</span>
                     </span>
                 </div>
 
@@ -213,7 +213,7 @@
                     </div>
                     <span class="pt-1 flex text-red-600 items-center  {{($errors->first('birthplace') ? "block" : "hidden")}}">
                       <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                      <span class="text-sm">This field name is required.</span>
+                      <span class="text-sm">This field is required.</span>
                     </span>
                 </div>
 
@@ -257,7 +257,7 @@
     <input type="text" name="business_type" value="{{$first['business_type'] ?? ''}}"  id="birthplace" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-full sm:text-sm border-gray-300 rounded-md mb-0 {{($errors->first('business_type') ? " border-red-600" : "")}}" placeholder="e.g Sari-sari store" >
     <span class="flex text-red-600 items-center {{($errors->first('business_type') ? "block" : "hidden")}}">
       <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-      <span class="text-sm">This field name is required.</span>
+      <span class="text-sm">This field is required.</span>
     </span>
       <div class="pt-5">
           <div class="flex justify-end mb-8">
