@@ -32,7 +32,7 @@ class ClearanceController extends Controller
             'business_address' => 'required',
             'birthdate' => 'required',
             'birthplace' => 'required',
-            'mobile_number' => 'required|min:10|max:10|numeric',
+            'mobile_number' => 'required|min:10|max:10',
             'telephone_number' => 'nullable',
             'business_type' => 'required'
         ]);
