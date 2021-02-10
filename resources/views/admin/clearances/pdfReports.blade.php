@@ -76,19 +76,19 @@
                 {{$report->amount}}
             </td>
             <td>
-                {{$report->created_at}}
+                {{date('d-m-Y', strtotime($report->created_at))}}
             </td>
         </tr>
         @endforeach
     </table>
     <div class="summary">
-        <p>Filter to Date Started from Date Ended</p>
-        <p>Total Released Documents: <strong>30</strong> </p>
-        <p>Total Amount: <strong>12,500.00</strong> </p>
+        <p>Filter to {{date('d-m-Y', strtotime($date_from))}} from {{date('d-m-Y', strtotime($date_to))}}</p>
+        <p>Total Released Documents: <strong>{{$count}}</strong> </p>
+        <p>Total Amount: <strong>{{$sum}}</strong> </p>
     </div>
     <div class="signatory">
         <p>Approved by:</p>
-        <p><strong>Captain Name</strong></p>
+        <p><strong>{{$captain->name}}</strong></p>
     </div>
 </body>
 </html>
