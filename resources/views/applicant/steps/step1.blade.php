@@ -121,7 +121,7 @@
                           First Name
                       </label>
                       <div class="mt-1">
-                        <input type="text" name="first_name" value="{{$first['first_name'] ?? old('first_name')}}" id="first_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('first_name') ? " border-red-600" : "")}}">
+                        <input type="text" name="first_name" value="{{$first['first_name'] ?? old('first_name')}}" id="first_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('first_name') ? " border-red-600" : "")}}" placeholder="Juan">
                       </div>
                       <span class="flex text-red-600 items-center {{($errors->first('business_type') ? "block" : "hidden")}}">
                         <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -134,7 +134,7 @@
                         Middle Name
                     </label>
                     <div class="mt-1">
-                        <input type="text" name="middle_name" value="{{$first['middle_name'] ?? ''}}" id="middle_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="middle_name" value="{{$first['middle_name'] ?? ''}}" id="middle_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Samson">
                     </div>
                     
                 </div>
@@ -144,7 +144,7 @@
                         Last Name
                     </label>
                     <div class="mt-1">
-                        <input type="text" name="last_name" value="{{$first['last_name'] ?? old('last_name')}}" id="last_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('last_name') ? " border-red-600" : "")}}">
+                        <input type="text" name="last_name" value="{{$first['last_name'] ?? old('last_name')}}" id="last_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('last_name') ? " border-red-600" : "")}}" placeholder="Dela Cruz">
                     </div>
                     <span class="pt-1 flex text-red-600 items-center  {{($errors->first('last_name') ? "block" : "hidden")}}">
                       <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
