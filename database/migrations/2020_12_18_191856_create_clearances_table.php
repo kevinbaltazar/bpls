@@ -28,7 +28,7 @@ class CreateClearancesTable extends Migration
             $table->date('birthdate');
             $table->string('birthplace');
             $table->string('mobile_number');
-            $table->string('telephone_number')->nullable();
+            $table->number('telephone_number')->nullable();
             $table->string('business_type');
             $table->string('order_number')->nullable();
             $table->integer('amount')->nullable();

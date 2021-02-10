@@ -6,6 +6,17 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <title>Apply</title>
+
+        <style>
+            input::-webkit-inner-spin-button,
+            input::-webkit-outer-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input[type=number]{
+                -moz-appearance: textfield;
+            }
+        </style>
     </head>
     <body>
        @yield('application')
