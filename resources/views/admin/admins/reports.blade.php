@@ -4,23 +4,23 @@
       <h1 class="text-blue-600 font-medium text-sm">Filter By:</h1>
       <div>
         <label for="date_to" class="block text-sm font-medium text-gray-700 mt-2">Date from</label>
-        <input type="date" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+        <input type="date" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
       </div>
       <div>
         <label for="date_to" class="block text-sm font-medium text-gray-700 mt-2">Date to</label>
-        <input type="date" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+        <input type="date" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
       </div>
       <div> 
         <label for="age_from" class="block text-sm font-medium text-gray-700 mt-2">Age from</label>
-        <input type="number" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+        <input type="number" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
       </div>
       <div> 
         <label for="age_to" class="block text-sm font-medium text-gray-700 mt-2">Age to</label>
-        <input type="number" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+        <input type="number" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
       </div>
       <div> 
         <label for="address" class="block text-sm font-medium text-gray-700 mt-2">Address</label>
-        <input type="text" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+        <input type="text" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
       </div>
 
      <div class="mt-5 mb-12 w-full">
