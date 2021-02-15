@@ -115,9 +115,9 @@ class Clearance extends Model implements HasMedia
         if ($this->status === ClearanceStatus::Inspected) {
             if(!$this->clearance_id) {
                 Nexmo::message()->send([
-                    'to'   => $this->mobile_number,
+                    'to'   => '63'.$this->mobile_number,
                     'from' => 'Pulong Buhangin',
-                    'text' => "Your application was already processed. Kindly get your document.\n\nNote: Bring ID, wear your face mask and face shield."
+                    'text' => "Your application was already processed. Kindly get your document. Note: Bring ID, wear your face mask and face shield."
                 ]);
                 return $this->update(['signed_at' => now()]);
             }

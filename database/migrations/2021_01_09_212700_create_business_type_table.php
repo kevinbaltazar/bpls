@@ -15,7 +15,7 @@ class CreateBusinessTypeTable extends Migration
     {
         Schema::create('business_types', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
+            $table->string('name');
             $table->timestamps();    
         });
     }

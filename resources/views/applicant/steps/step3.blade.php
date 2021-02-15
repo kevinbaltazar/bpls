@@ -97,8 +97,9 @@
 		<p>Business Name: <span class="font-bold text-red-600">{{$clearance->business_name}}</p>
 		<p>Birthdate: <span class="font-bold text-red-600">{{$clearance->birthdate}}</p>
 		<p>Birthplace: <span class="font-bold text-red-600">{{$clearance->birthplace}}</p>
-		<p>Mobile Number: <span class="font-bold text-red-600">{{$clearance->mobile_number}}</p>
-		<p>Telephone Number: <span class="font-bold text-red-600">{{$clearance->telephone_number}}</p>
+    <p>Mobile Number: <span class="font-bold text-red-600">+63{{$clearance->mobile_number}}</p>
+    <p>Business Type: <span class="font-bold text-red-600">{{$clearance->business_type}}</p>
+    <p>Telephone Number: <span class="font-bold text-red-600">{{$clearance->telephone_number ?? '---'}}</p>
 	</div>
  
     @foreach ($images as $item)
