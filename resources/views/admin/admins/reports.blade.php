@@ -10,20 +10,32 @@
         <label for="date_to" class="block text-sm font-medium text-gray-700 mt-2">Date to</label>
         <input type="date" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
       </div>
-      <div> 
-        <label for="age_from" class="block text-sm font-medium text-gray-700 mt-2">Age from</label>
-        <input type="number" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+
+      <div class="flex justify-between w-full">
+        <div> 
+          <label for="age_from" class="block text-sm font-medium text-gray-700 mt-2">Age from</label>
+          <input type="number" class="mt-1 w-11/12 block pl-3 mr-4 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+        </div>
+        <div> 
+          <label for="age_to" class="block text-sm font-medium text-gray-700 mt-2">Age to</label>
+          <input type="number" class="mt-1 w-full block pl-3 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+        </div>
       </div>
-      <div> 
-        <label for="age_to" class="block text-sm font-medium text-gray-700 mt-2">Age to</label>
-        <input type="number" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-      </div>
+
       <div> 
         <label for="address" class="block text-sm font-medium text-gray-700 mt-2">Address</label>
         <input type="text" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
       </div>
 
-     <div class="mt-5 mb-12 w-full">
+      <div> 
+        <label for="status" class="block text-sm font-medium text-gray-700 mt-2">Select status</label>
+        <select name="" class="mt-1 block w-full pl-3 mr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+          <option selected value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+
+     <div class="mt-5  w-full">
       <button type="button" class="mb-5 w-full items-center text-center py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
         Filter Search Result
       </button>
@@ -95,7 +107,7 @@
                          {{$report->amount}}
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$report->created_at}}
+                        {{$report->created_at->format('m-d-Y')}}
                        </td>
                       
                     </tr>

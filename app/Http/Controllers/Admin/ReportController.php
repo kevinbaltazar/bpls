@@ -30,7 +30,7 @@ class ReportController extends Controller
         session('date_to', []);
         session('count', []);
 
-        $reports = Clearance::paginate(30);
+        $reports = Clearance::whereNotNull("signed_at")->orWhereNotNull('renew_signed_at')->paginate(8);
         $sum =  $reports->sum('amount');
         $count = $reports->count('id');
         session()->put('count', $count);
