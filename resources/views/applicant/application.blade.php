@@ -22,4 +22,25 @@
        @yield('application')
     </body>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        function checkType(val)
+        {
+            var element = document.getElementById('type');
+            if(val == 'others') 
+            {
+                element.style.display='block';
+            }
+            else  
+            {
+                element.style.display='none';
+                
+            }
+            element.value = val;
+            if(element.value == 'others')
+            {
+                element.value = '';
+            }
+        }
+        
+    </script>
 </html>

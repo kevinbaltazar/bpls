@@ -20,7 +20,7 @@ class CreateClearancesTable extends Migration
             $table->string('control_number')->nullable();
             $table->string('cedula_number')->nullable();
             $table->string('first_name');
-            $table->string('middle_name');
+            $table->string('middle_name')->nullable();
             $table->string('last_name');
             $table->string('personal_address');
             $table->string('business_name');

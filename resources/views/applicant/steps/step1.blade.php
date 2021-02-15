@@ -254,10 +254,21 @@
 		  	<h2 class="font-semibold text-sm">Please input your business type</h2>
       </div>
 
-    <input type="text" name="business_type" value="{{$first['business_type'] ?? ''}}"  id="birthplace" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-full sm:text-sm border-gray-300 rounded-md mb-0 {{($errors->first('business_type') ? " border-red-600" : "")}}" placeholder="e.g Sari-sari store" >
-    <span class="flex text-red-600 items-center {{($errors->first('business_type') ? "block" : "hidden")}}">
-      <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-      <span class="text-sm">This field is required.</span>
+    {{-- <input type="text" list="business_type" name="business_type" value="{{$first['business_type'] ?? ''}}"  id="birthplace" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-full sm:text-sm border-gray-300 rounded-md mb-0 {{($errors->first('business_type') ? " border-red-600" : "")}}" placeholder="e.g Sari-sari store" /> --}}
+    
+   
+    <select name="business_type" onchange='checkType(this.value);' class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md {{($errors->first('business_type') ? " border-red-600" : "")}}"> 
+      <option selected disabled>Choose one</option>
+      @foreach ($business_type as $type)
+      <option value="{{$type->name}}">{{$type->name}}</option>
+      @endforeach
+      <option value="others">others</option>
+    </select>
+    <input type="text" name="business_type" id="type" style='display:none;' class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Please type your business here...">
+
+    <span class=" flex text-red-600 items-center {{($errors->first('business_type') ? "block" : "hidden")}}">
+      <svg class="-mt-10 w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span class="-mt-10 text-sm">This field is required.</span>
     </span>
       <div class="pt-5">
           <div class="flex justify-end mb-8">

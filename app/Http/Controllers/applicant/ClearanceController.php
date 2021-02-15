@@ -7,14 +7,18 @@ use Illuminate\Http\Request;
 use App\Models\Clearance;
 use App\Models\Media;
 use Nexmo\Laravel\Facade\Nexmo;
+use App\Models\Business_type;
 
 class ClearanceController extends Controller
 {
     public function createStep1()
     {
+        
         // session()->forget('first');
+        $business_type = Business_type::orderBy('name')->get();
         return view('applicant.steps.step1', [
             'first' => session('first', []),
+            'business_type' => $business_type,
         ]);
 
         
@@ -22,7 +26,6 @@ class ClearanceController extends Controller
 
     public function postCreateStep1(Request $request)
     {
-
         $validatedData = $request->validate([
             'first_name' => 'required',
             'middle_name' => 'nullable',
@@ -117,7 +120,7 @@ class ClearanceController extends Controller
         $clearance->save();
 
         Nexmo::message()->send([
-            'to'   => '639513489084',
+            'to'   => '63'.$this->mobile_number,
             'from' => 'Pulong Buhangin',
             'text' => "Your application was already submitted, please wait 3-5 working days to process your application. Thank you!"
         ]);
