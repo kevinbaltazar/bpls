@@ -53,6 +53,9 @@ Route::post('/renew/first', [ClearanceRenewController::class, 'postCreateRenewSt
 Route::get('/renew/second', [ClearanceRenewController::class, 'createRenewStep2']);
 Route::post('/renew/second', [ClearanceRenewController::class, 'postCreateRenewStep2']);
 
+Route::get('admin/audits', function(){
+    return view('admin/clearances/audit');
+});
 
 Route::get('admin/reports',  [ReportController::class, 'filter'])->name('filter');
 Route::get('admin/export',  [ReportController::class, 'exportPDF'])->name('exportPDF');

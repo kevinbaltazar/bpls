@@ -50,6 +50,7 @@
             <th>Cedula Number</th>
             <th>Sticker Number</th>
             <th>Business Name</th>
+            <th>Business Address</th>
             <th>Owner's Name</th>
             <th>Type</th>
             <th>Cost</th>
@@ -67,7 +68,10 @@
                 {{$report->business_name}}
             </td>
             <td>
-                {{$report->first_name . ' ' . $report->middle_name ?? '--' . ' '. $report->last_name }}
+                {{$report->business_address}}
+            </td>
+            <td>
+                {{$report->first_name . ' ' . $report->middle_name . ' ' . $report->last_name }}
             </td>
             <td>
                 {{$report->business_type}}
