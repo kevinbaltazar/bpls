@@ -57,6 +57,6 @@ Route::get('admin/audits', function(){
     return view('admin/clearances/audit');
 });
 
-Route::get('admin/reports',  [ReportController::class, 'filter'])->name('filter');
+Route::POST('admin/admin/reports',  [ReportController::class, 'filter'])->name('filter');
 Route::get('admin/export',  [ReportController::class, 'exportPDF'])->name('exportPDF');
 

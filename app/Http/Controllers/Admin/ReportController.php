@@ -30,9 +30,11 @@ class ReportController extends Controller
         session('date_to', []);
         session('count', []);
 
-        $reports = Clearance::whereNotNull("signed_at")->orWhereNotNull('renew_signed_at')->paginate(8);
+        $reports = Clearance::whereNotNull('control_number')->get();
         $sum =  $reports->sum('amount');
         $count = $reports->count('id');
+        session()->put('date_from', Carbon::parse(Clearance::orderBy('created_at', 'asc')->oldest('created_at')->first()->created_at)->format('Y-m-d')." 00:00:00");
+        session()->put('date_to', Carbon::now()->format('Y-m-d')." 23:59:59");
         session()->put('count', $count);
         session()->put('reports', $reports);
         session()->put('sum', $sum);
@@ -42,32 +44,64 @@ class ReportController extends Controller
 
     public function filter(GeneralSettings $settings, Request $request){
         
+
+        $address = $request->address;
+        $status = $request->status;
         $date_from = Carbon::parse($request->date_from)->format('Y-m-d')." 00:00:00";
         $date_to = Carbon::parse($request->date_to)->format('Y-m-d')." 23:59:59";
+        $now = Carbon::now()->format('Y-m-d')." 23:59:59";
+        $old = Carbon::parse(Clearance::orderBy('created_at', 'asc')->oldest('created_at')->first()->created_at)->format('Y-m-d')." 00:00:00";
 
+        $query = Clearance::query();
+        $query = $query->whereNotNull("control_number");
+        if($request->date_from !== null && $request->date_to === null){
+            $query = $query->whereBetween('created_at', [$date_from, $now]);
+        }
+        if($request->date_from !== null && $request->date_to !== null){
+            $query = $query->whereBetween('created_at', [$date_from, $date_to]);
+        }
+        if($request->date_from === null && $request->date_to !== null){
+            $query = $query->whereBetween('created_at', [$old, $date_to]);
+        }
+        if($request->address !== null){
+            $query = $query->Where('business_address', 'like', '%' . $request->address . '%');
+        }
+        if($request->status === 'all'){
+            $query = $query->where(function($query){
+                $query->where('rejected_at', '=', NULL)
+                ->orwhere('rejected_at', '!=', NULL);
+            });
+        }
+        if($request->status === 'approved'){
+            $query = $query->whereNull('rejected_at');
+        }
+        if($request->status === 'rejected'){
+            $query = $query->whereNotNull('rejected_at');
+        }
+        if($request->type === 'all'){
+            $query = $query->where(function($query){
+                $query->where('clearance_id', '=', NULL)
+                ->orwhere('clearance_id', '!=', NULL);
+            });
+        }
+        if($request->type === 'new'){
+            $query = $query->whereNull('clearance_id');
+        }
+        if($request->type === 'renew'){
+            $query = $query->whereNotNull('clearance_id');
+        }
+        
+        $reports = $query->get();
+
+        $sum =  $reports->sum('amount');
+        $count = $reports->count('id');
+        session()->put('count', $count);
+        session()->put('reports', $reports);
+        session()->put('sum', $sum);
         session()->put('date_from', $date_from);
         session()->put('date_to', $date_to);
         
-        if($request->date_from === NULL || $request->date_to === NULL){
-            $reports = Clearance::paginate(30);
-            $sum = $reports->sum('amount');
-            $count = $reports->count('id');
-            session()->put('count', $count);
-            session()->put('reports', $reports);
-            session()->put('sum', $sum);
-            return view('admin.admins.reports', compact('reports'));
-        }
-        else
-        {
-            $reports = Clearance::whereBetween('created_at', [$date_from, $date_to])->paginate(30);
-            $sum = $reports->sum('amount');
-            $count = $reports->count('id');
-            session()->put('count', $count);
-            session()->put('reports', $reports);
-            session()->put('sum', $sum);
-            return view('admin.admins.reports', compact('reports'));
-        }
-        
+        return view('admin.admins.reports', compact("reports"));
     }
 
     public function exportPDF() {
@@ -78,3 +112,23 @@ class ReportController extends Controller
     }
 
 }
+
+// if($request->date_from === NULL || $request->date_to === NULL){
+    //     $reports = Clearance::paginate(30);
+    //     $sum = $reports->sum('amount');
+    //     $count = $reports->count('id');
+    //     session()->put('count', $count);
+    //     session()->put('reports', $reports);
+    //     session()->put('sum', $sum);
+    //     return view('admin.admins.reports', compact('reports'));
+    // }
+    // else
+    // {
+    //     $reports = Clearance::whereBetween('created_at', [$date_from, $date_to])->paginate(30);
+    //     $sum = $reports->sum('amount');
+    //     $count = $reports->count('id');
+    //     session()->put('count', $count);
+    //     session()->put('reports', $reports);
+    //     session()->put('sum', $sum);
+    //     return view('admin.admins.reports', compact('reports'));
+    // }
