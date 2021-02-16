@@ -21,6 +21,7 @@ class auditController extends Controller
 
         return view('admin.clearances.audit',[
             'audits' => $audit,
+            'activity' => 'all',
         ]);
 
         
@@ -33,7 +34,7 @@ class auditController extends Controller
         $old = Carbon::parse(Clearance::orderBy('created_at', 'asc')->oldest('created_at')->first()->created_at ?? Carbon::now())->format('Y-m-d')." 00:00:00";
 
         $query = Clearance::query();
-        $activity = $request->activity;
+        $activity = $request->activity ?? 'all';
 
         if($request->activity === 'all'){
             if($request->date_from !== null && $request->date_to === null){
@@ -48,7 +49,7 @@ class auditController extends Controller
             if($request->date_from === null && $request->date_to === null){
                 $query->whereBetween('created_at', [$old, $now]);
             }
-            $audit = $query->whereNull('rejected_by')->get();
+            $audit = $query->get();
 
         }
         if($request->activity === 'approved'){

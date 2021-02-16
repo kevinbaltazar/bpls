@@ -50,13 +50,19 @@ class ClearanceController extends Controller
      */
     public function update(Request $request, Clearance $clearance)
     {
+        
         $formData = $this->validate($request, [
             'inspector' => Rule::requiredIf(
                 $clearance->status === ClearanceStatus::Pending &&
                     $request->new_status === ClearanceStatus::Approved
-            )
-        ]);        
+            ),      
+        ]);      
         
+
+        if($request->new_status === ClearanceStatus::Approved){
+            $clearance->update(['inspector_comment' => $request->inspector_comment]);
+        }
+
         if ($request->new_status === ClearanceStatus::Rejected) {
             
             $msg = "Your application was rejected.\n\nReason: ";

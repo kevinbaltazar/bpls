@@ -123,7 +123,7 @@
                       <div class="mt-1">
                         <input type="text" name="first_name" value="{{$first['first_name'] ?? old('first_name')}}" id="first_name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{($errors->first('first_name') ? " border-red-600" : "")}}" placeholder="Juan">
                       </div>
-                      <span class="flex text-red-600 items-center {{($errors->first('business_type') ? "block" : "hidden")}}">
+                      <span class="flex text-red-600 items-center {{($errors->first('first_name') ? "block" : "hidden")}}">
                         <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         <span class="text-sm">This field is required.</span>
                       </span>
@@ -226,7 +226,7 @@
                       <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                         +63
                       </span>
-                      <input type="number" name="mobile_number"  value="{{$first['mobile_number'] ?? ''}}"  class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300 {{($errors->first('mobile_number') ? " border-red-600" : "")}}" placeholder="9551238299">
+                      <input type="number" name="mobile_number"  value="{{substr($first['mobile_number'], 2)  ?? ''}}"  class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300 {{($errors->first('mobile_number') ? " border-red-600" : "")}}" placeholder="9551238299">
                     </div>
 
                     {{-- <div class="mt-1">

@@ -1,11 +1,6 @@
 @extends('applicant.application')
 @section('application')
 
-@if($errors->any())
-    @foreach ($errors->all() as $error)
-        <ul class="text-red-600">{{$error}}</ul>
-    @endforeach
-@endif
 	<div class="lg:border-t lg:border-b lg:border-gray-200">
 		<nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Progress">
 		<ol class="rounded-md overflow-hidden lg:flex lg:border-l lg:border-r lg:border-gray-200 lg:rounded-none">
@@ -100,19 +95,19 @@
 					</div>
 				</div>
 			</div>
-		
-			<x-dropzone class="sm:col-span-6" name="identification_card" label="Identification Card(ID)" />
-			<x-dropzone class="sm:col-span-6" name="real_property_tax" label="Real Property Tax" />
-			<x-dropzone class="sm:col-span-6" name="land_title" label="Land Title" />
-			<x-dropzone class="sm:col-span-6" name="dti" label="DTI/Sec Registration" />
-			<x-dropzone class="sm:col-span-6" name="contract_of_lease" label="Contract of Lease" />
+
+			<x-dropzone class="sm:col-span-6" name="identification_card" label="Identification Card(ID)" err="{{$errors->first('identification_card')}}" />
+			<x-dropzone class="sm:col-span-6" name="real_property_tax" label="Real Property Tax" err="{{$errors->first('real_property_tax')}}" />
+			<x-dropzone class="sm:col-span-6" name="land_title" label="Land Title" err="{{$errors->first('land_title')}}" />
+			<x-dropzone class="sm:col-span-6" name="dti" label="DTI/Sec Registration" err="{{$errors->first('dti')}}" />
+			<x-dropzone class="sm:col-span-6" name="contract_of_lease" label="Contract of Lease"err="{{$errors->first('contract_of_lease')}}" />
 
 			<div class="px-4 md:px-16 lg:px-20 mt-12">
 				<div class="pt-5">
 					<div class="flex justify-end mb-8">
-						<button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+						<a href="first" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
 							Cancel
-						</button>
+						</a>
 						<button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
 							Next
 						</button>
