@@ -188,7 +188,7 @@ class Clearance extends Model implements HasMedia
         }
         
         if ($role->name === 'superadmin'){
-            return $query->where(function ($query){
+            $query->where(function ($query){
                 $query->where('rejected_at', '=', NULL)
                     ->orwhere('renew_rejected_at', '=', NULL);
             })->where(function ($query){

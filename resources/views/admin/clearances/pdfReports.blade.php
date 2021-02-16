@@ -92,7 +92,7 @@
     </div>
     <div class="signatory">
         <p>Approved by:</p>
-        <p><strong>{{$captain->name}}</strong></p>
+        <p><strong>{{$captain->name ?? 'N/A'}}</strong></p>
     </div>
 </body>
 </html>
