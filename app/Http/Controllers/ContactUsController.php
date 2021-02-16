@@ -7,10 +7,6 @@ use App\Models\ContactUs;
 
 class ContactUsController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['role:superadmin,admin']);
-    }
     
     public function insert(Request $request){
         $data = $request->validate([

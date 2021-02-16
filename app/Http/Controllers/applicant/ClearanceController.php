@@ -40,6 +40,9 @@ class ClearanceController extends Controller
             'business_type' => 'required'
         ]);
 
+        $validatedData['mobile_number'] = '63'.$request->mobile_number;
+
+
         // if(!$validatedData)
         // {
         //     return redirect()->back()->withInput()->withErrors(['msg', 'errors']);
@@ -120,7 +123,7 @@ class ClearanceController extends Controller
         $clearance->save();
 
         Nexmo::message()->send([
-            'to'   => '63'.$this->mobile_number,
+            'to'   => $clearance->mobile_number,
             'from' => 'Pulong Buhangin',
             'text' => "Your application was already submitted, please wait 3-5 working days to process your application. Thank you!"
         ]);
