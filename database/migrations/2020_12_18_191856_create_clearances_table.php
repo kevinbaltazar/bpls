@@ -33,6 +33,11 @@ class CreateClearancesTable extends Migration
             $table->string('order_number')->nullable();
             $table->integer('amount')->nullable();
             $table->string('sticker_number')->nullable();
+            $table->string('reviewed_by')->nullable();
+            $table->string('inspected_by')->nullable();
+            $table->string('approved_by')->nullable();
+            $table->string('printed_by')->nullable();
+            $table->string('rejected_by')->nullable();
             $table->timestamp('completed_at')->nullable();
             $table->timestamp('requirements_approved_at')->nullable();
             $table->timestamp('inspected_at')->nullable();

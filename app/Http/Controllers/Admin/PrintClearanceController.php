@@ -9,6 +9,7 @@ use App\Support\GeneralSettings;
 use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class PrintClearanceController extends Controller
 {
@@ -36,10 +37,16 @@ class PrintClearanceController extends Controller
         $clearance->update($formData);
 
         if(!$clearance->clearance_id) {
-            $clearance->update(['printed_at' => now()]);
+            $clearance->update([
+                'printed_at' => now(),
+                'printed_by' => Auth::guard('admin')->user()->name,
+                ]);
         }
         else {
-            $clearance->update(['renew_printed_at' => now()]);
+            $clearance->update([
+                'renew_printed_at' => now(),
+                'printed_by' => Auth::guard('admin')->user()->name,
+                ]);
         }
 
         $secretary = Admin::find($settings->secretary);

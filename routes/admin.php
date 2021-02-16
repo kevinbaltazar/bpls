@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactUsController;
 use App\Models\Clearance;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\auditController;
 
 
 /*
@@ -24,6 +25,7 @@ use App\Http\Controllers\ReportController;
 |
 */
 
+Route::get('admin/audits', [auditController::class, 'index'])->name('audit');
 
 
 

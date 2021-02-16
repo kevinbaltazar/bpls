@@ -61,19 +61,19 @@ class ClearanceController extends Controller
             
             $msg = "Your application was rejected.\n\nReason: ";
 
-            Nexmo::message()->send([
-                'to'   => $clearance->mobile_number,
-                'from' => 'Pulong Buhangin',
-                'text' => $msg . $request->rejected_message 
-            ]);
+            // Nexmo::message()->send([
+            //     'to'   => $clearance->mobile_number,
+            //     'from' => 'Pulong Buhangin',
+            //     'text' => $msg . $request->rejected_message 
+            // ]);
             
             $clearance->reject();
-            $clearance->rejected_message = $rejected_message;
+            $clearance->rejected_message = $request->rejected_message;
             $clearance->save();  
         }
 
         if ($request->new_status === ClearanceStatus::Approved) {
-            $clearance->approve($formData);
+            $clearance->approve($formData,);
         }
 
         return redirect()->route('admin.clearances.index');

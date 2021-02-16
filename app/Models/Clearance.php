@@ -9,6 +9,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Models\Role;
 use Nexmo\Laravel\Facade\Nexmo;
+use Illuminate\Support\Facades\Auth;
 
 class Clearance extends Model implements HasMedia
 {
@@ -79,10 +80,16 @@ class Clearance extends Model implements HasMedia
     public function reject()
     {
         if(!$this->clearance_id) {
-            $this->update(['rejected_at' => now()]);
+            $this->update([
+                'rejected_at' => now(),
+                'rejected_by' => Auth::guard('admin')->user()->name,
+                ]);
         }
         else {
-            $this->update(['renew_rejected_at' => now()]);
+            $this->update([
+                'renew_rejected_at' => now(),
+                'rejected_by' => Auth::guard('admin')->user()->name,
+                ]);
         }
     }
 
@@ -92,39 +99,52 @@ class Clearance extends Model implements HasMedia
             if($this->renew_completed_at){
                 return $this->update([
                     'renew_requirements_approved_at' => now(),
-                    'clearance_inspector_id' => $formData['inspector']
+                    'clearance_inspector_id' => $formData['inspector'],
+                    'reviewed_by' => Auth::guard('admin')->user()->name,
                 ]);
             }
             else{
                 return $this->update([
                     'requirements_approved_at' => now(),
-                    'clearance_inspector_id' => $formData['inspector']
+                    'clearance_inspector_id' => $formData['inspector'],
+                    'reviewed_by' => Auth::guard('admin')->user()->name,
                 ]);
             }
         }
 
         if ($this->status === ClearanceStatus::Reviewed) {
             if(!$this->clearance_id) {
-                return $this->update(['inspected_at' => now()]);
+                return $this->update([
+                    'inspected_at' => now(),
+                    'inspected_by' => Auth::guard('admin')->user()->name,
+                ]);
             }
             else {
-                return $this->update(['renew_inspected_at' => now()]);
+                return $this->update([
+                    'renew_inspected_at' => now(),
+                    'inspected_by' => Auth::guard('admin')->user()->name,
+                    ]);
             }
         }
 
         if ($this->status === ClearanceStatus::Inspected) {
             if(!$this->clearance_id) {
-                Nexmo::message()->send([
-                    'to'   => '63'.$this->mobile_number,
-                    'from' => 'Pulong Buhangin',
-                    'text' => "Your application was already processed. Kindly get your document. Note: Bring ID, wear your face mask and face shield."
-                ]);
-                return $this->update(['signed_at' => now()]);
+                // Nexmo::message()->send([
+                //     'to'   => $this->mobile_number,
+                //     'from' => 'Pulong Buhangin',
+                //     'text' => "Your application was already processed. Kindly get your document. Note: Bring ID, wear your face mask and face shield."
+                // ]);
+                return $this->update([
+                    'signed_at' => now(),
+                    'approved_by' => Auth::guard('admin')->user()->name,
+                    ]);
             }
             else {
-                return $this->update(['renew_signed_at' => now()]);
-            }
-            
+                return $this->update([
+                    'renew_signed_at' => now(),
+                    'approved_by' => Auth::guard('admin')->user()->name,
+                    ]);
+            }           
         }
     }
 
