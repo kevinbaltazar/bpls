@@ -20,8 +20,10 @@ use Spatie\WelcomeNotification\WelcomesNewUsers;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
+Route::group(['middleware' => ['web', WelcomesNewUsers::class,]], function () {
+    Route::get('/welcome/{user}', [MyWelcomeController::class, 'showWelcomeForm'])->name('welcome');
+    Route::post('/welcome/{user}', [MyWelcomeController::class, 'savePassword']);
+});
 
 
 Route::get('/', function () {
@@ -61,7 +63,3 @@ Route::POST('admin/admin/reports',  [ReportController::class, 'filter'])->name('
 Route::get('admin/export',  [ReportController::class, 'exportPDF'])->name('exportPDF');
 
 
-Route::group(['middleware' => ['web', WelcomesNewUsers::class,]], function () {
-    Route::get('welcome/{user}', [MyWelcomeController::class, 'showWelcomeForm'])->name('welcome');
-    Route::post('welcome/{user}', [MyWelcomeController::class, 'savePassword']);
-});

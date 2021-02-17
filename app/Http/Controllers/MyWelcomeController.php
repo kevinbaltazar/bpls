@@ -13,7 +13,7 @@ class MyWelcomeController extends BaseWelcomeController
     public function sendPasswordSavedResponse(): Response
 
     {
-        return redirect()->route('login');
+        return redirect()->route('admin.login');
     }
 
     public function rules()
