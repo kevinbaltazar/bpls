@@ -56,6 +56,9 @@ class AdminController extends Controller
 
         $admin->assignRole(Role::find($request->role));
 
+        $expiresAt = now()->addDay(3);
+        $admin->sendWelcomeNotification($expiresAt);
+
         return redirect()->route('admin.admins.index');
     }
 

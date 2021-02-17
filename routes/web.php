@@ -7,6 +7,8 @@ use App\Http\Controllers\applicant\ClearanceRenewController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\auditController;
+use App\Http\Controllers\MyWelcomeController;
+use Spatie\WelcomeNotification\WelcomesNewUsers;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +60,8 @@ Route::post('admin/admin/audits', [auditController::class, 'filter'])->name('aud
 Route::POST('admin/admin/reports',  [ReportController::class, 'filter'])->name('filter');
 Route::get('admin/export',  [ReportController::class, 'exportPDF'])->name('exportPDF');
 
+
+Route::group(['middleware' => ['web', WelcomesNewUsers::class,]], function () {
+    Route::get('welcome/{user}', [MyWelcomeController::class, 'showWelcomeForm'])->name('welcome');
+    Route::post('welcome/{user}', [MyWelcomeController::class, 'savePassword']);
+});

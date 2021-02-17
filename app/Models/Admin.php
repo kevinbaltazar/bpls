@@ -13,6 +13,7 @@ class Admin extends Authenticatable
     use HasFactory;
     use HasRoles;
     use Notifiable;
+    use \Spatie\WelcomeNotification\ReceivesWelcomeNotification;
 
     /**
      * The attributes that are mass assignable.

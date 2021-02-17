@@ -20,7 +20,8 @@
         "nexmo/laravel": "^2.4",
         "spatie/laravel-medialibrary": "^8.0.0",
         "spatie/laravel-permission": "^3.18",
-        "spatie/laravel-settings": "^1.0"
+        "spatie/laravel-settings": "^1.0",
+        "spatie/laravel-welcome-notification": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

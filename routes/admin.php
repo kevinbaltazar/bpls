@@ -12,7 +12,7 @@ use App\Models\Clearance;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\auditController;
-
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +26,6 @@ use App\Http\Controllers\auditController;
 */
 
 Route::get('admin/audits', [auditController::class, 'index'])->name('audit');
-
-
 
 Route::get('/', DashboardController::class)->name('dashboard');
 
@@ -55,4 +53,5 @@ Route::get('dashboard/renewed',  [DashboardController::class, 'showrenewed'])->n
 
 Route::get('admin/messages',  [ContactUsController::class, 'show'])->name('messages');
 Route::get('admin/reports',  [ReportController::class, 'index'])->name('reports');
+
 
