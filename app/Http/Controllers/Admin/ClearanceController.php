@@ -67,14 +67,14 @@ class ClearanceController extends Controller
             
             $msg = "Your application was rejected.\n\nReason: ";
 
-            // Nexmo::message()->send([
-            //     'to'   => $clearance->mobile_number,
-            //     'from' => 'Pulong Buhangin',
-            //     'text' => $msg . $request->rejected_message 
-            // ]);
+            Nexmo::message()->send([
+                'to'   => $clearance->mobile_number,
+                'from' => 'Pulong Buhangin',
+                'text' => $msg . $request->rejected_message 
+            ]);
             
             $clearance->reject();
-            $clearance->rejected_message = $request->rejected_message;
+            $clearance->rejected_message = "63" . $request->rejected_message;
             $clearance->save();  
         }
 

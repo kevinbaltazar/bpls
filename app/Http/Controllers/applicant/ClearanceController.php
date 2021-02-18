@@ -40,7 +40,7 @@ class ClearanceController extends Controller
             'business_type' => 'required'
         ]);
 
-        $validatedData['mobile_number'] = '63'.$request->mobile_number;
+        $validatedData['mobile_number'] = $request->mobile_number;
 
 
         // if(!$validatedData)

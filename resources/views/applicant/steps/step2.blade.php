@@ -96,11 +96,18 @@
 				</div>
 			</div>
 
-			<x-dropzone class="sm:col-span-6" name="identification_card" label="Identification Card(ID)" err="{{$errors->first('identification_card')}}" />
+			{{-- <x-dropzone class="sm:col-span-6" name="identification_card" label="Identification Card(ID)" err="{{$errors->first('identification_card')}}" />
 			<x-dropzone class="sm:col-span-6" name="real_property_tax" label="Real Property Tax" err="{{$errors->first('real_property_tax')}}" />
 			<x-dropzone class="sm:col-span-6" name="land_title" label="Land Title" err="{{$errors->first('land_title')}}" />
 			<x-dropzone class="sm:col-span-6" name="dti" label="DTI/Sec Registration" err="{{$errors->first('dti')}}" />
-			<x-dropzone class="sm:col-span-6" name="contract_of_lease" label="Contract of Lease"err="{{$errors->first('contract_of_lease')}}" />
+			<x-dropzone class="sm:col-span-6" name="contract_of_lease" label="Contract of Lease"err="{{$errors->first('contract_of_lease')}}" /> --}}
+
+				<x-dropzone class="sm:col-span-6" name="identification_card" label="Identification Card(ID)"  />
+				<x-dropzone class="sm:col-span-6" name="real_property_tax" label="Real Property Tax"  />
+				<x-dropzone class="sm:col-span-6" name="land_title" label="Land Title"  />
+				<x-dropzone class="sm:col-span-6" name="dti" label="DTI/Sec Registration"  />
+				<x-dropzone class="sm:col-span-6" name="contract_of_lease" label="Contract of Lease" />
+
 
 			<div class="px-4 md:px-16 lg:px-20 mt-12">
 				<div class="pt-5">
