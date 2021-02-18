@@ -74,7 +74,7 @@ class ClearanceController extends Controller
             ]);
             
             $clearance->reject();
-            $clearance->rejected_message = "63" . $request->rejected_message;
+            $clearance->rejected_message = $request->rejected_message;
             $clearance->save();  
         }
 
