@@ -99,6 +99,7 @@
 </div>
 
 <div class="px-4 md:px-16 lg:px-20 mt-12">
+
   <form class="space-y-8" method="POST" action="#">
     @csrf
       <div class="space-y-8">

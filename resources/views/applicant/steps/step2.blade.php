@@ -81,6 +81,11 @@
 	</div>
 
 	<div class="px-4 mt-8 lg:px-72">
+	@if($errors->any())
+		@foreach ($errors->all() as $error)
+			<ul class="text-red-600">{{$error}}</ul>
+		@endforeach
+	@endif
 		<form class="space-y-8 divide-gray-200" action="/application/second" method="POST" enctype="multipart/form-data">
 			@csrf
 			

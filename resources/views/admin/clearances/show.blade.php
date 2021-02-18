@@ -268,9 +268,11 @@
             </div>
         </div>
         {{--   --}}
-        <div >
-           <p class="text-red-600 text-lg font-medium mt-8">Inspector approved message: <span class="text-black text-sm">{{$clearance->inspector_comment}}</span></p>
-        </div>
+        @if($clearance->inspector_comment)
+            <div>
+                <p class="text-red-600 text-lg font-medium mt-8">Inspector approved message: <span class="text-black text-sm">{{$clearance->inspector_comment}}</span></p>
+            </div>
+        @endif
         
             @foreach ($clearance->getMedia('requirements') as $requirements)
             <div class="flex w-full">

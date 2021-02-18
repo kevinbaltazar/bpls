@@ -229,7 +229,7 @@ class Clearance extends Model implements HasMedia
 
         if ($clearance === null) {
 
-            $control_num = $clearance->control_number ?? '2021-00000';
+            $control_num = $clearance->control_number ?? $year .'-00000';
             $number = (int) explode('-',  $control_num)[1];
             return $year . '-' . str_pad($number + 1, 5, '0', STR_PAD_LEFT);
 

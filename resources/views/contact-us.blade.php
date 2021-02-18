@@ -102,26 +102,42 @@
                     <div class="mt-3">
                         <label for="fullName" class="block text-sm font-medium text-gray-700 text-left">Full Name</label>
                         <div class="mt-1">
-                          <input type="text" name="full_name" id="fullName" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                          <input type="text" name="full_name" id="fullName" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{$errors->first('full_name') ? 'border-red-600' : ''}}">
                         </div>
+                        <span class="flex text-red-600 items-center {{($errors->first('full_name') ? "block" : "hidden")}}">
+                          <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                          <span class="text-sm">This field is required.</span>
+                        </span>
                     </div>
                     <div class="mt-3">
                         <label for="email" class="block text-sm font-medium text-gray-700 text-left">Email</label>
                         <div class="mt-1">
-                          <input type="text" name="email" id="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="">
+                          <input type="text" name="email" id="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{$errors->first('email') ? 'border-red-600' : ''}}" placeholder="">
                         </div>
+                        <span class="flex text-red-600 items-center {{($errors->first('email') ? "block" : "hidden")}}">
+                          <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                          <span class="text-sm">This field is required.</span>
+                        </span>
                     </div>
                     <div class="mt-3">
                         <label for="contactNumber" class="block text-sm font-medium text-gray-700 text-left">Contact Number</label>
                         <div class="mt-1">
-                          <input type="text" name="contact_number" id="contactNumber" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="">
+                          <input type="text" name="contact_number" id="contactNumber" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{$errors->first('contact_number') ? 'border-red-600' : ''}}" placeholder="">
                         </div>
+                        <span class="flex text-red-600 items-center {{($errors->first('contact_number') ? "block" : "hidden")}}">
+                          <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                          <span class="text-sm">This field is required.</span>
+                        </span>
                     </div>
                     <div class="mt-3">
                         <label for="message" class="block text-sm font-medium text-gray-700 text-left">Message</label>
                         <div class="mt-1">
-                            <textarea class="min-h-0 resize-none hadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" name="message" id="" cols="30" rows="10"></textarea>
+                            <textarea class="min-h-0 resize-none hadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md {{$errors->first('message') ? 'border-red-600' : ''}}" name="message" id="" cols="30" rows="10"></textarea>
                         </div>
+                        <span class="flex text-red-600 items-center {{($errors->first('message') ? "block" : "hidden")}}">
+                          <svg class="w-4 h-4 mr-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                          <span class="text-sm">This field is required.</span>
+                        </span>
                     </div>
                     <div class="mt-6 mb-8">
                         <button class="bg-indigo-500 w-full py-2 text-white font-medium rounded-md focus:outline-none">Submit</button>
