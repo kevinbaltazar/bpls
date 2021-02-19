@@ -64,8 +64,8 @@
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Sticker Number
                         </th>
-                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Business Name
+                      <th scope="col" class="px-3  py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Business Information
                       </th>
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Owner's Name
@@ -89,11 +89,23 @@
                         {{$report->control_number ?? ''}}
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$report->business_address}}
+                        {{$report->sticker_number}}
                       </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$report->business_name}}
+                      
+                      <td class="px-3 py-3 text-sm text-gray-900">
+                        <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                           <p class="overflow-ellipsis">
+                             {{ $report->business_name}}
+                            </p>
+                        </div>
+
+                        <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                          <p class="overflow-ellipsis">
+                            {{ $report->business_address}}
+                           </p>
+                        </div>
                       </td>
+                    
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {{$report->first_name .' '. $report->last_name}}
                       </td>
@@ -108,7 +120,7 @@
                          {{$report->amount}}
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{$report->created_at->format('m-d-Y')}}
+                        {{\Carbon\Carbon::parse($report->created_at)->format('F-j-Y')}}
                        </td>
                       
                     </tr>
