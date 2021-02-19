@@ -32,7 +32,6 @@ return [
     |    The environment variables to set while running the wkhtmltopdf process.
     |
     */
-
     'pdf' => [
         'enabled' => true,
         'binary'  => env('WKHTML_PDF_BINARY', '/usr/local/bin/wkhtmltopdf'),

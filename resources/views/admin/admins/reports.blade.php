@@ -86,7 +86,7 @@
                     @foreach ($reports as $report)
                     <tr>
                       <td class="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {{$report->control_number ?? 'rejected'}}
+                        {{$report->control_number ?? ''}}
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {{$report->business_address}}
