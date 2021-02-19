@@ -66,19 +66,69 @@
                              </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                          jane.cooper@example.com
+                          <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         
                       </tr>
@@ -97,19 +147,69 @@
                              </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                          jane.cooper@example.com
+                          <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         
                       </tr>
@@ -128,19 +228,69 @@
                              </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                          jane.cooper@example.com
+                         <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                           <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                           <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                           <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                           <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         
                       </tr>
@@ -159,19 +309,69 @@
                              </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                          jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         <td class="text-center truncate w-64 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            <div class="text-sm  w-40 font-medium text-gray-900 overflow-ellipsis">
+                                <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius animi, maxime tempora expedita tenetur quidem beatae consequuntur modi quibusdam vel eveniet ducimus hic eligendi, sit dolore laborum ea maiores!
+                                 </p>
+                             </div>
+     
+                             <div class="text-sm w-40 text-gray-500 overflow-ellipsis">
+                               <p class="truncate">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, cumque ea animi sint nobis laborum repellat debitis amet ab aliquid tenetur, in perspiciatis ipsam, necessitatibus totam aut quaerat maxime repudiandae.
+                                </p>
+                             </div>
                         </td>
                         
                       </tr>
