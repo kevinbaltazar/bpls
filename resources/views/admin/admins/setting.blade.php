@@ -1,5 +1,10 @@
 <x-admin-layout>
     <div class="max-w-3xl mx-auto px-24">
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+                <ul class="text-red-600">{{$error}}</ul>
+            @endforeach
+        @endif
         <form method="POST" action="{{ Route('admin.setting')}}">
             @csrf
 
@@ -41,7 +46,6 @@
 
             <div class="mt-6">
                 <div class="flex justify-end">
-                    <x-button variant="secondary">Cancel</x-button>
                     <x-button class="ml-3" type="submit">Save</x-button>
                 </div>
             </div>

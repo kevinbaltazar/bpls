@@ -24,6 +24,10 @@ class GeneralSettingsController extends Controller
 
     public function update(GeneralSettings $settings, Request $request)
     {
+        $this->validate($request, [
+            $request->secretary => 'required',
+            $request->captain => 'required' ,
+        ]);      
         $settings->secretary = $request->secretary;
         $settings->captain = $request->captain;
         

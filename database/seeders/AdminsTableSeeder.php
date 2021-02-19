@@ -16,12 +16,12 @@ class AdminsTableSeeder extends Seeder
      */
     public function run()
     {
-        $kevin = Admin::create([
+        $abette = Admin::create([
             'name' => 'Abetteson Gumasing',
             'email' => 'ahgumasin@gmail.com',
             'password' => Hash::make('password')
         ]);
 
-        $kevin->assignRole('superadmin');
+        $abette->assignRole('superadmin');
     }
 }
