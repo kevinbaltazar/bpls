@@ -17,13 +17,10 @@ class auditController extends Controller
 
     public function index(){
 
-        $audit = Clearance::all();
+        $audits = Clearance::paginate(5);
+        $activity = "all";
 
-        return view('admin.clearances.audit',[
-            'audits' => $audit,
-            'activity' => 'all',
-        ]);
-
+        return view('admin.clearances.audit', compact('audits', 'activity'));
         
     }
 
@@ -113,11 +110,7 @@ class auditController extends Controller
             $audit = $query->whereNull('rejected_by')->get();
         }
 
-       
-
-        return view('admin.clearances.audit',[
-            'audits' => $audit,
-            'activity' => $activity,
-        ]);
+        $audits = $query->paginate(5);
+        return view('admin.clearances.audit', compact('audits', 'activity'));
     }
 }
