@@ -10,6 +10,7 @@
             body {
                 padding: 0;
                 margin:0;
+                font-family: arial;
             }
 
             .reports {
@@ -41,9 +42,46 @@
                 margin-right: 100px;
                 margin-top: 50px;
             }
+
+            .summarize {
+                font-size: 20px;
+
+            }
     </style>
 </head>
 <body>
+    <table style="width: 100%; border-spacing: 20px; border-collapse: separate;">
+        <tbody>
+            <tr style="height: 100px;">
+                <td style="width: 20%;">
+                    <img src="{{ asset('png/pulo-logo.png') }}" style="width: 150px; height: auto;" />
+                </td>
+
+                <td style="width: 60%;">
+                    <h4 style="text-align: center; font-size: 16px; line-height: 22px;">
+                        REPUBLIC OF THE PHILIPPINES <br /> 
+                        PROVINCE OF BULACAN <br /> 
+                        MUNICIPALITY OF SANTA MARIA <br /> 
+                        BARANGAY PULONG BUHANGIN <br /> 
+                        OFFICE OF THE PUNONG BARANGAY
+                    </h4>
+                </td>
+
+                <td class="text-right" style="width: 20%;">
+                    <img src="{{ asset('png/pulo-logo-2.png') }}" style="width: 150px; height: auto;" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align:center;">
+        <h1 class="" style="letter-spacing: 10px; font-size: 40px;">
+           SUMMARY OF  REPORTS
+        </h1>
+        <div class="summarize">
+            <p><strong>{{ \Carbon\Carbon::parse($date_from)->format('F-j-Y') }}</strong> to <strong>{{ \Carbon\Carbon::parse($date_to)->format('F-j-Y') }}</strong></p>
+        </div>   
+    </div>
     
     <table class="reports" style="width: 100%">
         <tr>
@@ -80,16 +118,16 @@
                 {{$report->amount}}
             </td>
             <td>
-                {{date('d-m-Y', strtotime($report->created_at))}}
+                {{\Carbon\Carbon::parse($report->created_at)->format('F-j-Y')}}
             </td>
         </tr>
         @endforeach
     </table>
-    <div class="summary">
-        <p>Filter to {{date('d-m-Y', strtotime($date_from))}} from {{date('d-m-Y', strtotime($date_to))}}</p>
-        <p>Total Released Documents: <strong>{{$count}}</strong> </p>
-        <p>Total Amount: <strong>{{$sum}}</strong> </p>
+    <div>
+        <p>Total Released Documents:{{$count}} </p>
+        <p>Total Amount: {{$sum}} </p>
     </div>
+   
     <div class="signatory">
         <p>Approved by:</p>
         <p><strong>{{$captain->name ?? 'N/A'}}</strong></p>
