@@ -33,6 +33,7 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'pdf' => [
         'enabled' => true,
         'binary'  => env('WKHTML_PDF_BINARY', '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"'),
@@ -48,6 +49,23 @@ return [
         'options' => [],
         'env'     => [],
     ],
+=======
+'pdf' => [
+    'enabled' => true,
+    'binary'  => env('WKHTML_PDF_BINARY', '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"'),
+    'timeout' => false,
+    'options' => [],
+    'env'     => [],
+],
+
+'image' => [
+    'enabled' => true,
+    'binary'  => env('WKHTML_IMG_BINARY', '/usr/local/bin/wkhtmltoimage'),
+    'timeout' => false,
+    'options' => [],
+    'env'     => [],
+],
+>>>>>>> 68853f94683518d152c398dfdcb888f44df978fa
     
 ];
 
