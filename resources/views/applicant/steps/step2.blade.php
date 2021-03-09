@@ -1,6 +1,7 @@
 @extends('applicant.application')
 @section('application')
 
+
 	<div class="lg:border-t lg:border-b lg:border-gray-200">
 		<nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Progress">
 		<ol class="rounded-md overflow-hidden lg:flex lg:border-l lg:border-r lg:border-gray-200 lg:rounded-none">
@@ -91,6 +92,11 @@
 			
 			<div class="sm:col-span-6">
 				<div class="sm:col-span-2">
+					{{-- <div class=" absolute right-60 mt-8">
+						<svg class="info w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+						<span class="texttoolkit w-36 absolute bg-blue-500 rounded-lg p-2 text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt laborum nisi earum dolorum rerum explicabo itaque accusantium provident. Laborum, iure.</span>
+					</div> --}}
+					
 					<label for="cedula_number" class="block text-sm font-medium text-gray-700">
 						Cedula Number
 					</label>
@@ -128,4 +134,5 @@
 			</div>
 		</form>
 	</div>
+
 @endsection

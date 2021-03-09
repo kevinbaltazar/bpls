@@ -26,7 +26,6 @@ class DashboardController extends Controller
         $rejected = $clearance::whereNotNull('rejected_at')->whereDate('rejected_at', '>', Carbon::now()->subDays(30))->orWhereNotNull('renew_rejected_at')->whereDate('renew_rejected_at', '>', Carbon::now()->subDays(30))->count();
         $renew = $clearance::whereNotNull('renew_completed_at')->whereDate('renew_completed_at', '>', Carbon::now()->subDays(30))->count();
         $clearance = $clearance::paginate(15);
-       
         return view('admin.dashboard', compact('processed', 'received', 'rejected', 'clearance', 'renew'));
     }
     

@@ -92,7 +92,7 @@
 <div class="px-4 md:px-16 lg:px-20 mt-12">
 	<div class="flex flex-col text-center text-xl">
 		<p>Cedula Number: <span class="font-bold text-red-600">{{$clearance->cedula_number}}</span></p>
-	  <p>Full Name: <span class="font-bold text-red-600">{{$clearance->full_name}}</span></p>
+	  <p>Full Name: <span class="font-bold text-red-600">{{ ucfirst(trans($clearance->first_name)) . " " . ucfirst(trans($clearance->middle_name ?? '')) . " " . ucfirst(trans($clearance->last_name))}} </span></p>
     <p>Personal Address: <span class="font-bold text-red-600">{{$clearance->personal_address}}</p>
 		<p>Business Name: <span class="font-bold text-red-600">{{$clearance->business_name}}</p>
 		<p>Birthdate: <span class="font-bold text-red-600">{{\Carbon\Carbon::parse($clearance->birthdate)->format('F-j-Y')}}</p>

@@ -21,10 +21,27 @@ class ClearanceController extends Controller
     public function index()
     {
         $admin = Auth::guard('admin')->user();
-
+        
         return view('admin.clearances.index', [
-            'clearances' => Clearance::manageable($admin->role)->get()
+            'clearances' => Clearance::manageable($admin->role)->Paginate(7),
         ]);
+    }
+
+    public function search(Request $request){
+        
+        $admin = Auth::guard('admin')->user();
+
+        if($request->search){
+            return view('admin.clearances.index', [
+                'clearances' => Clearance::manageable($admin->role)->where('business_name', 'LIKE', '%' . $request->search . '%')->orwhere('business_address', 'LIKE', '%' . $request->search . '%')->Paginate(7)->setPath ( '' ),
+            ]);
+        }
+        else{
+            return view('admin.clearances.index', [
+                'clearances' => Clearance::manageable($admin->role)->Paginate(7),
+            ]);
+        }
+        
     }
 
     /**
