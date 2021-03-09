@@ -100,11 +100,11 @@ class ClearanceRenewController extends Controller
         $clearance->renew_completed_at = now();
         $clearance->save();
 
-        // Nexmo::message()->send([
-        //     'to'   => $clearance->mobile_number,
-        //     'from' => 'Pulong Buhangin',
-        //     'text' => "Your application was already submitted, please wait 3-5 working days to process your application. Thank you!"
-        // ]);
+        Nexmo::message()->send([
+            'to'   => $clearance->mobile_number,
+            'from' => 'Pulong Buhangin',
+            'text' => "Your application was already submitted, please wait 3-5 working days to process your application. Thank you!"
+        ]);
         
         return redirect('/');
     }
