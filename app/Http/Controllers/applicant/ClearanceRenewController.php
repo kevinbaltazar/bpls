@@ -68,6 +68,10 @@ class ClearanceRenewController extends Controller
 
     public function createRenewStep2()
     {
+        if(session('clearance') === NULL)
+        {
+            return redirect()->back();
+        }
         return view('applicant/renew/second');
     }
 

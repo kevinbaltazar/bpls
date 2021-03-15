@@ -105,6 +105,7 @@
 						<input type="text" name="cedula_number" value="{{$first['cedula_number'] ?? ''}}"  id="cedula_number" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
 					</div>
 				</div>
+				<p class="text-xs text-gray-500" style="font-style: italic">This cedula number must be issued by pulong buhangin or sta maria.</p>
 			</div>
 
 			{{-- <x-dropzone class="sm:col-span-6" name="identification_card" label="Identification Card(ID)" err="{{$errors->first('identification_card')}}" />
