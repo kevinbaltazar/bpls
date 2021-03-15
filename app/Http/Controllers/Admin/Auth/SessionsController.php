@@ -23,7 +23,7 @@ class SessionsController extends Controller
         if (! $this->guard()->attempt($credentials)) {
             return redirect()
                 ->route('admin.login')
-                ->with('error', trans('auth.failed'));
+                ->withErrors('error', trans('auth.failed'));
         }
 
         return redirect()->route('admin.clearances.index');

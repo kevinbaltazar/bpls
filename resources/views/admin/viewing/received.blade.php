@@ -1,10 +1,14 @@
 <x-admin-layout>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center mb-4">
         <h2 class="text-lg leading-6 font-medium text-gray-900">Viewing of all received documents</h2>
-        <div>
-            <label for="search" class="sr-only">search</label>
-            <input type="text" name="search" id="search" class=" justify-betweenshadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-56 sm:text-sm border-gray-300 rounded-md" placeholder="Search anything here...">
-        </div>
+        <form action="{{route('admin.search')}}" method="get">
+          @csrf
+          <div>
+              <input type="hidden" name="hidden" value="received">
+              <label for="search" class="sr-only">search</label>
+              <input type="text" name="search" id="search" class=" justify-between shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-56 sm:text-sm border-gray-300 rounded-md" placeholder="Search Bus. name/Ctrl #">
+          </div>
+        </form>
     </div>
    
     <div class="hidden sm:block">
@@ -35,9 +39,9 @@
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach ($clearance as $clearances)
+                    @foreach ($clearances as $clearance)
                   <tr class="bg-white">
-                    @if ($clearances->clearance_id === NULL)
+                    @if ($clearance->clearance_id === NULL)
                     <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
                       <span class="text-gray-900 font-medium">New</span>
                     </td>
@@ -47,19 +51,19 @@
                     </td>
                     @endif
                     <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
-                        <span class="text-gray-900 font-medium">{{$clearances->control_number ?? '-- -- --'}}</span>
+                        <span class="text-gray-900 font-medium">{{$clearance->control_number ?? '-- -- --'}}</span>
                     </td>
                     <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
-                      <span class="text-gray-900 font-medium">{{$clearances->business_name}}</span>
+                      <span class="text-gray-900 font-medium">{{$clearance->business_name}}</span>
                     </td>
                     <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
-                      <span class="text-gray-900 font-medium">{{$clearances->business_type}}</span>
+                      <span class="text-gray-900 font-medium">{{$clearance->business_type}}</span>
                     </td>
                     <td class="hidden px-6 text-center py-4 whitespace-nowrap text-sm text-gray-500 md:block">
-                        {{$clearances->mobile_number}}
+                        {{$clearance->mobile_number}}
                     </td>
                     <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
-                        {{$clearances->created_at->toFormattedDateString()}}
+                        {{$clearance->created_at->toFormattedDateString()}}
                     </td>
                   </tr>
                   @endforeach
@@ -68,9 +72,11 @@
                   
                 </tbody>
               </table>
-              
+              <div class="p-5">
+                {{ $clearances->appends(array_filter(request()->except('page')))->render() }}
+              </div>
               <!-- Pagination -->
-              <nav class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6" aria-label="Pagination">
+              {{-- <nav class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6" aria-label="Pagination">
                     <div class="hidden sm:block">
                       <p class="text-sm text-gray-700">
                         Showing
@@ -90,7 +96,7 @@
 						Next
                       </a>
                     </div>
-                  </nav>
+                  </nav> --}}
             </div>
           </div>
         </div>

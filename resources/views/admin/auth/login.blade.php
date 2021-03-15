@@ -15,7 +15,8 @@
             Sign in to your account
           </h2>
         </div>
-      
+
+
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <form class="space-y-6" method="POST" action="{{ route('admin.login') }}">
@@ -33,7 +34,7 @@
                     type="email" 
                     autocomplete="email" 
                     required 
-                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm {{($errors->first('email') ? " border-red-600" : "")}}"
                     value="{{ old('email') }}"
                   >
                 </div>
@@ -50,7 +51,7 @@
                     type="password" 
                     autocomplete="current-password" 
                     required 
-                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm {{($errors->first('password') ? " border-red-600" : "")}}"
                   >
                 </div>
               </div>

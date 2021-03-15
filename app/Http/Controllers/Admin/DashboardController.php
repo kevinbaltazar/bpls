@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Clearance;
 use Illuminate\Support\Carbon;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -31,25 +32,85 @@ class DashboardController extends Controller
     
     public function showapproved(Clearance $clearance){
 
-        $clearance = Clearance::whereNotNull('printed_at')->orWhereNotNull('renew_printed_at')->paginate(50);
-        return view('admin/viewing/approved', compact('clearance'));
+        return view('admin/viewing/approved', [
+            'clearances' => Clearance::whereNotNull('printed_at')->orWhereNotNull('renew_printed_at')->paginate(6)->setPath ( '' ),
+        ]);
     }
 
     public function showreceived(Clearance $clearance){
 
-        $clearance = Clearance::paginate(50);
-        return view('admin/viewing/received', compact('clearance'));
+        return view('admin/viewing/received', [
+            'clearances' => Clearance::paginate(6)->setPath ( '' ),
+        ]);
     }
 
     public function showrejected(Clearance $clearance){
 
-        $clearance = Clearance::whereNotNull('rejected_at')->orwhereNotNull('renew_rejected_at')->paginate(50);
-        return view('admin/viewing/rejected', compact('clearance'));
+        
+        return view('admin/viewing/rejected', [
+            'clearances' => Clearance::whereNotNull('rejected_at')->orwhereNotNull('renew_rejected_at')->paginate(6)->setPath ( '' ),
+        ]);
     }
 
     public function showrenewed(Clearance $clearance){
 
-        $clearance = Clearance::whereNotNull('renew_completed_at')->paginate(50);
-        return view('admin/viewing/renewed', compact('clearance'));
+        return view('admin/viewing/renewed', [
+            'clearances' => Clearance::whereNotNull('clearance_id')->paginate(6)->setPath ( '' ),
+        ]);
+    }
+
+    public function search(Request $request){
+        
+
+        $query = Clearance::query($request->search);
+        
+        if($request->hidden == "approved"){
+            if($request->search != Null){
+                $query->where(function($query){
+                    $query->whereNotNull('printed_at')
+                    ->orwhereNotNull('renew_printed_at');
+                });
+                $clearances = $query->where('control_number', 'LIKE', '%' . $request->search . '%')->paginate(6)->setPath ( '' );
+                return view('admin/viewing/approved', compact('clearances'));
+            }
+            else{
+                return view('admin/viewing/approved', [
+                    'clearances' => Clearance::whereNotNull('printed_at')->orWhereNotNull('renew_printed_at')->paginate(6)->setPath ( '' ),
+                ]);
+            }
+        }
+        if($request->hidden == "received"){
+            if($request->search != Null){
+                $clearances = $query->where('control_number', 'LIKE', '%' . $request->search . '%')->orWhere('business_name', 'LIKE', '%' . $request->search . '%')->paginate(6)->setPath ( '' );
+                return view('admin/viewing/received', compact('clearances'));
+            }
+            else{
+                return view('admin/viewing/received', [
+                    'clearances' => Clearance::paginate(6)->setPath ( '' ),
+                ]);
+            }
+        }
+        if($request->hidden == "rejected"){
+            if($request->search != Null){
+                $clearances = $query->Where('business_name', 'LIKE', '%' . $request->search . '%')->paginate(6)->setPath ( '' );
+                return view('admin/viewing/rejected', compact('clearances'));
+            }
+            else{
+                return view('admin/viewing/rejected', [
+                    'clearances' => Clearance::whereNotNull('rejected_at')->orwhereNotNull('renew_rejected_at')->paginate(6)->setPath ( '' ),
+                ]);
+            }
+        }
+        if($request->hidden == "renewed"){
+            if($request->search != Null){
+                $clearances = $query->whereNotNull('clearance_id')->where('control_number', 'LIKE', '%' . $request->search . '%')->orWhere('business_name', 'LIKE', '%' . $request->search . '%')->paginate(6)->setPath ( '' );
+                return view('admin/viewing/renewed', compact('clearances'));
+            }
+            else{
+                return view('admin/viewing/renewed', [
+                    'clearances' => Clearance::whereNotNull('renew_completed_at')->paginate(6)->setPath ( '' ),
+                ]);
+            }
+        }
     }
 }

@@ -33,7 +33,8 @@ Route::resource('admins', AdminController::class);
 Route::resource('clearances', ClearanceController::class)->only(['index', 'show', 'update']);
 Route::post('clearances/{clearance}/print', PrintClearanceController::class)->name('clearances.print');
 
-Route::get('search', [ClearanceController::class, 'search'])->name('search');
+Route::get('search', [ClearanceController::class, 'search'])->name('search-c');
+Route::get('dashboard/search', [DashboardController::class, 'search'])->name('search');
 // Remove this
 Route::view('test', 'admin.clearances.pdf', ['clearance' => Clearance::first()]);
 
